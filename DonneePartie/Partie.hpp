@@ -22,13 +22,11 @@ class Partie{
 
 	public :
 		Partie();//constructeur de la classe Partie
-		void remiseAuPropre();
-		void choixDesPersonnages();
-		void lancementDuTour();
-		void DebutDuJeu();
-		void finDuJeu();
-		
-		void jouer();
+		void remiseAuPropre();// remet les joueurs dans l'etatNeutre
+		void choixDesPersonnages(); //permet à chaque joueur de choisir son personnage
+		void DebutDuJeu();//debute la partie
+		void lancementDuTour();//lance le tour une fois le choix des personnages effectué
+		void finDuJeu();//Vérfie si la partie peut être terminé
 		
 };
 

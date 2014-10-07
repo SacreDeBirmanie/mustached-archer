@@ -12,7 +12,9 @@ Partie::choixDesPersonnages(Association assoc,Pioche pioche){
 }
 
 Partie::DebutDuJeu(Association assoc,Pioche pioche){
-	
+	while(!finDuJeu()){
+		assocPJ
+	}
 }
 
 Partie::lancementDuTour(Association assoc,Pioche pioche){

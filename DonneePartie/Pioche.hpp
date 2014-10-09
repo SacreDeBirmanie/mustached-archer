@@ -7,13 +7,15 @@
 #ifndef PIOCHE_HPP
 #define PIOCHE_HPP
 
+#include <vector>  //for std::vector
+#include <algorithm> 
 #include <string> // pour le type std::string
 
 class Pioche{
 
 
 	private :
-
+		std::vector<Quartier> cartes;
 		
 
 		

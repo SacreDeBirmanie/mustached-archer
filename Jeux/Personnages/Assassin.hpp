@@ -11,9 +11,8 @@
 
 class Assassin{
 
-
 	private :
-
+		
 		
 
 	public :

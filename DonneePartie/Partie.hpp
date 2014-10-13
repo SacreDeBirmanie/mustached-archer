@@ -7,6 +7,7 @@
 #ifndef PARTIE_HPP
 #define PARTIE_HPP
 
+
 #include <string> // pour le type std::string
 
 class Partie{

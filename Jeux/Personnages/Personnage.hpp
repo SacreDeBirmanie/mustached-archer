@@ -1,7 +1,7 @@
-/*
-   Fichier Personnage.hpp
-
-   Définition du type Personnage
+/** \file Personnage.hpp
+* \bref Définition du type Personnage
+* 
+* Classe abstraite qui définit la classe Personnage
 */
 
 #ifndef PERSONNAGE_HPP
@@ -17,7 +17,8 @@ class Personnage{
 		
 
 	public :
-		Personnage();//constructeur de la classe Personnage
+		//! Le constructeur
+		virtual Personnage();
 		void jouer();
 		
 };

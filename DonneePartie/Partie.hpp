@@ -7,17 +7,18 @@
 #ifndef PARTIE_HPP
 #define PARTIE_HPP
 
+
 #include <string> // pour le type std::string
 
 class Partie{
 
 
 	private :
-		int VilleA8=0;
-		Pioche pioche=new Pioche();
-		Personnage[] personnage;
-		Joueur[] joueurs;
-		AssociationPersonnage[] roles;
+		int VilleA8=0;//modifier par un joueur si sa cité a 8 quartiers
+		Pioche pioche=new Pioche();//pioche de la partie
+		Personnage[] personnages;//pointeurs vers persos
+		Joueur[] joueurs;//pointeurs vers joueurs
+		AssociationPJ[] roles;
 		
 
 	public :

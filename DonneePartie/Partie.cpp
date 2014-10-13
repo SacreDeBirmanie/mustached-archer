@@ -1,4 +1,6 @@
-Partie::Partie(Association assoc,Pioche pioche){
+Partie::Partie(Personnage[] persos, Association assoc, Pioche pioche, Joueurs[] joueurs){
+		this->personnages = persos;
+		this->joueurs = joueurs
 		this->assocPJ = assoc;
 		this->pioche = pioche;
 }

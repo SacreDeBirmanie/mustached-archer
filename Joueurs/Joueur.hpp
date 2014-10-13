@@ -13,11 +13,10 @@ class Joueur{
 
 
 	private :
-		Carte[] main;
-		Carte[] cite;
-		int pieceOr;
-		Etat etat;
-		*engagement;
+		vector<Quartier> main;
+		vector<Quartier> cite;//*************a remplacer par une classe cité pour gérer les carte avec les merveilles (retour de méthode pour les pouvoirs )********//
+		int pieceOr;//nombre de piece d'or du joueur
+		Etat etat; // personnage joué par le joueur(Normal si le personnage n'a pas encore ete selectionnie)
 		
 
 	public :

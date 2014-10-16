@@ -8,7 +8,7 @@
 #define JOUEUR_HPP
 
 #include <string> // pour le type std::string
-
+#include "Quartier.hpp"
 class Joueur{
 
 
@@ -21,11 +21,14 @@ class Joueur{
 
 	public :
 		Joueur();//constructeur de la classe Joueur
+		~Joueur();
 		void setEtat();
+		Etat getEtat();
 		void tourDeJeu();//effectue un tour de jeu
 		void piocher(int nombre);//pioche un nombre de carte
 		void prendrePiece(int nombre);//prend un nombre de piece
-		void construire(Quartier quartier);//construit un quartier dans sa cite
+		bool construire(Quartier quartier);//construit un quartier dans sa cite
+		void capacite();// active la capacité spéciale du personnage choisi
 		
 };
 

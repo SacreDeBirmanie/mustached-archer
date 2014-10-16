@@ -8,8 +8,9 @@
 #define MARCHAND_HPP
 
 #include <string> // pour le type std::string
+#include "Personnage.hpp"
 
-class Marchand{
+class Marchand : public Personnage{
 
 
 	private :
@@ -19,7 +20,7 @@ class Marchand{
 	public :
 		Marchand();//constructeur de la classe Marchand
 		int recevoirVert(Carte[] cite);
-		int recompenseDebut();
+		void capacite();
 		
 };
 

@@ -12,13 +12,15 @@
 class Personnage{
 
 
-	private :
+	protected :		
+		Joueur joueur;
 		
 		
 
 	public :
 		//! Le constructeur
 		virtual Personnage();
+		void setJoueur(Joueur joueur);
 		void jouer();
 		
 };

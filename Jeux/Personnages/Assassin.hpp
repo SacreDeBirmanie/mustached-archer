@@ -8,6 +8,7 @@
 #define ASSASSIN_HPP
 
 #include <string> // pour le type std::string
+class Joueur;
 
 class Assassin{
 
@@ -17,7 +18,7 @@ class Assassin{
 
 	public :
 		Assassin();//constructeur de la classe Assassin
-		void assassinner(Joueur joueur);
+		void assassinner(Joueur joueur);//permet d'assassiner un joueur
 		
 };
 

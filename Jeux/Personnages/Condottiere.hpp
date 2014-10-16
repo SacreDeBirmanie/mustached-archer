@@ -9,11 +9,13 @@
 
 #include <string> // pour le type std::string
 
+class Joueur;
+
 class Condottiere{
 
 
 	private :
-
+		
 		
 
 	public :

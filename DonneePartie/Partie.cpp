@@ -1,12 +1,14 @@
-Partie::Partie(Personnage[] persos, Association assoc, Pioche pioche, Joueurs[] joueurs){
+Partie::Partie(std::vector<Personnage> persos, AssociationPersonnageJoueur assoc, Pioche pioche, std::vector<Joueurs> joueurs){
 		this->personnages = persos;
 		this->joueurs = joueurs
 		this->assocPJ = assoc;
 		this->pioche = pioche;
 }
 
-Partie::remiseAuPropre(Association assoc,Pioche pioche){
-	
+Partie::entreDeuxTours(){
+	for ( vector<Joueur>::iterator iter = joueurs.begin(); iter != joueurs.end(); iter++ ){
+		*iter.setEtat()
+	}
 }
 
 Partie::choixDesPersonnages(Association assoc,Pioche pioche){

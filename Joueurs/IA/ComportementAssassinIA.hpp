@@ -13,7 +13,7 @@ class EtatAssassinIA{
 
 
 	private :
-
+		
 		
 
 	public :

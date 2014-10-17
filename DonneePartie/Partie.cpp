@@ -7,28 +7,48 @@ Partie::Partie(std::vector<Personnage> persos, AssociationPersonnageJoueur assoc
 
 Partie::entreDeuxTours(){
 	for ( vector<Joueur>::iterator iter = joueurs.begin(); iter != joueurs.end(); iter++ ){
-		*iter.setEtat()
+		*iter.setComportement(ComportementNeutreIA.getComportement())
 	}
 }
 
-Partie::choixDesPersonnages(Association assoc,Pioche pioche){
-	
+Partie::choixDesPersonnages(){
+	for ( vector<Joueur>::iterator iter = joueurs.begin(); iter != joueurs.end(); iter++ ){
+		*iter.jouer(this);
+	}
 }
 
 Partie::DebutDuJeu(Association assoc,Pioche pioche){
 	while(!finDuJeu()){
-		assocPJ
+		EntreDeuxTours();
+		choixDesPersonnages();
+		lancementDuTour();
 	}
+	proclamerLeVainqueur();
 }
 
 Partie::lancementDuTour(Association assoc,Pioche pioche){
-	
+	for ( vector<Joueur>::iterator iter = joueurs.begin(); iter != joueurs.end(); iter++ ){
+		*iter.jouer(this);
+	}
 }
 
-Partie::finDuJeu(Association assoc,Pioche pioche){
+Partie::finDuJeu(){
+	if (VilleA8==0)
+		return true;
+	else
+		return false;
+}
+
+Partie::decompteDesPoints(&map<String;int> tmp){//************tableau associatif n'est pas forcément le meilleur choix********
+	
+	for ( vector<Joueur>::iterator iter = joueurs.begin(); iter != joueurs.end(); iter++ ){
+		tmp[*iter.getPseudo()]=*iter.decompteDesPoints();
+	}
 	
 }
 
 Partie::proclamerLeVainqueur(Association assoc,Pioche pioche){
-	
+	map<String,int> tmp;
+	decompteDesPoints(tmp);
+	cout<<"Et Le vainqueur est ...."<<endl;;
 }

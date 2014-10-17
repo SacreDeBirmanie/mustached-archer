@@ -29,6 +29,7 @@ class Partie{
 		void DebutDuJeu();//debute la partie
 		void lancementDuTour();//lance le tour une fois le choix des personnages effectué
 		void finDuJeu();//Vérfie si la partie peut être terminé
+		void decompteDesPoints();
 		
 };
 

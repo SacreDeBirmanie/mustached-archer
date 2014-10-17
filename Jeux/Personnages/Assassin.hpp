@@ -10,7 +10,7 @@
 #include <string> // pour le type std::string
 class Joueur;
 
-class Assassin{
+class Assassin : public Personnage{
 
 	private :
 		

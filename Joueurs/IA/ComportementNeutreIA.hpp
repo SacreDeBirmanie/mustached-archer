@@ -13,12 +13,12 @@ class EtatNeutreIA{
 
 
 	private :
-
+		
 		
 
 	public :
 		EtatNeutreIA();//constructeur de la classe EtatNeutreIA
-		void jouer();
+		void jouer(Partie p, Joueur j);
 		
 };
 

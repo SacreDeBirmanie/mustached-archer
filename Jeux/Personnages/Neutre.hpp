@@ -1,17 +1,17 @@
 /*
-   Fichier Condottiere.hpp
+   Fichier Neutre.hpp
 
-   Définition du type Condottiere
+   Définition du type Neutre
 */
 
-#ifndef CONDOTTIERE_HPP
-#define CONDOTTIERE_HPP
+#ifndef NEUTRE_HPP
+#define NEUTRE_HPP
 
 #include <string> // pour le type std::string
 
 class Joueur;
 
-class Condottiere : public Personnage{
+class Neutre : public Personnage{
 
 
 	private :
@@ -19,7 +19,7 @@ class Condottiere : public Personnage{
 		
 
 	public :
-		Condottiere();//constructeur de la classe Condottiere
+		Neutre();//constructeur de la classe Neutre
 		int recevoirRouge();
 		int detruireQuartier(Joueur joueurD,Carte quartier);
 		
@@ -28,5 +28,5 @@ class Condottiere : public Personnage{
 
 
 /******************************************************************************/
-#include "Condottiere.cpp"
-#endif // CONDOTTIERE_HPP
+#include "Neutre.cpp"
+#endif // NEUTRE_HPP

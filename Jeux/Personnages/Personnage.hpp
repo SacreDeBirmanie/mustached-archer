@@ -13,7 +13,7 @@ class Personnage{
 
 
 	protected :		
-		Joueur joueur;
+		ComportementNeutreIA comportementIA ;
 		
 		
 

@@ -14,7 +14,9 @@ void Joueur::setEtat{}
 Etat Joueur::getEtat(){
 	return null;
 }
-void Joueur::tourDeJeu(){}
+void Joueur::jouer(Partie p){
+	this.comportement.jouer(p,this);
+}
 
 void Joueur::piocher(int nombre){}
 

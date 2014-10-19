@@ -9,10 +9,12 @@ Joueur::Joueur(){}
 
 Joueur::~Joueur(){}
 
-void Joueur::setEtat{}
+Etat Joueur::getComportement(){
+	return this->comportement;
+}
 
-Etat Joueur::getEtat(){
-	return null;
+void Joueur::choisirPersonnage(Partie p, Vector<Personnage> persosDispo){
+	this->comportement.choisirPersonnage(p,persosDispo,this);
 }
 void Joueur::jouer(Partie p){
 	this->comportement->jouer(p,this);

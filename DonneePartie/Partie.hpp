@@ -15,10 +15,9 @@ class Partie{
 
 
 	private :
-		int VilleA8=0;//modifier par un joueur si sa cité a 8 quartiers
+		int limiteTailleVille;
+		int VilleComplete=0;//modifier par un joueur si sa cité a 8 quartiers
 		Pioche pioche=new Pioche();//pioche de la partie
-		std::vector<Personnage> personnages;//pointeurs vers persos
-		std::vector<Joueur> joueurs;//pointeurs vers joueurs
 		AssociationPersonnageJoueur roles;//role de chaque joueur
 		
 

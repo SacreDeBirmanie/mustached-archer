@@ -13,8 +13,9 @@ class AssociationPersonnageJoueur{
 
 
 	private :
-		const vector<Joueur> &listeJoueurs;
-		const vector<Personnage> &listePersonnages();
+		Joueur * j couronnement;
+		vector<Joueur> &listeJoueurs;
+		vector<Personnage> &listePersonnages();
 		map<String,*Personnage> AssocJP;
 		map<String,*Joueur> AssocPJ;
 		
@@ -24,7 +25,10 @@ class AssociationPersonnageJoueur{
 		void associer(Personnage p, Joueur j);
 		Joueur retrouverJ(Personnage p);
 		Personnage retrouverP(Joueur j);
+		vector<Personnage> persosDisponible();
 		vector<Joueur> ordreTour();
+		vector<Joueur> ordreChoixPersonnages();
+		void couronnement();
 		
 		
 };

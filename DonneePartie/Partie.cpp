@@ -1,19 +1,19 @@
-Partie::Partie(std::vector<Personnage> persos, AssociationPersonnageJoueur assoc, Pioche pioche, std::vector<Joueurs> joueurs){
-		this->personnages = persos;
-		this->joueurs = joueurs
-		this->assocPJ = assoc;
-		this->pioche = pioche;
+Partie::Partie(std::vector<Personnage> persos, Pioche pioche, int tailleVille):
+roles(new AssociationPersonnageJoueur(persos,joueurs)), limiteTailleVille(tailleVille){
+
 }
 
 Partie::entreDeuxTours(){
 	for ( vector<Joueur>::iterator iter = joueurs.begin(); iter != joueurs.end(); iter++ ){
-		*iter.setComportement(ComportementNeutreIA.getComportement())
+		*iter.setComportement(ComportementNeutreIA.getComportement());
+		roles.associer(*iter,Neutre);
 	}
 }
 
 Partie::choixDesPersonnages(){
+	vector<Personnage> tmp = roles.getListePersonnages();
 	for ( vector<Joueur>::iterator iter = joueurs.begin(); iter != joueurs.end(); iter++ ){
-		*iter.jouer(this);
+		*iter.choisirPersonnage(this,tmp);
 	}
 }
 
@@ -33,7 +33,7 @@ Partie::lancementDuTour(){
 }
 
 Partie::finDuJeu(){
-	if (VilleA8==0)
+	if (VilleComplete>=limiteTailleVille)
 		return true;
 	else
 		return false;

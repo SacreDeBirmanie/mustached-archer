@@ -9,7 +9,7 @@
 
 #include <string> // pour le type std::string
 
-class EtatNeutreIA{
+class ComportementNeutreIA{
 
 
 	private :
@@ -17,7 +17,7 @@ class EtatNeutreIA{
 		
 
 	public :
-		EtatNeutreIA();//constructeur de la classe EtatNeutreIA
+		ComportementNeutreIA();//constructeur de la classe EtatNeutreIA
 		void jouer(Partie p, Joueur j);
 		
 };

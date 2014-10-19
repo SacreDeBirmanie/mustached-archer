@@ -26,7 +26,7 @@ Partie::DebutDuJeu(Association assoc,Pioche pioche){
 	proclamerLeVainqueur();
 }
 
-Partie::lancementDuTour(Association assoc,Pioche pioche){
+Partie::lancementDuTour(){
 	for ( vector<Joueur>::iterator iter = joueurs.begin(); iter != joueurs.end(); iter++ ){
 		*iter.jouer(this);
 	}

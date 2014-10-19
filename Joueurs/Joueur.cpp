@@ -15,13 +15,13 @@ Etat Joueur::getEtat(){
 	return null;
 }
 void Joueur::jouer(Partie p){
-	this.comportement.jouer(p,this);
+	this->comportement->jouer(p,this);
 }
 
 void Joueur::piocher(int nombre){}
 
 void Joueur::prendrePiece(int nombre){
-	pieceOr+=nombre;
+	this->pieceOr+=nombre;
 }
 
 bool Joueur::construire(Quartier quartier){

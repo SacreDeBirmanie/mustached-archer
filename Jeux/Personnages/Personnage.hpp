@@ -12,7 +12,8 @@
 class Personnage{
 
 
-	protected :		
+	protected :	
+		String nom;
 		ComportementNeutreIA comportementIA ;
 		
 		

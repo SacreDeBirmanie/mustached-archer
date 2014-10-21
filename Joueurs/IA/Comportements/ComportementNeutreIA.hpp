@@ -19,6 +19,7 @@ class ComportementNeutreIA{
 	public :
 		ComportementNeutreIA();//constructeur de la classe ComportementNeutreIA
 		void jouer(Partie p, Joueur j);
+		void choisirPersonnage(Partie p, vector<Personnage> persosDispo);
 		
 };
 

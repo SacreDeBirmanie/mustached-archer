@@ -18,7 +18,7 @@ class EtatAssassinIA{
 
 	public :
 		EtatAssassinIA();//constructeur de la classe EtatAssassinIA
-		void jouer();
+		void jouer(Partie p, Joueur j);
 		Personnage choixAssassinat();
 		
 };

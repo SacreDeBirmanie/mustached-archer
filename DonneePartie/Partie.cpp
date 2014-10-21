@@ -47,7 +47,11 @@ Partie::decompteDesPoints(&map<String;int> tmp){//************tableau associatif
 	
 }
 
-Partie::proclamerLeVainqueur(Association assoc,Pioche pioche){
+void Partie::associer(Personnage p, Joueur j){
+	this->roles.associer(p,j);
+}
+
+void Partie::proclamerLeVainqueur(Association assoc,Pioche pioche){
 	map<String,int> tmp;
 	decompteDesPoints(tmp);
 	cout<<"Et Le vainqueur est ...."<<endl;;

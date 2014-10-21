@@ -20,7 +20,6 @@ class Personnage{
 	public :
 		//! Le constructeur
 		virtual Personnage();
-		void setJoueur(Joueur joueur);
 		void jouer();
 		
 };

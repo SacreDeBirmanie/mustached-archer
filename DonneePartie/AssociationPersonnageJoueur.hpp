@@ -28,6 +28,8 @@ class AssociationPersonnageJoueur{
 		vector<Personnage> persosDisponible();
 		vector<Joueur> ordreTour();
 		vector<Joueur> ordreChoixPersonnages();
+		Personnage personnageAleatoire();
+		joueur joueurAleatoire();
 		void couronnement();
 		
 		

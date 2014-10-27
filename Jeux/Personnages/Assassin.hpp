@@ -1,29 +1,29 @@
 /*
-   Fichier Assassin.hpp
+   Fichier Macchabee.hpp
 
-   Définition du type Assassin
+   Définition du type Macchabee
 */
 
-#ifndef ASSASSIN_HPP
-#define ASSASSIN_HPP
+#ifndef MACCHABEE_HPP
+#define MACCHABEE_HPP
 
 #include <string> // pour le type std::string
 class Joueur;
 
-class Assassin : public Personnage{
+class Macchabee : public Personnage{
 
 	private :
-		
+		comportementIA comportementMacchabee = new comportementMacchabee();
 		
 
 	public :
-		Assassin();//constructeur de la classe Assassin
-		void assassinner(Joueur joueur);//permet d'assassiner un joueur
+		Macchabee();//constructeur de la classe Macchabee
+		
 		
 };
 
 
 
 /******************************************************************************/
-#include "Assassin.cpp"
-#endif // ASSASSIN_HPP
+#include "Macchabee.cpp"
+#endif // MACCHABEE_HPP

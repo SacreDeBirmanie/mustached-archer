@@ -15,3 +15,15 @@ void Pioche::defausserCarte(vector<Quartier> q){
 		this->cartes.push_back(*iter);
 	}
 }
+
+int prendrePiece(int nombre){
+	if(this->reserveOr-nombre>=0){
+		this->reserveOr = this->reserveOr-nombre;
+		return nombre;
+	}
+	else{
+		int tmp = this->reserveOr;
+		this->reserveOr=0;
+		return tmp;
+	}
+}

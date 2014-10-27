@@ -16,7 +16,7 @@ class Partie{
 
 	private :
 		int limiteTailleVille;
-		int VilleComplete=0;//modifier par un joueur si sa cité a 8 quartiers
+		bool villeComplete=false;//modifier par un joueur si sa cité a 8 quartiers
 		Pioche pioche=new Pioche();//pioche de la partie
 		AssociationPersonnageJoueur roles;//role de chaque joueur
 		
@@ -31,6 +31,7 @@ class Partie{
 		void decompteDesPoints();//methode permettant de décompter les points cite de chaque joueurs enregistre dans un tableau
 		void associer(Personnage p, Joueur j);
 		void recupererJoueurs();
+		int prendrePiece(int nombre);
 		
 };
 

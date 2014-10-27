@@ -33,10 +33,7 @@ Partie::lancementDuTour(){
 }
 
 Partie::finDuJeu(){
-	if (VilleComplete>=limiteTailleVille)
-		return true;
-	else
-		return false;
+	return this->villeComplete;
 }
 
 Partie::decompteDesPoints(&map<String;int> tmp){//************tableau associatif n'est pas forcément le meilleur choix********
@@ -55,4 +52,8 @@ void Partie::proclamerLeVainqueur(Association assoc,Pioche pioche){
 	map<String,int> tmp;
 	decompteDesPoints(tmp);
 	cout<<"Et Le vainqueur est ...."<<endl;;
+}
+
+int prendrePiece(int nombre){
+	this->pioche.prendrePiece();
 }

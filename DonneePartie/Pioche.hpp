@@ -16,6 +16,7 @@ class Pioche{
 
 	private :
 		std::vector<Quartier> cartes;
+		int reserveOr;
 		
 
 		
@@ -24,6 +25,7 @@ class Pioche{
 		Pioche();//constructeur de la classe Pioche
 		Carte[] piocherCarte(int nombre);
 		void defausserCarte(Carte[]);
+		int prendrePiece(int nombre);
 		
 };
 

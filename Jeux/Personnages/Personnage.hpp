@@ -15,6 +15,7 @@ class Personnage{
 	protected :	
 		String nom;
 		int numero;
+		ComportementIA comportementIA;
 		
 
 	public :

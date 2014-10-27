@@ -12,7 +12,7 @@
 class Joueur{
 
 
-	private :
+	protected :
 		String Pseudo;
 		vector<Quartier> main;//cartes dans la main du joueur
 		vector<Quartier> cite;//*************a remplacer par une classe cité pour gérer les carte avec les merveilles (retour de méthode pour les pouvoirs )********//
@@ -25,7 +25,7 @@ class Joueur{
 		~Joueur();
 		virtual void setComportement(Personnage p);
 		Comportement getComportement();
-		void choisirPersonnage(Partie p, vector<Personnage> persosDispo);
+		virtual void choisirPersonnage(Partie p, vector<Personnage> persosDispo);
 		
 		
 		void jouer(Partie p);//effectue un tour de jeu
@@ -36,7 +36,7 @@ class Joueur{
 		void piocher(int nombre);//pioche un nombre de carte
 		void prendrePiece(int nombre);//prend un nombre de piece
 		bool construire(Quartier quartier);//construit un quartier dans sa cite
-		void capacite();// active la capacité spéciale du personnage choisi
+		//void capacite();// active la capacité spéciale du personnage choisi
 		int decompteDesPoints();
 		
 };

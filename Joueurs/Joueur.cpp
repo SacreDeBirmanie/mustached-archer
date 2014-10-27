@@ -23,7 +23,7 @@ void Joueur::jouer(Partie p){
 void Joueur::piocher(int nombre){}
 
 void Joueur::prendrePiece(int nombre){
-	this->pieceOr+=nombre;
+	this->pieceOr+=this->partie.prendrePiece();
 }
 
 bool Joueur::construire(Quartier quartier){
@@ -44,4 +44,10 @@ bool Joueur::construire(Quartier quartier){
 	return false;	
 }
 
-void Joueur::capacite(){}
+int Joueur::decompteDesPoints(){
+	int total = 0;
+	for(vector<Quartier>::iterator it = main.begin();it!=main.end();++it){
+		total += *it.getPoint();
+	}
+	return total;
+}

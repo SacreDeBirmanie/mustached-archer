@@ -3,10 +3,17 @@ roles(new AssociationPersonnageJoueur(persos,joueurs)), limiteTailleVille(taille
 
 }
 
+void nouveauJoueur(Joueur joueur){
+	
+}
+void nouveauPersonnage(Personnage personnage){
+	
+}
+
 Partie::entreDeuxTours(){
 	for ( vector<Joueur>::iterator iter = joueurs.begin(); iter != joueurs.end(); iter++ ){
-		*iter.setComportement(ComportementNeutreIA.getComportement());
-		roles.associer(*iter,Neutre);
+		*iter.setComportement(Neutre);
+		roles.reinitialiser();
 	}
 }
 

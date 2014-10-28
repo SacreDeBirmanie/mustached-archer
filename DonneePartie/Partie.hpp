@@ -20,14 +20,16 @@ class Partie{
 		Pioche pioche=new Pioche();//pioche de la partie
 		AssociationPersonnageJoueur roles;//role de chaque joueur
 		
-
-	public :
-		Partie();//constructeur de la classe Partie
+	protected :
+		void nouveauJoueur(Joueur joueur);
+		void nouveauPersonnage(Personnage personnage);
 		void entreDeuxTours();// remet les joueurs dans l'etatNeutre
 		void choixDesPersonnages(); //permet à chaque joueur de choisir son personnage
 		void DebutDuJeu();//debute la partie
 		void lancementDuTour();//lance le tour une fois le choix des personnages effectué
 		void finDuJeu();//Vérfie si la partie peut être terminé
+	public :
+		Partie();//constructeur de la classe Partie
 		void decompteDesPoints();//methode permettant de décompter les points cite de chaque joueurs enregistre dans un tableau
 		void associer(Personnage p, Joueur j);
 		void recupererJoueurs();

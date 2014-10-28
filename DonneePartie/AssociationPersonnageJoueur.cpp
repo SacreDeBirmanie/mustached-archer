@@ -1,5 +1,28 @@
-AssociationPersonnageJoueur::AssociationPersonnageJoueur(&vector<Joueur> js, &vector<Personnage> ps): listeJoueurs(js), listePersonnages(ps) {
+AssociationPersonnageJoueur::AssociationPersonnageJoueur() {
 	
+}
+
+AssociationPersonnageJoueur::AssociationPersonnageJoueur(&vector<Joueur> js, &vector<Personnage> ps) {
+	
+}
+
+int nouveauJoueur(Joueur &joueur){
+	if(this->listeJoueurs.find(joueur.getPseudo())){
+		return 1;
+	}
+	else{
+		this->listeJoueurs[joueur.getPseudo()] = joueur;
+		return 0;
+	}
+}
+int nouveauPersonnage(Personnage &personnage){
+	if(this->listePersonnages.find(personnage.getOrdre()){
+		return 1;
+	}
+	else{
+		this->listePersonnages[personnage.getOrdre()] = personnage;
+		return 0;
+	}
 }
 vector<Personnage> AssociationPersonnageJoueur::getListePersonnages(){
 	return this->listePersonnages;
@@ -7,8 +30,23 @@ vector<Personnage> AssociationPersonnageJoueur::getListePersonnages(){
 
 void AssociationPersonnageJoueur::associer(Personnage *p, Joueur *j){
 	this->AssocJP[p.getNom()] = j;
+	
+}
+
+void AssociationPersonnageJoueur::associer(Joueur *j, Personnage *p){
 	this->AssocPJ[j.getPseudo()] = p;
 }
+
+void AssociationPersonnageJoueur::reinitialiser(){
+	for (map<String, Joueur> listeJoueurs::iterator iter = listeJoueurs.begin(); iter != listeJoueurs.end(); iter++ ){
+		this->AssocJP[*iter.getNom()] = NULL;
+	}
+	
+	for ( map<String,*Joueur>::iterator iter = listePersonnages.begin(); iter != listePersonnages.end(); iter++ ){
+		this->AssocPJ[*iter.getOrdre()] = NULL;
+	}
+}
+
 Joueur AssociationPersonnageJoueur::retrouverJ(Personnage p){
 	return this->AssocPJ[p.getNom()];
 }
@@ -17,10 +55,11 @@ Personnage AssociationPersonnageJoueur::retrouverP(Joueur j){
 }
 
 vector<Personnage> persosDisponible(){
-	vector<Personnage> tmp;
+	vector<Personnage*> tmp;
 	
-	for ( vector<Joueur>::iterator iter = listePersonnages.begin(); iter != listePersonnages.end(); iter++ ){
-		if(!retrouverJ(*iter.getNom())==
+	for ( map<String,*Joueur>::iterator iter = listePersonnages.begin(); iter != listePersonnages.end(); iter++ ){
+		if(iter->second ==NULL)
+			tmp.push_back()
 	}
 	
 	

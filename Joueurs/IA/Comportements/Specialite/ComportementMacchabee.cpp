@@ -1,29 +1,20 @@
-/*
-   Fichier ComportementMacchabeeIA.hpp
+ComportementMacchabeeIA::ComportementMacchabeeIA(){
 
-   Définition du type ComportementMacchabeeIA
-*/
+}
 
-#ifndef COMPORTEMENTMACCHABEEIA_HPP
-#define COMPORTEMENTMACCHABEEIA_HPP
+int ComportementMacchabeeIA::assassinat(string joueur, string personnage){
+	this->joueur = joueur;
+	this->personnage = personnage;
+	this->seDevoiler = false;
+}
 
-#include <string> // pour le type std::string
-
-class ComportementMacchabeeIA{
-
-
-	private :
+void ComportementMacchabeeIA::jouer(Partie p, Joueur j){
+	if(this->seDevoiler)
+		cout<<joueur<<" est le personnage "<<personnage<<"qui a été assassiné"<<endl;
+	else
 		
-		
+}
 
-	public :
-		ComportementMacchabeeIA();//constructeur de la classe ComportementMacchabeeIA
-		void jouer(Partie p, Joueur j);//vide vu que le joueur passe son tour
-		
-};
+Personnage ComportementMacchabeeIA::choixAssassinat(){
 
-
-
-/******************************************************************************/
-#include "ComportementMacchabeeIA.cpp"
-#endif // COMPORTEMENTMACCHABEEIA_HPP
+}

@@ -14,15 +14,19 @@ class AssociationPersonnageJoueur{
 
 	private :
 		Joueur * j couronnement;
-		vector<Joueur> &listeJoueurs;
-		vector<Personnage> &listePersonnages();
-		map<String,*Personnage> AssocJP;
-		map<String,*Joueur> AssocPJ;
+		map<String, Joueur> listeJoueurs;
+		map<int, Personnage> listePersonnages();
+		map<String,int> AssocJP;
+		map<String,String> AssocPJ;
 		
 
 	public :
 		AssociationPersonnageJoueur(const &vector<Joueur> js, const &vector<Personnage> ps);//constructeur de la classe AssociationPersonnageJoueur
+		int nouveauJoueur(Joueur joueur);
+		int nouveauPersonnage(Personnage personnage);
 		void associer(Personnage p, Joueur j);
+		void associer(Joueur j, Personnage p);
+		void reinitialiser();
 		Joueur retrouverJ(Personnage p);
 		Personnage retrouverP(Joueur j);
 		vector<Personnage> persosDisponible();

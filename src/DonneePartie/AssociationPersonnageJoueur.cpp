@@ -8,22 +8,31 @@ AssociationPersonnageJoueur::AssociationPersonnageJoueur(&vector<Joueur> js, &ve
 
 int nouveauJoueur(Joueur &joueur){
 	if(this->listeJoueurs.find(joueur.getPseudo())){
-		return 1;
+		return true;
 	}
 	else{
 		this->listeJoueurs[joueur.getPseudo()] = joueur;
-		return 0;
+		return false;
 	}
 }
 int nouveauPersonnage(Personnage &personnage){
 	if(this->listePersonnages.find(personnage.getOrdre()){
-		return 1;
+		return true;
 	}
 	else{
 		this->listePersonnages[personnage.getOrdre()] = personnage;
-		return 0;
+		return false;
 	}
 }
+
+int nbJoueurs(){
+	return this->listeJoueurs.size();
+}
+
+int nbPersonnages(){
+	return this->listePersonnages.size();
+}
+		
 vector<Personnage> AssociationPersonnageJoueur::getListePersonnages(){
 	return this->listePersonnages;
 }

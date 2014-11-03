@@ -22,8 +22,10 @@ class AssociationPersonnageJoueur{
 
 	public :
 		AssociationPersonnageJoueur(const &vector<Joueur> js, const &vector<Personnage> ps);//constructeur de la classe AssociationPersonnageJoueur
-		int nouveauJoueur(Joueur joueur);
-		int nouveauPersonnage(Personnage personnage);
+		bool nouveauJoueur(Joueur joueur);
+		bool nouveauPersonnage(Personnage personnage);
+		int nbJoueurs();
+		int nbPersonnages();
 		void associer(Personnage p, Joueur j);
 		void associer(Joueur j, Personnage p);
 		void reinitialiser();

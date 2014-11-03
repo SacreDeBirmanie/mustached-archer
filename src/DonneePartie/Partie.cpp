@@ -1,13 +1,16 @@
-Partie::Partie(std::vector<Personnage> persos, Pioche pioche, int tailleVille):
-roles(new AssociationPersonnageJoueur(persos,joueurs)), limiteTailleVille(tailleVille){
+Partie::Partie(Pioche pioche, int tailleVille=8):
+pioche(pioche), limiteTailleVille(tailleVille){
 
 }
 
-void nouveauJoueur(Joueur joueur){
-	
+void nouveauJoueur(Joueur &joueur){
+	if(roles.nouveauJoueur(joueur))
+		cout<<"Le joueur "<<joueur.getPseudo()<<" a deja ete ajoute dans la partie");
 }
-void nouveauPersonnage(Personnage personnage){
-	
+
+void nouveauPersonnage(Personnage & personnage){
+	if(roles.nouveauPersonnage(personnage))
+		cout<<"Le personnage "<<personnage.getNom()<<" a deja ete ajoute dans la partie");
 }
 
 Partie::entreDeuxTours(){
@@ -25,12 +28,16 @@ Partie::choixDesPersonnages(){
 }
 
 Partie::DebutDuJeu(Association assoc,Pioche pioche){
-	while(!finDuJeu()){
-		EntreDeuxTours();
-		choixDesPersonnages();
-		lancementDuTour();
+	if(roles.nbJoueurs>=roles.nbPersonnages)
+		cout<<"impossible de demarrer la partie, il manque des personnages"<<endl;
+	else{
+		while(!finDuJeu()){
+			EntreDeuxTours();
+			choixDesPersonnages();
+			lancementDuTour();
+		}
+		proclamerLeVainqueur();
 	}
-	proclamerLeVainqueur();
 }
 
 Partie::lancementDuTour(){

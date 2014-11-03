@@ -29,7 +29,7 @@ class Partie{
 		void lancementDuTour();//lance le tour une fois le choix des personnages effectué
 		void finDuJeu();//Vérfie si la partie peut être terminé
 	public :
-		Partie();//constructeur de la classe Partie
+		Partie(Pioche pioche, int tailleVille);//constructeur de la classe Partie
 		void decompteDesPoints();//methode permettant de décompter les points cite de chaque joueurs enregistre dans un tableau
 		void associer(Personnage p, Joueur j);
 		void recupererJoueurs();

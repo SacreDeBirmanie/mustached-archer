@@ -16,6 +16,8 @@ class AssociationPersonnageJoueur{
 		Joueur * j couronnement;
 		map<String, Joueur> listeJoueurs;
 		map<int, Personnage> listePersonnages();
+		Joueur * ordreTour;
+		int curseur = 0;
 		map<String,int> AssocJP;
 		map<String,String> AssocPJ;
 		
@@ -33,10 +35,12 @@ class AssociationPersonnageJoueur{
 		Personnage retrouverP(Joueur j);
 		vector<Personnage> persosDisponible();
 		vector<Joueur> ordreTour();
+		Joueur joueurSuivant();
 		vector<Joueur> ordreChoixPersonnages();
 		Personnage personnageAleatoire();
-		joueur joueurAleatoire();
-		void couronnement();
+		Joueur joueurAleatoire();
+		
+		void couronnement(joueur joueur);
 		
 		
 };

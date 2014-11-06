@@ -54,6 +54,8 @@ void AssociationPersonnageJoueur::reinitialiser(){
 	for ( map<String,*Joueur>::iterator iter = listePersonnages.begin(); iter != listePersonnages.end(); iter++ ){
 		this->AssocPJ[*iter.getOrdre()] = NULL;
 	}
+	ordreTour = new Joueur[this.listejoueur.size()];
+	this.curseur =0;
 }
 
 Joueur AssociationPersonnageJoueur::retrouverJ(Personnage p){
@@ -68,23 +70,23 @@ vector<Personnage> persosDisponible(){
 	
 	for ( map<String,*Joueur>::iterator iter = listePersonnages.begin(); iter != listePersonnages.end(); iter++ ){
 		if(iter->second ==NULL)
-			tmp.push_back()
+			tmp.push_back();
 	}
 	
 	
 }
 
-vector<Joueur> AssociationPersonnageJoueur::ordreTour(){
-	vector<Joueur> tmp = this->js;
-	sort(tmp.begin(), tmp.end(), );
+Joueur AssociationPersonnageJoueur::joueurSuivantTour(){
+	this.curseur++;
+	return ordreTour[this.curseur--];
 	
 }
 
-vector<Joueur> AssociationPersonnageJoueur::ordreChoixPersonnages(){
+vector<Joueur> AssociationPersonnageJoueur::joueurSuivantChoixPersonnages(){
 	
 }
 
 void AssociationPersonnageJoueur::couronnement(Joueur *j,Personnage p){
-	String[] regents = {Roi.getNom(),Empereur.getNom};
+	String[] regents = {Roi.getNom(),Empereur.getNom()};
 }
 

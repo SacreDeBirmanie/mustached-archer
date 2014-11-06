@@ -15,8 +15,8 @@ class Partie{
 
 
 	private :
-		int limiteTailleVille;
-		bool villeComplete=false;//modifier par un joueur si sa cité a 8 quartiers
+		int limiteTailleVille;//*******observer ? des que la cite d un joueur est modifie**********
+		bool villeComplete=false;//modifier par un joueur si sa cité a 8 quartiers****** Observer ?des que la cite d un joueur est modifie *****
 		Pioche pioche=new Pioche();//pioche de la partie
 		AssociationPersonnageJoueur roles;//role de chaque joueur
 		

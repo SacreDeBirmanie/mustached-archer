@@ -13,13 +13,20 @@ class AssociationPersonnageJoueur{
 
 
 	private :
-		Joueur * j couronnement;
+		int couronnement; // savoir le joueur commencant à choisir son personnage
+		bool selection;
+		int curseur choixCourant;
+		
+		vector<Joueur> placementJoueur;//
+		
 		map<String, Joueur> listeJoueurs;
 		map<int, Personnage> listePersonnages();
-		Joueur * ordreTour;
-		int curseur = 0;
+		
 		map<String,int> AssocJP;
-		map<String,String> AssocPJ;
+		map<int,String> AssocPJ;
+		
+		Chaine<String> ordreTour;
+		Maillon<String> tourCourant;
 		
 
 	public :

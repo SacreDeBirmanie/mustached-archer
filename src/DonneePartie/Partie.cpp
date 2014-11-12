@@ -14,17 +14,14 @@ void nouveauPersonnage(Personnage & personnage){
 }
 
 Partie::entreDeuxTours(){
-	for ( vector<Joueur>::iterator iter = joueurs.begin(); iter != joueurs.end(); iter++ ){
-		*iter.setComportement(Neutre);
-		roles.reinitialiser();
-	}
+	roles.reinitialiser();
 }
 
+
+
 Partie::choixDesPersonnages(){
-	vector<Personnage> tmp = roles.getListePersonnages();
-	for ( vector<Joueur>::iterator iter = joueurs.begin(); iter != joueurs.end(); iter++ ){
-		*iter.choisirPersonnage(this,tmp);
-	}
+	Joeur 
+	while()
 }
 
 Partie::DebutDuJeu(Association assoc,Pioche pioche){

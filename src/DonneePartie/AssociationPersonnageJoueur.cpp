@@ -1,5 +1,8 @@
 AssociationPersonnageJoueur::AssociationPersonnageJoueur() {
+	Joueur * j couronnement = NULL;
+	this.placementJoueur = new Vector<Joueur>();
 	
+	Chaine<String> ordreTour = new Chaine<String>();
 }
 
 AssociationPersonnageJoueur::AssociationPersonnageJoueur(&vector<Joueur> js, &vector<Personnage> ps) {
@@ -7,13 +10,14 @@ AssociationPersonnageJoueur::AssociationPersonnageJoueur(&vector<Joueur> js, &ve
 }
 
 int nouveauJoueur(Joueur &joueur){
-	if(this->listeJoueurs.find(joueur.getPseudo())){
-		return true;
-	}
-	else{
-		this->listeJoueurs[joueur.getPseudo()] = joueur;
-		return false;
-	}
+		if(this->listeJoueurs.find(joueur.getPseudo())){
+			return true;
+		}
+		else{
+			this->listeJoueurs[joueur.getPseudo()] = joueur;
+			placementJoueur.push_back(joueur.getPseudo());
+			return false;
+		}
 }
 int nouveauPersonnage(Personnage &personnage){
 	if(this->listePersonnages.find(personnage.getOrdre()){
@@ -31,10 +35,6 @@ int nbJoueurs(){
 
 int nbPersonnages(){
 	return this->listePersonnages.size();
-}
-		
-vector<Personnage> AssociationPersonnageJoueur::getListePersonnages(){
-	return this->listePersonnages;
 }
 
 void AssociationPersonnageJoueur::associer(Personnage *p, Joueur *j){
@@ -54,8 +54,9 @@ void AssociationPersonnageJoueur::reinitialiser(){
 	for ( map<String,*Joueur>::iterator iter = listePersonnages.begin(); iter != listePersonnages.end(); iter++ ){
 		this->AssocPJ[*iter.getOrdre()] = NULL;
 	}
-	ordreTour = new Joueur[this.listejoueur.size()];
-	this.curseur =0;
+	
+	selection = false;
+	
 }
 
 Joueur AssociationPersonnageJoueur::retrouverJ(Personnage p){
@@ -72,21 +73,53 @@ vector<Personnage> persosDisponible(){
 		if(iter->second ==NULL)
 			tmp.push_back();
 	}
+	return tmp;
 	
 	
 }
 
 Joueur AssociationPersonnageJoueur::joueurSuivantTour(){
-	this.curseur++;
-	return ordreTour[this.curseur--];
+	if(tourCourant.suivant != NULL){
+		Maillon<Joueur> * tmp = tourCourant;
+		tourCourant = tourCourant.suivant;
+		return tmp.element;
+	}
+	else
+		return NULL;
 	
 }
 
-vector<Joueur> AssociationPersonnageJoueur::joueurSuivantChoixPersonnages(){
-	
+void deplacerCurseurChoixPerso(bool init=false){
+	if(init==false){
+		if(choixCourant<placementJoueur.size()-1)
+			choixCourant++;
+		else
+			choixCourant = 0;
+	else{
+		selection = true;
+		choixCourant = couronnement;
+	}
 }
 
-void AssociationPersonnageJoueur::couronnement(Joueur *j,Personnage p){
-	String[] regents = {Roi.getNom(),Empereur.getNom()};
+Joueur AssociationPersonnageJoueur::joueurSuivantChoixPersonnages(){
+	if(placementJoueur.at(choixCourant).getPseudo() != couronnement && selection == true){
+		this->deplacerCurseurChoixPerso();
+		return placementJoueur.at(choixCourant)
+	}
+	else if(placementJoueur.at(choixCourant).getPseudo() == couronnement && selection == false){
+		this->deplacerCurseurChoixPerso(true);
+		return placementJoueur.at(choixCourant);
+	}
+	else
+		return NULL;
+}
+
+void AssociationPersonnageJoueur::couronnement(String j){
+	for(int i=0, i<placementJoueur.size();++i){
+		if(j == placementJoueur.at(i)){
+			couronnement = i;
+			break;
+		}
+	}
 }
 

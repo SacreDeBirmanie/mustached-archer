@@ -14,14 +14,19 @@ void nouveauPersonnage(Personnage & personnage){
 }
 
 Partie::entreDeuxTours(){
-	roles.reinitialiser();
+	roles->reinitialiser();
 }
 
 
 
 Partie::choixDesPersonnages(){
-	Joeur 
-	while()
+	cout<<"Les joueurs vont choisir leur personnages"<<endl;
+	Joueur *joueur = roles->joueurSuivantChoixPersonnages();
+	while(joueur != NULL){
+		joueur->choisirPersonnages();
+		*joueur = roles->joueurSuivantChoixPersonnages();
+	}
+	cout<<"Tout le monde a choisit son personnage, le tour va pouvoir commencer"<<endl;
 }
 
 Partie::DebutDuJeu(Association assoc,Pioche pioche){
@@ -38,16 +43,20 @@ Partie::DebutDuJeu(Association assoc,Pioche pioche){
 }
 
 Partie::lancementDuTour(){
-	for ( vector<Joueur>::iterator iter = joueurs.begin(); iter != joueurs.end(); iter++ ){
-		*iter.jouer(this);
+	Joueur * joueur = joueur->joueurSuivantTour();
+	while(joueur != NULL)
+		joueur->jouer(this);
+		joueur = joueur->joueurSuivantTour();
 	}
+	
+	cout<<"Le tour est termine"<<endl;
 }
 
 Partie::finDuJeu(){
 	return this->villeComplete;
 }
 
-Partie::decompteDesPoints(&map<String;int> tmp){//************tableau associatif n'est pas forcément le meilleur choix********
+Partie::decompteDesPoints(&map<String,int> tmp){//************tableau associatif n'est pas forcément le meilleur choix********
 	
 	for ( vector<Joueur>::iterator iter = joueurs.begin(); iter != joueurs.end(); iter++ ){
 		tmp[*iter.getPseudo()]=*iter.decompteDesPoints();
@@ -56,13 +65,25 @@ Partie::decompteDesPoints(&map<String;int> tmp){//************tableau associatif
 }
 
 void Partie::associer(Personnage p, Joueur j){
-	this->roles.associer(p,j);
+	this->roles->associer(p,j);
 }
 
 void Partie::proclamerLeVainqueur(Association assoc,Pioche pioche){
 	map<String,int> tmp;
 	decompteDesPoints(tmp);
-	cout<<"Et Le vainqueur est ...."<<endl;;
+	
+	String vainqueur = NULL;
+	
+	cout<<"|| DECOMPTE DES POINTS ||"<<endl;
+	for(tmp::iterator it=tmp.begin() ; it!=tmp.end() ; ++it){
+		
+		cout<<it->first<<" : "<<it->second<<endl;
+		if(it->second > tmp[vainqueur]){
+			vainqueur = it->first;
+		}
+	}
+	
+	cout<<"+++Et Le vainqueur est ...."<<vainqueur<<endl;
 }
 
 int prendrePiece(int nombre){

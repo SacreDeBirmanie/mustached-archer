@@ -91,10 +91,7 @@ Joueur AssociationPersonnageJoueur::joueurSuivantTour(){
 
 void deplacerCurseurChoixPerso(bool init=false){
 	if(init==false){
-		if(choixCourant<placementJoueur.size()-1)
-			choixCourant++;
-		else
-			choixCourant = 0;
+			choixCourant = (choixCourant +1) % placementJoueur.size();
 	else{
 		selection = true;
 		choixCourant = couronnement;
@@ -112,6 +109,10 @@ Joueur AssociationPersonnageJoueur::joueurSuivantChoixPersonnages(){
 	}
 	else
 		return NULL;
+}
+
+Joueur joueurSuivantDecomptePoints(){
+	
 }
 
 void AssociationPersonnageJoueur::couronnement(String j){

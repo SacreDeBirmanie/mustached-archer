@@ -8,6 +8,7 @@
 #define ASSOCIATIONPERSONNAGEJOUEUR_HPP
 
 #include <string> // pour le type std::string
+#include <vector>  //for std::vector
 
 class AssociationPersonnageJoueur{
 
@@ -15,7 +16,7 @@ class AssociationPersonnageJoueur{
 	private :
 		int couronnement; // savoir le joueur commencant à choisir son personnage
 		bool selection;
-		int curseur choixCourant;
+		int curseur, choixCourant;
 		
 		vector<Joueur> placementJoueur;//
 		

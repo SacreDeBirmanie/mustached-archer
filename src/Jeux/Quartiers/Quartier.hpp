@@ -9,10 +9,10 @@
 
 #include <string> // pour le type std::string
 
-#define MARCHAND = 1
-#define RELIGIEUX = 2
-#define NOBLE = 3
-#define MILITAIRE = 4
+#define MARCHAND  1
+#define RELIGIEUX  2
+#define NOBLE  3
+#define MILITAIRE  4
 
 class Quartier{
 

@@ -20,15 +20,15 @@ int Quartier::getCout(){
 	return cout;
 }
 		
-bool estMarchand(){
+bool Quartier::estMarchand(){
 	return type==MARCHAND;
 }
-bool estReligieux(){
+bool Quartier::estReligieux(){
 	return type==RELIGIEUX;
 }
-bool estNoble(){
+bool Quartier::estNoble(){
 	return type==NOBLE;
 }
-bool estMilitaire(){
+bool Quartier::estMilitaire(){
 	return type==MILITAIRE;
 }

@@ -19,7 +19,7 @@ class Marchand : public Personnage{
 
 	public :
 		Marchand();//constructeur de la classe Marchand
-		int recevoirVert(Carte[] cite);
+		//int recevoirVert(Carte[] cite);
 		void capacite();
 		
 };

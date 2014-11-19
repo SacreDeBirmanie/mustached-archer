@@ -13,15 +13,16 @@ class Personnage{
 
 
 	protected :	
-		String nom;
+		string nom;
 		int numero;
-		ComportementIA comportementIA;
+		//ComportementIA comportementIA;
 		
 
 	public :
 		//! Le constructeur
-		virtual Personnage();
-		void jouer();
+		Personnage();
+		virtual void jouer();
+		virtual void capacite();
 		
 };
 

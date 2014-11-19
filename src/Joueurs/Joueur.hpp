@@ -7,13 +7,13 @@
 #ifndef JOUEUR_HPP
 #define JOUEUR_HPP
 
-#include <string> // pour le type std::string
-#include "Quartier.hpp"
+
+
 class Joueur{
 
 
 	protected :
-		String Pseudo;
+		string Pseudo;
 		vector<Quartier> main;//cartes dans la main du joueur
 		vector<Quartier> cite;//*************a remplacer par une classe cité pour gérer les carte avec les merveilles (retour de méthode pour les pouvoirs )********//
 		int pieceOr;//nombre de piece d'or du joueur
@@ -21,11 +21,11 @@ class Joueur{
 		
 
 	public :
-		virtual Joueur();//constructeur de la classe Joueur
+		Joueur();//constructeur de la classe Joueur
 		~Joueur();
-		virtual void setComportement(Personnage p);
+		virtual void setComportement(Personnage p)=0;
 		Comportement getComportement();
-		virtual void choisirPersonnage(Partie p, vector<Personnage> persosDispo);
+		virtual void choisirPersonnage(Partie p, vector<Personnage> persosDispo)=0;
 		
 		
 		void jouer(Partie p);//effectue un tour de jeu

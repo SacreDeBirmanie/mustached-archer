@@ -13,7 +13,7 @@ Etat Joueur::getComportement(){
 	return this->comportement;
 }
 
-void Joueur::choisirPersonnage(Partie p, Vector<Personnage> persosDispo){
+void Joueur::choisirPersonnage(Partie p, vector<Personnage> persosDispo){
 	this->comportement.choisirPersonnage(p,persosDispo,this);
 }
 void Joueur::jouer(Partie p){

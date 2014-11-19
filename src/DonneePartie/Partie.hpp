@@ -10,7 +10,6 @@
 
 #include <string> // pour le type std::string
 #include <vector>  //for std::vector
-
 class Partie{
 
 

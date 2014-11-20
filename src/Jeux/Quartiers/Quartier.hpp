@@ -18,9 +18,9 @@ class Quartier{
 
 
 	protected :
-		string nom;
-		int type;
-		int cout;
+		string nom_;
+		int type_;
+		int cout_;
 		
 
 		

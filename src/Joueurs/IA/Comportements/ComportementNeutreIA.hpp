@@ -1,7 +1,6 @@
-/*
-   Fichier ComportementNeutreIA.hpp
-
-   Définition du type ComportementNeutreIA
+/**
+*   Fichier ComportementNeutreIA.hpp
+*   \brief Définition du type ComportementNeutreIA
 */
 
 #ifndef COMPORTEMENTNEUTREIA_HPP
@@ -9,7 +8,7 @@
 
 #include <string> // pour le type std::string
 
-class ComportementNeutreIA{
+class ComportementNeutreIA : public ComportementIA{
 
 
 	private :

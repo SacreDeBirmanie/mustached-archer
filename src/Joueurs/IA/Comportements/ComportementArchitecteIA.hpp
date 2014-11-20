@@ -1,15 +1,14 @@
-/*
-   Fichier EtatArchitecteIA.hpp
-
-   Définition du type EtatArchitecteIA
+/**
+*   Fichier ComportementArchitecteIA.hpp
+*	\brief Définition du type ComportementArchitecteIA
 */
 
-#ifndef ETATARCHITECTEIA_HPP
-#define ETATARCHITECTEIA_HPP
+#ifndef COMPORTEMENTARCHITECTEIA_HPP
+#define COMPORTEMENTARCHITECTEIA_HPP
 
 #include <string> // pour le type std::string
 
-class EtatArchitecteIA{
+class ComportementArchitecteIA : public ComportementIA{
 
 
 	private :
@@ -17,7 +16,7 @@ class EtatArchitecteIA{
 		
 
 	public :
-		EtatArchitecteIA();//constructeur de la classe EtatArchitecteIA
+		ComportementArchitecteIA();//constructeur de la classe
 		void jouer();
 		
 };
@@ -25,5 +24,5 @@ class EtatArchitecteIA{
 
 
 /******************************************************************************/
-#include "EtatArchitecteIA.cpp"
-#endif // ETATARCHITECTEIA_HPP
+#include "ComportementArchitecteIA.cpp"
+#endif // COMPORTEMENTARCHITECTEIA_HPP

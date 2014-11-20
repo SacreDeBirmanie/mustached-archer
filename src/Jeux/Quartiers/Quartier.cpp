@@ -5,30 +5,30 @@
  */
  
  Quartier::Quartier(string nom, int type,int cout){
-	 this->nom = nom;
-	 this->type = type;
-	 this-> cout = cout;
+	 nom_ = nom;
+	 type_ = type;
+	 cout_ = cout;
  }
 
 Quartier::~Quartier(){}
 
 string Quartier::getNom(){
-	return nom;
+	return nom_;
 }
 
 int Quartier::getCout(){
-	return cout;
+	return cout_;
 }
 		
 bool Quartier::estMarchand(){
-	return type==MARCHAND;
+	return type_==MARCHAND;
 }
 bool Quartier::estReligieux(){
-	return type==RELIGIEUX;
+	return type_==RELIGIEUX;
 }
 bool Quartier::estNoble(){
-	return type==NOBLE;
+	return type_==NOBLE;
 }
 bool Quartier::estMilitaire(){
-	return type==MILITAIRE;
+	return type_==MILITAIRE;
 }

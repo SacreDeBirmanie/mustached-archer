@@ -1,7 +1,6 @@
-/*
-   Fichier EtatVoleurIA.hpp
-
-   Définition du type EtatVoleurIA
+/**
+*   Fichier ComportementVoleurIA.hpp
+*   \brief Définition du type ComportementVoleurIA
 */
 
 #ifndef ETATVOLEURIA_HPP
@@ -9,7 +8,7 @@
 
 #include <string> // pour le type std::string
 
-class EtatVoleurIA{
+class ComportementVoleurIA : public ComportementIA{
 
 
 	private :
@@ -17,7 +16,7 @@ class EtatVoleurIA{
 		
 
 	public :
-		EtatVoleurIA();//constructeur de la classe EtatVoleurIA
+		ComportementVoleurIA();//constructeur de la classe EtatVoleurIA
 		void jouer();
 		Personnage choixVole();
 		
@@ -26,5 +25,5 @@ class EtatVoleurIA{
 
 
 /******************************************************************************/
-#include "EtatVoleurIA.cpp"
+#include "ComportementVoleurIA.cpp"
 #endif // ETATVOLEURIA_HPP

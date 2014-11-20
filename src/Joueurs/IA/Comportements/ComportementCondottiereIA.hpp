@@ -1,7 +1,6 @@
-/*
-   Fichier EtatCondottiere.hpp
-
-   Définition du type EtatCondottiere
+/**
+*   Fichier ComportementCondottiere.hpp
+*   \brief Définition du type ComportementCondottiere
 */
 
 #ifndef ETATCONDOTTIEREIA_HPP
@@ -9,7 +8,7 @@
 
 #include <string> // pour le type std::string
 
-class EtatCondottiere{
+class ComportementCondottiere : public ComportementIA{
 
 
 	private :
@@ -17,7 +16,7 @@ class EtatCondottiere{
 		
 
 	public :
-		EtatCondottiere();//constructeur de la classe EtatCondottiere
+		ComportementCondottiere();//constructeur de la classe EtatCondottiere
 		Joueur choixJoueurQuartier();
 		Carte choixQuartierDetruit(Joueur joueur);
 		
@@ -26,5 +25,5 @@ class EtatCondottiere{
 
 
 /******************************************************************************/
-#include "EtatCondottiere.cpp"
+#include "ComportementCondottiere.cpp"
 #endif // ETATCONDOTTIEREIA_HPP

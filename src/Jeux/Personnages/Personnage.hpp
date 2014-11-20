@@ -21,8 +21,8 @@ class Personnage{
 	public :
 		//! Le constructeur
 		Personnage();
-		virtual void jouer();
-		virtual void capacite();
+		virtual void jouer() = 0;
+		virtual void capacite() = 0;
 		
 };
 

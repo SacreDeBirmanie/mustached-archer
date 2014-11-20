@@ -1,7 +1,6 @@
-/*
-   Fichier EtatRoiIA.hpp
-
-   Définition du type EtatRoiIA
+/**
+*   Fichier ComportementRoiIA.hpp
+*   \brief Définition du type ComportementRoiIA
 */
 
 #ifndef ETATROIIA_HPP
@@ -9,7 +8,7 @@
 
 #include <string> // pour le type std::string
 
-class EtatRoiIA{
+class ComportementRoiIA : public ComportementIA{
 
 
 	private :
@@ -17,7 +16,7 @@ class EtatRoiIA{
 		
 
 	public :
-		EtatRoiIA();//constructeur de la classe EtatRoiIA
+		ComportementRoiIA();//constructeur de la classe EtatRoiIA
 		void jouer();
 		
 };
@@ -25,5 +24,5 @@ class EtatRoiIA{
 
 
 /******************************************************************************/
-#include "EtatRoiIA.cpp"
+#include "ComportementRoiIA.cpp"
 #endif // ETATROIIA_HPP

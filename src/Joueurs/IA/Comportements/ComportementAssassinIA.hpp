@@ -1,7 +1,6 @@
-/*
-   Fichier EtatAssassinIA.hpp
-
-   Définition du type EtatAssassinIA
+/**
+*   Fichier ComportementAssassinIA.hpp
+*   Définition du type ComportementAssassinIA
 */
 
 #ifndef ETATASSASSINIA_HPP
@@ -9,7 +8,7 @@
 
 #include <string> // pour le type std::string
 
-class EtatAssassinIA{
+class ComportementAssassinIA : public ComportementIA{
 
 
 	private :
@@ -17,7 +16,7 @@ class EtatAssassinIA{
 		
 
 	public :
-		EtatAssassinIA();//constructeur de la classe EtatAssassinIA
+		ComportementAssassinIA();//constructeur de la classe EtatAssassinIA
 		void jouer(Partie p, Joueur j);
 		Personnage choixAssassinat();
 		
@@ -26,5 +25,5 @@ class EtatAssassinIA{
 
 
 /******************************************************************************/
-#include "EtatAssassinIA.cpp"
+#include "ComportementAssassinIA.cpp"
 #endif // ETATASSASSINIA_HPP

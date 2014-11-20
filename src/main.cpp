@@ -17,7 +17,9 @@ using namespace std;
 //#include "Jeux/Personnages/Magicien.hpp"
 
 //Autorise la partie, la pioche et l'association
-#include "DonneePartie/*.hpp"
+#include "Joueurs/IA/Comportements/ComportementIA.hpp"
+#include "Joueurs/IA/Comportements/ComportementAssassinIA.hpp"
+#include "Joueurs/IA/Comportements/ComportementMarchandIA.hpp"
 
 int main(){
 	

@@ -1,7 +1,6 @@
-/*
-   Fichier EtatMagicienIA.hpp
-
-   Définition du type EtatMagicienIA
+/**
+*   Fichier ComportementMagicienIA.hpp
+*   Définition du type ComportementMagicienIA
 */
 
 #ifndef ETATMAGICIENIA_HPP
@@ -9,7 +8,7 @@
 
 #include <string> // pour le type std::string
 
-class EtatMagicienIA{
+class ComportementMagicienIA : public ComportementIA{
 
 
 	private :
@@ -17,7 +16,7 @@ class EtatMagicienIA{
 		
 
 	public :
-		EtatMagicienIA();//constructeur de la classe EtatMagicienIA
+		ComportementMagicienIA();//constructeur de la classe EtatMagicienIA
 		void jouer();
 		void choixPouvoir();
 		Joueur choixEchangeJoueurs();
@@ -29,5 +28,5 @@ class EtatMagicienIA{
 
 
 /******************************************************************************/
-#include "EtatMagicienIA.cpp"
+#include "ComportementMagicienIA.cpp"
 #endif // ETATMAGICIENIA_HPP

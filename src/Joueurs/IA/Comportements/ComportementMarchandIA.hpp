@@ -1,7 +1,6 @@
-/*
-   Fichier EtatMarchandIA.hpp
-
-   Définition du type EtatMarchandIA
+/**
+*   Fichier ComportementMarchandIA.hpp
+*   Définition du type ComportementMarchandIA
 */
 
 #ifndef ETATMARCHANDIA_HPP
@@ -9,7 +8,7 @@
 
 #include <string> // pour le type std::string
 
-class EtatMarchandIA{
+class ComportementMarchandIA : public ComportementIA{
 
 
 	private :
@@ -17,7 +16,7 @@ class EtatMarchandIA{
 		
 
 	public :
-		EtatMarchandIA();//constructeur de la classe EtatMarchandIA
+		ComportementMarchandIA();//constructeur de la classe EtatMarchandIA
 		void jouer();
 		
 };
@@ -25,5 +24,5 @@ class EtatMarchandIA{
 
 
 /******************************************************************************/
-#include "EtatMarchandIA.cpp"
+#include "ComportementMarchandIA.cpp"
 #endif // ETATMARCHANDIA_HPP

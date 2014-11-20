@@ -1,15 +1,14 @@
-/*
-   Fichier EtatEvequeIA.hpp
-
-   Définition du type EtatEvequeIA
+/**
+*   Fichier ComportementEvequeIA.hpp
+*	\brief Définition du type ComportementEvequeIA
 */
 
-#ifndef ETATEVEQUEIA_HPP
-#define ETATEVEQUEIA_HPP
+#ifndef COMPORTEMENTEVEQUEIA_HPP
+#define COMPORTEMENTEVEQUEIA_HPP
 
 #include <string> // pour le type std::string
 
-class EtatEvequeIA{
+class ComportementEvequeIA : public ComportementIA{
 
 
 	private :
@@ -17,7 +16,7 @@ class EtatEvequeIA{
 		
 
 	public :
-		EtatEvequeIA();//constructeur de la classe EtatEvequeIA
+		ComportementEvequeIA();//constructeur de la classe
 		void jouer();
 		
 };
@@ -25,5 +24,5 @@ class EtatEvequeIA{
 
 
 /******************************************************************************/
-#include "EtatEvequeIA.cpp"
-#endif // ETATEVEQUEIA_HPP
+#include "ComportementEvequeIA.cpp"
+#endif // COMPORTEMENTEVEQUEIA

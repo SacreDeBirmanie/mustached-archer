@@ -1,7 +1,6 @@
-/*
-   Fichier Pioche.hpp
-
-   Définition du type Pioche
+/**
+*   Fichier Pioche.hpp
+*   \brief Définition du type Pioche
 */
 
 #ifndef PIOCHE_HPP
@@ -15,7 +14,7 @@ class Pioche{
 
 
 	private :
-		std::vector<Quartier*> * cartes = new Vector<Quartier*>;
+		vector<Quartier*> * cartes = new vector<Quartier*>;
 		int reserveOr;
 		
 
@@ -24,8 +23,8 @@ class Pioche{
 	public :
 		Pioche(int limiteOr);//constructeur de la classe Pioche
 		void ajouterCarte(Quartier *carte);
-		Carte[] piocherCarte(int nombre);
-		void defausserCarte(Carte[]);
+		vector<Quartier> piocherCarte(int nombre);
+		void defausserCarte(vector<Quartier>);
 		int prendrePiece(int nombre);
 		
 };

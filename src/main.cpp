@@ -9,6 +9,13 @@ using namespace std;
 //Autorise la creation de quartiers
 #include "Jeux/Quartiers/Quartier.hpp"
 
+#include "DonneePartie/Pioche.hpp"
+#include "DonneePartie/Partie.hpp"
+#include "DonneePartie/AssociationPersonnageJoueur.hpp"
+
+#include "Joueurs/IA/Comportements/ComportementIA.hpp"
+#include "Joueurs/IA/Comportements/ComportementAssassinIA.hpp"
+#include "Joueurs/IA/Comportements/ComportementMarchandIA.hpp"
 //Autorise la creation des personnages de la liste
 #include "Jeux/Personnages/Personnage.hpp"
 #include "Jeux/Personnages/Assassin.hpp"
@@ -17,9 +24,10 @@ using namespace std;
 //#include "Jeux/Personnages/Magicien.hpp"
 
 //Autorise la partie, la pioche et l'association
-#include "Joueurs/IA/Comportements/ComportementIA.hpp"
-#include "Joueurs/IA/Comportements/ComportementAssassinIA.hpp"
-#include "Joueurs/IA/Comportements/ComportementMarchandIA.hpp"
+#include "DonneePartie/Pioche.hpp"
+#include "DonneePartie/Partie.hpp"
+#include "DonneePartie/AssociationPersonnageJoueur.hpp"
+
 
 int main(){
 	

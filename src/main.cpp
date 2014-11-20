@@ -25,8 +25,9 @@ using namespace std;
 
 //Autorise la partie, la pioche et l'association
 #include "DonneePartie/Pioche.hpp"
-#include "DonneePartie/Partie.hpp"
 #include "DonneePartie/AssociationPersonnageJoueur.hpp"
+#include "DonneePartie/Partie.hpp"
+
 
 
 int main(){

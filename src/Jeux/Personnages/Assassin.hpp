@@ -1,7 +1,6 @@
-/*
-   Fichier Assassin.hpp
-
-   Définition du type Assassin
+/**
+*   Fichier Assassin.hpp
+*   \brief Définition du type Assassin
 */
 
 #ifndef ASSASSIN_HPP
@@ -14,7 +13,7 @@ class Assassin : public Personnage{
 
 	private :
 		int const ordre = 1;
-		comportementIA comportementMacchabee = new comportementMacchabee();
+		ComportementIA comportementAssassin = new ComportementAssassinIA();
 		
 
 	public :

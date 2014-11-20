@@ -16,3 +16,7 @@ class ComportementIA{
 		virtual void jouer() = 0;
 		
 };
+
+/******************************************************************************/
+#include "ComportementIA.cpp"
+#endif // COMPORTEMENTIA_HPP

@@ -1,15 +1,15 @@
-Partie::Partie(Pioche pioche, int tailleVille=8):
+Partie::Partie(Pioche & pioche, int tailleVille=8):
 pioche(pioche), limiteTailleVille(tailleVille){
 
 }
 
-void nouveauJoueur(Joueur &joueur){
+void nouveauJoueur(Joueur *joueur){
 	if(roles.nouveauJoueur(joueur))
 		cout<<"Le joueur "<<joueur.getPseudo()<<" a deja ete ajoute dans la partie");
 }
 
-void nouveauPersonnage(Personnage & personnage){
-	if(roles.nouveauPersonnage(personnage))
+void nouveauPersonnage(Personnage personnage){
+	if(roles.nouveauPersonnage(*personnage))
 		cout<<"Le personnage "<<personnage.getNom()<<" a deja ete ajoute dans la partie");
 }
 
@@ -29,7 +29,7 @@ Partie::choixDesPersonnages(){
 	cout<<"Tout le monde a choisit son personnage, le tour va pouvoir commencer"<<endl;
 }
 
-Partie::DebutDuJeu(Association assoc,Pioche pioche){
+Partie::debuterLeJeu(Association assoc,Pioche pioche){
 	if(roles.nbJoueurs>=roles.nbPersonnages)
 		cout<<"impossible de demarrer la partie, il manque des personnages"<<endl;
 	else{

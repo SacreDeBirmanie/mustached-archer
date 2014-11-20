@@ -15,14 +15,15 @@ class Pioche{
 
 
 	private :
-		std::vector<Quartier> cartes;
+		std::vector<Quartier*> * cartes = new Vector<Quartier*>;
 		int reserveOr;
 		
 
 		
 
 	public :
-		Pioche();//constructeur de la classe Pioche
+		Pioche(int limiteOr);//constructeur de la classe Pioche
+		void ajouterCarte(Quartier *carte);
 		Carte[] piocherCarte(int nombre);
 		void defausserCarte(Carte[]);
 		int prendrePiece(int nombre);

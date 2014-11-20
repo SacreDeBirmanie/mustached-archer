@@ -16,15 +16,15 @@ class Partie{
 	private :
 		int limiteTailleVille;//*******observer ? des que la cite d un joueur est modifie**********
 		bool villeComplete=false;//modifier par un joueur si sa cité a 8 quartiers****** Observer ?des que la cite d un joueur est modifie *****
-		Pioche pioche=new Pioche();//pioche de la partie
+		Pioche & pioche;//pioche de la partie
 		AssociationPersonnageJoueur roles;//role de chaque joueur
 		
 	protected :
-		void nouveauJoueur(Joueur joueur);
-		void nouveauPersonnage(Personnage personnage);
+		void nouveauJoueur(Joueur *joueur);
+		void nouveauPersonnage(Personnage *personnage);
 		void entreDeuxTours();// remet les joueurs dans l'etatNeutre
 		void choixDesPersonnages(); //permet à chaque joueur de choisir son personnage
-		void DebutDuJeu();//debute la partie
+		void debuterLeJeu();//debute la partie
 		void lancementDuTour();//lance le tour une fois le choix des personnages effectué
 		void finDuJeu();//Vérfie si la partie peut être terminé
 	public :

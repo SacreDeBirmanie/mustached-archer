@@ -1,16 +1,16 @@
 /*
-   Fichier Macchabee.hpp
+   Fichier Assassin.hpp
 
-   Définition du type Macchabee
+   Définition du type Assassin
 */
 
-#ifndef MACCHABEE_HPP
-#define MACCHABEE_HPP
+#ifndef ASSASSIN_HPP
+#define ASSASSIN_HPP
 
 #include <string> // pour le type std::string
 class Joueur;
 
-class Macchabee : public Personnage{
+class Assassin : public Personnage{
 
 	private :
 		int const ordre = 1;
@@ -18,7 +18,7 @@ class Macchabee : public Personnage{
 		
 
 	public :
-		Macchabee();//constructeur de la classe Macchabee
+		Assassin();//constructeur de la classe Assassin
 		
 		
 };
@@ -26,5 +26,5 @@ class Macchabee : public Personnage{
 
 
 /******************************************************************************/
-#include "Macchabee.cpp"
-#endif // MACCHABEE_HPP
+#include "Assassin.cpp"
+#endif // ASSASSIN_HPP

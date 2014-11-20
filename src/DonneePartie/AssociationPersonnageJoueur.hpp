@@ -18,12 +18,12 @@ class AssociationPersonnageJoueur{
 		bool selection;
 		int curseur, choixCourant;
 		
-		vector<Joueur> placementJoueur;//
+		vector<Joueur*> * placementJoueur;//
 		
 		map<String, Joueur> listeJoueurs;
 		map<int, Personnage> listePersonnages();
 		
-		map<String,int> AssocJP;
+		map<String,int>  AssocJP;
 		map<int,String> AssocPJ;
 		
 		Chaine<String> ordreTour;
@@ -32,8 +32,8 @@ class AssociationPersonnageJoueur{
 
 	public :
 		AssociationPersonnageJoueur(const &vector<Joueur> js, const &vector<Personnage> ps);//constructeur de la classe AssociationPersonnageJoueur
-		bool nouveauJoueur(Joueur joueur);
-		bool nouveauPersonnage(Personnage personnage);
+		bool nouveauJoueur(Joueur *joueur);
+		bool nouveauPersonnage(Personnage *personnage);
 		int nbJoueurs();
 		int nbPersonnages();
 		void associer(Personnage p, Joueur j);

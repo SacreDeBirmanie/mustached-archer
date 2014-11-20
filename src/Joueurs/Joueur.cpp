@@ -5,7 +5,7 @@
  */
 
 
-Joueur::Joueur(){}
+Joueur::Joueur(String p): pseudo(p){}
 
 Joueur::~Joueur(){}
 

@@ -1,6 +1,10 @@
-Pioche::Pioche(){
+Pioche::Pioche(int limiteOr) : reserveOr(limiteOr){
 
 }
+
+void Pioche::ajouterCarte(Quartier *carte){
+	cartes.push_back(carte);
+	}
 
 vector<Quartier> Pioche::piocherCarte(int nombre){
 	vector<Quartier> tmp;
@@ -11,7 +15,7 @@ vector<Quartier> Pioche::piocherCarte(int nombre){
 }
 
 void Pioche::defausserCarte(vector<Quartier> q){
-	for ( vector<Joueur>::iterator iter = q.begin(); iter != q.end(); iter++ ){
+	for ( vector<Quartier>::iterator iter = q.begin(); iter != q.end(); iter++ ){
 		this->cartes.push_back(*iter);
 	}
 }

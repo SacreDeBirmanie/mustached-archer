@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="mustached-archer" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/mustached-archer" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/mustached-archer" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="main.cpp" />
+		<Unit filename="src/DonneePartie/AssociationPersonnageJoueur.cpp" />
+		<Unit filename="src/DonneePartie/AssociationPersonnageJoueur.hpp" />
+		<Unit filename="src/DonneePartie/Partie.cpp" />
+		<Unit filename="src/DonneePartie/Partie.hpp" />
+		<Unit filename="src/DonneePartie/Pioche.cpp" />
+		<Unit filename="src/DonneePartie/Pioche.hpp" />
+		<Unit filename="src/Jeux/Cite/Cite.hpp" />
+		<Unit filename="src/Jeux/Personnages/Architecte.hpp" />
+		<Unit filename="src/Jeux/Personnages/Assassin.cpp" />
+		<Unit filename="src/Jeux/Personnages/Assassin.hpp" />
+		<Unit filename="src/Jeux/Personnages/Condottiere.hpp" />
+		<Unit filename="src/Jeux/Personnages/Eveque.hpp" />
+		<Unit filename="src/Jeux/Personnages/Magicien.hpp" />
+		<Unit filename="src/Jeux/Personnages/Marchand.cpp" />
+		<Unit filename="src/Jeux/Personnages/Marchand.hpp" />
+		<Unit filename="src/Jeux/Personnages/Neutre.hpp" />
+		<Unit filename="src/Jeux/Personnages/Personnage.hpp" />
+		<Unit filename="src/Jeux/Personnages/Roi.hpp" />
+		<Unit filename="src/Jeux/Personnages/Specialite/Macchabee.hpp" />
+		<Unit filename="src/Jeux/Personnages/Voleur.hpp" />
+		<Unit filename="src/Jeux/Quartiers/Merveilles/Donjon.hpp" />
+		<Unit filename="src/Jeux/Quartiers/Merveilles/EcoleDeMagie.hpp" />
+		<Unit filename="src/Jeux/Quartiers/Merveilles/Merveille.hpp" />
+		<Unit filename="src/Jeux/Quartiers/Quartier.cpp" />
+		<Unit filename="src/Jeux/Quartiers/Quartier.hpp" />
+		<Unit filename="src/Joueurs/Humain/Comportements/EtatAssassinHumain.hpp" />
+		<Unit filename="src/Joueurs/Humain/Comportements/EtatCondottiereHumain.hpp" />
+		<Unit filename="src/Joueurs/Humain/Humain.cpp" />
+		<Unit filename="src/Joueurs/Humain/Humain.hpp" />
+		<Unit filename="src/Joueurs/IA/Comportements/ComportementArchitecteIA.hpp" />
+		<Unit filename="src/Joueurs/IA/Comportements/ComportementAssassinIA.hpp" />
+		<Unit filename="src/Joueurs/IA/Comportements/ComportementCondottiereIA.hpp" />
+		<Unit filename="src/Joueurs/IA/Comportements/ComportementEvequeIA.hpp" />
+		<Unit filename="src/Joueurs/IA/Comportements/ComportementMagicienIA.hpp" />
+		<Unit filename="src/Joueurs/IA/Comportements/ComportementMarchandIA.hpp" />
+		<Unit filename="src/Joueurs/IA/Comportements/ComportementNeutreIA.cpp" />
+		<Unit filename="src/Joueurs/IA/Comportements/ComportementNeutreIA.hpp" />
+		<Unit filename="src/Joueurs/IA/Comportements/ComportementRoiIA.hpp" />
+		<Unit filename="src/Joueurs/IA/Comportements/ComportementVoleurIA.hpp" />
+		<Unit filename="src/Joueurs/IA/Comportements/Specialite/ComportementMacchabee.cpp" />
+		<Unit filename="src/Joueurs/IA/Comportements/Specialite/ComportementMacchabee.hpp" />
+		<Unit filename="src/Joueurs/IA/IA.cpp" />
+		<Unit filename="src/Joueurs/IA/IA.hpp" />
+		<Unit filename="src/Joueurs/Joueur.cpp" />
+		<Unit filename="src/Joueurs/Joueur.hpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

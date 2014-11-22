@@ -5,3 +5,7 @@
 */
 
 Personnage::Personnage(){}
+
+int Personnage::getOrdre(){
+	return numero;
+}

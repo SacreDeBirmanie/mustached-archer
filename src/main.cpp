@@ -3,7 +3,9 @@
 */
 #include <cstdlib>
 #include <cstdio>
+#include <iostream>
 #include <vector>  
+#include <map>
 #include <string> 
 using namespace std;
 //Autorise la creation de quartiers

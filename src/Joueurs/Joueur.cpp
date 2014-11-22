@@ -5,12 +5,16 @@
  */
 
 
-Joueur::Joueur(String p): pseudo(p){}
+Joueur::Joueur(string p): pseudo(p){}
 
 Joueur::~Joueur(){}
 
+string Joueur::getPseudo(){
+	return pseudo_;
+}
+
 Comportement Joueur::getComportement(){
-	return this->comportement;
+	return comportement_;
 }
 
 void Joueur::choisirPersonnage(Partie p, vector<Personnage> persosDispo){
@@ -23,17 +27,17 @@ void Joueur::jouer(Partie p){
 void Joueur::piocher(int nombre){}
 
 void Joueur::prendrePiece(int nombre){
-	this->pieceOr+=this->partie.prendrePiece();
+	this->pieceOr_+=this->partie.prendrePiece();
 }
 
 bool Joueur::construire(Quartier quartier){
 	int i=0;
 	for(vector<Quartier>::iterator it = main.begin();it!=main.end();++it){
 		//TODO vérifier le test d'égalité
-		if((it.getNom()).compare(quartier.getNom())==0){//le quartier est dans notre main 
-			if(quartier.getCout()<=pieceOr){//on peut acheter le quartier
-				cite.push_back(quartier);//on ajoute le quartier dans notre cité
-				main.erase(main.begin()+i);//on enlève le quartier de notre main
+		if((&*it.getNom()).compare(quartier.getNom())==0){//le quartier est dans notre main 
+			if(quartier.getCout()<=pieceOr_){//on peut acheter le quartier
+				cite_.push_back(quartier);//on ajoute le quartier dans notre cité
+				main_.erase(main_.begin()+i);//on enlève le quartier de notre main
 				return true;
 			}
 			else

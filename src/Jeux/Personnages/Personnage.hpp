@@ -21,6 +21,7 @@ class Personnage{
 	public :
 		//! Le constructeur
 		Personnage();
+		int getOrdre();
 		virtual void jouer() = 0;
 		virtual void capacite() = 0;
 		

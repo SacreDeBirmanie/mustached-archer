@@ -3,23 +3,23 @@ pioche(pioche), limiteTailleVille(tailleVille){
 
 }
 
-void nouveauJoueur(Joueur *joueur){
+void Partie::nouveauJoueur(Joueur *joueur){
 	if(roles.nouveauJoueur(joueur))
 		cout<<"Le joueur "<<joueur.getPseudo()<<" a deja ete ajoute dans la partie");
 }
 
-void nouveauPersonnage(Personnage personnage){
+void Partie::nouveauPersonnage(Personnage personnage){
 	if(roles.nouveauPersonnage(*personnage))
 		cout<<"Le personnage "<<personnage.getNom()<<" a deja ete ajoute dans la partie");
 }
 
-Partie::entreDeuxTours(){
+void Partie::entreDeuxTours(){
 	roles->reinitialiser();
 }
 
 
 
-Partie::choixDesPersonnages(){
+void Partie::choixDesPersonnages(){
 	cout<<"Les joueurs vont choisir leur personnages"<<endl;
 	Joueur *joueur = roles->joueurSuivantChoixPersonnages();
 	while(joueur != NULL){
@@ -29,7 +29,7 @@ Partie::choixDesPersonnages(){
 	cout<<"Tout le monde a choisit son personnage, le tour va pouvoir commencer"<<endl;
 }
 
-Partie::debuterLeJeu(Association assoc,Pioche pioche){
+void Partie::debuterLeJeu(Association assoc,Pioche pioche){
 	if(roles.nbJoueurs>=roles.nbPersonnages)
 		cout<<"impossible de demarrer la partie, il manque des personnages"<<endl;
 	else{
@@ -42,7 +42,7 @@ Partie::debuterLeJeu(Association assoc,Pioche pioche){
 	}
 }
 
-Partie::lancementDuTour(){
+void Partie::lancementDuTour(){
 	Joueur * joueur = joueur->joueurSuivantTour();
 	while(joueur != NULL)
 		joueur->jouer(this);
@@ -52,11 +52,11 @@ Partie::lancementDuTour(){
 	cout<<"Le tour est termine"<<endl;
 }
 
-Partie::finDuJeu(){
+void Partie::finDuJeu(){
 	return this->villeComplete;
 }
 
-Partie::decompteDesPoints(&map<String,int> tmp){//************tableau associatif n'est pas forcément le meilleur choix********
+void Partie::decompteDesPoints(&map<String,int> tmp){//************tableau associatif n'est pas forcément le meilleur choix********
 	
 	for ( vector<Joueur>::iterator iter = joueurs.begin(); iter != joueurs.end(); iter++ ){
 		tmp[*iter.getPseudo()]=*iter.decompteDesPoints();

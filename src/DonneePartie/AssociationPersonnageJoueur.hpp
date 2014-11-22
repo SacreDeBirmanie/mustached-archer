@@ -14,20 +14,20 @@ class AssociationPersonnageJoueur{
 
 
 	private :
-		int couronnement; // savoir le joueur commencant à choisir son personnage
-		bool selection;
-		int curseur, choixCourant;
+		int couronnement_; // savoir le joueur commencant à choisir son personnage
+		bool selection_;
+		int curseur_, choixCourant_;
 		
 		vector<Joueur*> * placementJoueur;//
 		
-		map<String, Joueur> listeJoueurs;
-		map<int, Personnage> listePersonnages();
+		map<string, Joueur*> listeJoueurs;
+		map<int, Personnage*> listePersonnages();
 		
-		map<String,int>  AssocJP;
-		map<int,String> AssocPJ;
+		map<string,int>  AssocJP;
+		map<int,string> AssocPJ;
 		
-		Chaine<String> ordreTour;
-		Maillon<String> tourCourant;
+		Chaine<string> ordreTour;
+		Maillon<string> tourCourant;
 		
 
 	public :
@@ -37,19 +37,19 @@ class AssociationPersonnageJoueur{
 		bool nouveauPersonnage(Personnage *personnage);
 		int nbJoueurs();
 		int nbPersonnages();
-		void associer(Personnage p, Joueur j);
-		void associer(Joueur j, Personnage p);
+		void associer(Personnage *p, Joueur *j);
+		void associer(Joueur *j, Personnage *p);
 		void reinitialiser();
-		Joueur retrouverJ(Personnage p);
-		Personnage retrouverP(Joueur j);
-		vector<Personnage> persosDisponible();
-		vector<Joueur> ordreTour();
-		Joueur joueurSuivant();
-		vector<Joueur> ordreChoixPersonnages();
-		Personnage personnageAleatoire();
-		Joueur joueurAleatoire();
+		Joueur* retrouverJ(Personnage *p);
+		Personnage* retrouverP(Joueur *j);
+		vector<Personnage>* persosDisponible();
+		vector<Joueur>* ordreTour();
+		Joueur* joueurSuivant();
+		vector<Joueur>* ordreChoixPersonnages();
+		Personnage* personnageAleatoire();
+		Joueur* joueurAleatoire();
 		void deplacerCurseurChoixPerso(bool init=false);
-		void couronnement(joueur joueur);
+		void couronnement(Joueur *joueur);
 		
 		
 };

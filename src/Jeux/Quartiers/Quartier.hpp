@@ -29,7 +29,8 @@ class Quartier{
 		Quartier(string nom,int type,int cout);
 		~Quartier();
 		string getNom();
-		int getCout();		
+		int getCout();
+		int getType();		
 		bool estMarchand();
 		bool estReligieux();
 		bool estNoble();

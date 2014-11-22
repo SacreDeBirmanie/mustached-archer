@@ -9,9 +9,8 @@ using namespace std;
 //Autorise la creation de quartiers
 #include "Jeux/Quartiers/Quartier.hpp"
 
-#include "DonneePartie/Pioche.hpp"
-#include "DonneePartie/Partie.hpp"
-#include "DonneePartie/AssociationPersonnageJoueur.hpp"
+
+#include "Joueurs/Joueur.hpp"
 
 #include "Joueurs/IA/Comportements/ComportementIA.hpp"
 #include "Joueurs/IA/Comportements/ComportementAssassinIA.hpp"
@@ -23,7 +22,6 @@ using namespace std;
 //#include "Jeux/Personnages/Condottiere.hpp"
 //#include "Jeux/Personnages/Magicien.hpp"
 
-//Autorise la partie, la pioche et l'association
 #include "DonneePartie/Pioche.hpp"
 #include "DonneePartie/AssociationPersonnageJoueur.hpp"
 #include "DonneePartie/Partie.hpp"

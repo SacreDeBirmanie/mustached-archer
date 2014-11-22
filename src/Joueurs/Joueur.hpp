@@ -15,7 +15,7 @@ class Joueur{
 	protected :
 		string Pseudo;
 		vector<Quartier> main;//cartes dans la main du joueur
-	        Cite cite;//*************a remplacer par une classe cité pour gérer les carte avec les merveilles (retour de méthode pour les pouvoirs )********//
+	    Cite cite;//*************a remplacer par une classe cité pour gérer les carte avec les merveilles (retour de méthode pour les pouvoirs )********//
 		int pieceOr;//nombre de piece d'or du joueur
 		Comportement comportement; // personnage joué par le joueur(Normal si le personnage n'a pas encore ete selectionnie)
 		

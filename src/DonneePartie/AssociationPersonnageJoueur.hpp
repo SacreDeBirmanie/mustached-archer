@@ -31,6 +31,7 @@ class AssociationPersonnageJoueur{
 		
 
 	public :
+		AssociationPersonnageJoueur();
 		AssociationPersonnageJoueur(const &vector<Joueur> js, const &vector<Personnage> ps);//constructeur de la classe AssociationPersonnageJoueur
 		bool nouveauJoueur(Joueur *joueur);
 		bool nouveauPersonnage(Personnage *personnage);
@@ -47,7 +48,7 @@ class AssociationPersonnageJoueur{
 		vector<Joueur> ordreChoixPersonnages();
 		Personnage personnageAleatoire();
 		Joueur joueurAleatoire();
-		
+		void deplacerCurseurChoixPerso(bool init=false);
 		void couronnement(joueur joueur);
 		
 		

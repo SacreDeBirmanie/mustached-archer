@@ -63,10 +63,10 @@ Joueur AssociationPersonnageJoueur::retrouverJ(Personnage p){
 	return this->AssocPJ[p.getNom()];
 }
 Personnage AssociationPersonnageJoueur::retrouverP(Joueur j){
-	return this->AssocJPP[j.getNom()];
+	return this->AssocJP[j.getNom()];
 }
 
-vector<Personnage> persosDisponible(){
+vector<Personnage> AssociationPersonnageJoueur::persosDisponible(){
 	vector<Personnage*> tmp;
 	
 	for ( map<String,*Joueur>::iterator iter = listePersonnages.begin(); iter != listePersonnages.end(); iter++ ){
@@ -89,7 +89,7 @@ Joueur AssociationPersonnageJoueur::joueurSuivantTour(){
 	
 }
 
-void deplacerCurseurChoixPerso(bool init=false){
+void AssociationPersonnageJoueur::deplacerCurseurChoixPerso(bool init=false){
 	if(init==false){
 			choixCourant = (choixCourant +1) % placementJoueur.size();
 	else{
@@ -101,7 +101,7 @@ void deplacerCurseurChoixPerso(bool init=false){
 Joueur AssociationPersonnageJoueur::joueurSuivantChoixPersonnages(){
 	if(placementJoueur.at(choixCourant).getPseudo() != couronnement && selection == true){
 		this->deplacerCurseurChoixPerso();
-		return placementJoueur.at(choixCourant)
+		return placementJoueur.at(choixCourant);
 	}
 	else if(placementJoueur.at(choixCourant).getPseudo() == couronnement && selection == false){
 		this->deplacerCurseurChoixPerso(true);
@@ -115,7 +115,7 @@ Joueur joueurSuivantDecomptePoints(){
 	
 }
 
-void AssociationPersonnageJoueur::couronnement(String j){
+void AssociationPersonnageJoueur::couronnement(string j){
 	for(int i=0, i<placementJoueur.size();++i){
 		if(j == placementJoueur.at(i)){
 			couronnement = i;

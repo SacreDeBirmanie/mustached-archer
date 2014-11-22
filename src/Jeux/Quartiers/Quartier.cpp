@@ -19,6 +19,10 @@ string Quartier::getNom(){
 int Quartier::getCout(){
 	return cout_;
 }
+
+int Quartier::getType(){
+	return type_;
+}
 		
 bool Quartier::estMarchand(){
 	return type_==MARCHAND;
@@ -32,3 +36,4 @@ bool Quartier::estNoble(){
 bool Quartier::estMilitaire(){
 	return type_==MILITAIRE;
 }
+

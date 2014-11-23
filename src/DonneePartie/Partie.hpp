@@ -26,11 +26,12 @@ class Partie{
 		void choixDesPersonnages(); //permet à chaque joueur de choisir son personnage
 		void debuterLeJeu();//debute la partie
 		void lancementDuTour();//lance le tour une fois le choix des personnages effectué
-		void finDuJeu();//Vérfie si la partie peut être terminé
+		bool finDuJeu();//Vérfie si la partie peut être terminé
 	public :
 		Partie(Pioche pioche, int tailleVille);//constructeur de la classe Partie
-		void decompteDesPoints();//methode permettant de décompter les points cite de chaque joueurs enregistre dans un tableau
-		void associer(Personnage p, Joueur j);
+		void decompteDesPoints(map<string,int> &tmp);//methode permettant de décompter les points cite de chaque joueurs enregistre dans un tableau
+		void associer(Personnage *p, Joueur *j);
+		void proclamerLeVainqueur();
 		void recupererJoueurs();
 		int prendrePiece(int nombre);
 		

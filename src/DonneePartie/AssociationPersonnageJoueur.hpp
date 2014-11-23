@@ -21,7 +21,7 @@ class AssociationPersonnageJoueur{
 		vector<Joueur*> * placementJoueur;//
 		
 		map<string, Joueur*> listeJoueurs;
-		map<int, Personnage*> listePersonnages();
+		map<int, Personnage*> listePersonnages;
 		
 		map<string,int>  AssocJP;
 		map<int,string> AssocPJ;

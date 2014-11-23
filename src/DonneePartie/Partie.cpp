@@ -5,12 +5,12 @@ pioche(pioche), limiteTailleVille(tailleVille){
 
 void Partie::nouveauJoueur(Joueur *joueur){
 	if(roles.nouveauJoueur(joueur))
-		cout<<"Le joueur "<<joueur.getPseudo()<<" a deja ete ajoute dans la partie");
+		cout<<"Le joueur "<<joueur->getPseudo()<<" a deja ete ajoute dans la partie");
 }
 
-void Partie::nouveauPersonnage(Personnage personnage){
+void Partie::nouveauPersonnage(Personnage *personnage){
 	if(roles.nouveauPersonnage(*personnage))
-		cout<<"Le personnage "<<personnage.getNom()<<" a deja ete ajoute dans la partie");
+		cout<<"Le personnage "<<personnage->getNom()<<" a deja ete ajoute dans la partie");
 }
 
 void Partie::entreDeuxTours(){
@@ -29,12 +29,12 @@ void Partie::choixDesPersonnages(){
 	cout<<"Tout le monde a choisit son personnage, le tour va pouvoir commencer"<<endl;
 }
 
-void Partie::debuterLeJeu(Association assoc,Pioche pioche){
-	if(roles.nbJoueurs>=roles.nbPersonnages)
+void Partie::debuterLeJeu(){
+	if(roles.nbJoueurs()>=roles.nbPersonnages())
 		cout<<"impossible de demarrer la partie, il manque des personnages"<<endl;
 	else{
 		while(!finDuJeu()){
-			EntreDeuxTours();
+			entreDeuxTours();
 			choixDesPersonnages();
 			lancementDuTour();
 		}
@@ -44,7 +44,7 @@ void Partie::debuterLeJeu(Association assoc,Pioche pioche){
 
 void Partie::lancementDuTour(){
 	Joueur * joueur = joueur->joueurSuivantTour();
-	while(joueur != NULL)
+	while(joueur != NULL){
 		joueur->jouer(this);
 		joueur = joueur->joueurSuivantTour();
 	}
@@ -52,11 +52,11 @@ void Partie::lancementDuTour(){
 	cout<<"Le tour est termine"<<endl;
 }
 
-void Partie::finDuJeu(){
+bool Partie::finDuJeu(){
 	return this->villeComplete;
 }
 
-void Partie::decompteDesPoints(&map<String,int> tmp){//************tableau associatif n'est pas forcément le meilleur choix********
+void Partie::decompteDesPoints(map<string,int> &tmp){//************tableau associatif n'est pas forcément le meilleur choix********
 	
 	for ( vector<Joueur>::iterator iter = joueurs.begin(); iter != joueurs.end(); iter++ ){
 		tmp[*iter.getPseudo()]=*iter.decompteDesPoints();
@@ -64,18 +64,18 @@ void Partie::decompteDesPoints(&map<String,int> tmp){//************tableau assoc
 	
 }
 
-void Partie::associer(Personnage p, Joueur j){
-	this->roles->associer(p,j);
+void Partie::associer(Personnage *p, Joueur *j){
+	roles->associer(p,j);
 }
 
-void Partie::proclamerLeVainqueur(Association assoc,Pioche pioche){
-	map<String,int> tmp;
+void Partie::proclamerLeVainqueur(){
+	map<string,int> tmp;
 	decompteDesPoints(tmp);
 	
-	String vainqueur = NULL;
+	string vainqueur = NULL;
 	
 	cout<<"|| DECOMPTE DES POINTS ||"<<endl;
-	for(tmp::iterator it=tmp.begin() ; it!=tmp.end() ; ++it){
+	for(map<string,int>::iterator it=tmp.begin() ; it!=tmp.end() ; ++it){
 		
 		cout<<it->first<<" : "<<it->second<<endl;
 		if(it->second > tmp[vainqueur]){

@@ -11,11 +11,18 @@
 class ComportementIA{
 
 
+	private :
+		
+		
+
 	public :
 		ComportementIA();//constructeur de la classe ComportementIA
-		virtual void jouer() = 0;
+		void jouer(Partie p, Joueur j);
+		void choisirPersonnage(Partie p, vector<Personnage> persosDispo);
 		
 };
+
+
 
 /******************************************************************************/
 #include "ComportementIA.cpp"

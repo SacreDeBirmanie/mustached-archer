@@ -9,24 +9,24 @@
 #include <string>
 using namespace std;
 //Autorise la creation de quartiers
-#include "Jeux\§Quartiers\Quartier.hpp"
+#include "Jeux/Quartiers/Quartier.hpp"
 
 
-#include "Joueurs\Joueur.hpp"
+#include "Joueurs/Joueur.hpp"
 
-#include "Joueurs\IA\Comportements\ComportementIA.hpp"
-#include "Joueurs\IA\Comportements\ComportementAssassinIA.hpp"
-#include "Joueurs\IA\Comportements\ComportementMarchandIA.hpp"
+#include "Joueurs/IA/Comportements/ComportementIA.hpp"
+#include "Joueurs/IA/Comportements/ComportementAssassinIA.hpp"
+#include "Joueurs/IA/Comportements/ComportementMarchandIA.hpp"
 //Autorise la creation des personnages de la liste
-#include "Jeux\Personnages\Personnage.hpp"
-#include "Jeux\Personnages\Assassin.hpp"
-#include "Jeux_Personnages\Marchand.hpp"
+#include "Jeux/Personnages/Personnage.hpp"
+#include "Jeux/Personnages/Assassin.hpp"
+#include "Jeux/Personnages/Marchand.hpp"
 //#include "Jeux/Personnages/Condottiere.hpp"
 //#include "Jeux/Personnages/Magicien.hpp"
 
-#include "DonneePartie\Pioche.hpp"
-#include "DonneePartie\AssociationPersonnageJoueur.hpp"
-#include "DonneePartie\Partie.hpp"
+#include "DonneePartie/Pioche.hpp"
+#include "DonneePartie/AssociationPersonnageJoueur.hpp"
+#include "DonneePartie/Partie.hpp"
 
 
 

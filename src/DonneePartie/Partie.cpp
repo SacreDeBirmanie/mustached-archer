@@ -5,12 +5,12 @@ pioche(pioche), limiteTailleVille(tailleVille){
 
 void Partie::nouveauJoueur(Joueur *joueur){
 	if(roles.nouveauJoueur(joueur))
-		cout<<"Le joueur "<<joueur->getPseudo()<<" a deja ete ajoute dans la partie");
+		cout<<"Le joueur "<<joueur->getPseudo()<<" a deja ete ajoute dans la partie";
 }
 
 void Partie::nouveauPersonnage(Personnage *personnage){
 	if(roles.nouveauPersonnage(*personnage))
-		cout<<"Le personnage "<<personnage->getNom()<<" a deja ete ajoute dans la partie");
+		cout<<"Le personnage "<<personnage->getNom()<<" a deja ete ajoute dans la partie";
 }
 
 void Partie::entreDeuxTours(){
@@ -58,7 +58,7 @@ bool Partie::finDuJeu(){
 
 void Partie::decompteDesPoints(map<string,int> &tmp){//************tableau associatif n'est pas forcément le meilleur choix********
 	
-	for ( vector<Joueur>::iterator iter = joueurs.begin(); iter != joueurs.end(); iter++ ){
+	for ( vector<*Joueur>::iterator iter = joueurs.begin(); iter != joueurs.end(); iter++ ){
 		tmp[*iter.getPseudo()]=*iter.decompteDesPoints();
 	}
 	

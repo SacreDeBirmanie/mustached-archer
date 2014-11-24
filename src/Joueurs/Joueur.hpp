@@ -25,6 +25,8 @@ class Joueur{
 		~Joueur();
 		string getPseudo():
 		
+		Vector<Quartier*> getMain();
+		
 		
 		virtual void setComportement(Personnage p)=0;
 		Comportement getComportement();

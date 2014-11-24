@@ -4,9 +4,14 @@
 
 ComportementAssassinIA::ComportementAssassinIA(){}
 
-void ComportementAssassinIA::jouer(Partie p, Joueur j){
+void ComportementAssassinIA::jouer(Partie *p, Joueur *j){
+	j->choisirGainTour(j);
+	assassiner(choixAssassinat(p, j));
+	choisirConstruction(j);
+	
+
 }
 
-Personnage ComportementAssassinIA::choixAssassinat(){
-	return null;
+Personnage ComportementAssassinIA::choixAssassinat(Partie *p, Joueur *j){
+	
 }

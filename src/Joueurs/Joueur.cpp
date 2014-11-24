@@ -55,3 +55,8 @@ int Joueur::decompteDesPoints(){
 	}
 	return total;
 }
+
+Vector<Quartier*> getMain(){
+	return this->main_;
+
+}

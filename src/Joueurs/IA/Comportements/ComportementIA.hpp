@@ -8,6 +8,8 @@
 
 #include <string> // pour le type std::string
 
+#include "ClassesUtiles/Aleatoire.cpp"
+
 class ComportementIA{
 
 
@@ -19,6 +21,7 @@ class ComportementIA{
 		ComportementIA();//constructeur de la classe ComportementIA
 		void jouer(Partie p, Joueur j);
 		void choisirPersonnage(Partie p, vector<Personnage> persosDispo);
+		void choisirGainTour(Joueur *j);
 		
 };
 

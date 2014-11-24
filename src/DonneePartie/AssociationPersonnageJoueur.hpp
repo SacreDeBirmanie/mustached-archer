@@ -17,22 +17,22 @@ class AssociationPersonnageJoueur{
 		int couronnement_; // savoir le joueur commencant à choisir son personnage
 		bool selection_;
 		int curseur_, choixCourant_;
-		
+
 		vector<Joueur*> * placementJoueur;//
-		
+
 		map<string, Joueur*> listeJoueurs;
 		map<int, Personnage*> listePersonnages;
-		
+
 		map<string,int>  AssocJP;
 		map<int,string> AssocPJ;
-		
+
 		Chaine<string> ordreTour;
 		Maillon<string> tourCourant;
-		
+
 
 	public :
 		AssociationPersonnageJoueur();
-		AssociationPersonnageJoueur(const &vector<Joueur> js, const &vector<Personnage> ps);//constructeur de la classe AssociationPersonnageJoueur
+
 		bool nouveauJoueur(Joueur *joueur);
 		bool nouveauPersonnage(Personnage *personnage);
 		int nbJoueurs();
@@ -43,18 +43,18 @@ class AssociationPersonnageJoueur{
 		Joueur* retrouverJ(Personnage *p);
 		Personnage* retrouverP(Joueur *j);
 		vector<Personnage>* persosDisponible();
-		vector<Joueur>* ordreTour();
+		vector<Joueur*> ordreTour();
 		Joueur* joueurSuivant();
-		vector<Joueur>* ordreChoixPersonnages();
+		vector<Joueur*> ordreChoixPersonnages();
 		Personnage* personnageAleatoire();
 		Joueur* joueurAleatoire();
 		void deplacerCurseurChoixPerso(bool init=false);
 		void couronnement(Joueur *joueur);
-		
+
 		void modifierOrdreJoueur(Joueur *j);
 		void modifierOrdreJoueur(Joueur *j,Joueur *jj);
-		
-		
+
+
 };
 
 

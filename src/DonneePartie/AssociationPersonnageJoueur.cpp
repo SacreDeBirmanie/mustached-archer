@@ -1,12 +1,7 @@
 AssociationPersonnageJoueur::AssociationPersonnageJoueur() {
 	Joueur * j = NULL;
-	placementJoueur = new Vector<Joueur*>();
-	
-	Chaine<string> ordreTour = new Chaine<string>();
-}
 
-AssociationPersonnageJoueur::AssociationPersonnageJoueur(&vector<Joueur> js, &vector<Personnage> ps) {
-	
+	Chaine<string> ordreTour = new Chaine<string>();
 }
 
 bool AssociationPersonnageJoueur::nouveauJoueur(Joueur *joueur){
@@ -20,7 +15,7 @@ bool AssociationPersonnageJoueur::nouveauJoueur(Joueur *joueur){
 		}
 }
 bool AssociationPersonnageJoueur::nouveauPersonnage(Personnage *personnage){
-	if(this->listePersonnages.find(personnage->getOrdre()){
+	if(this->listePersonnages.find(personnage->getOrdre())){
 		return true;
 	}
 	else{
@@ -41,7 +36,7 @@ void AssociationPersonnageJoueur::associer(Personnage *p, Joueur *j){
 	this->AssocJP[p->getNom()] = j;
 	this->AssocPJ[j->getPseudo()] = p;
 	*j->setComportement(Personnage *p);
-	
+
 }
 
 void AssociationPersonnageJoueur::associer(Joueur *j, Personnage *p){
@@ -54,13 +49,13 @@ void AssociationPersonnageJoueur::reinitialiser(){
 	for (map<String, Joueur> listeJoueurs::iterator iter = listeJoueurs.begin(); iter != listeJoueurs.end(); iter++ ){
 		this->AssocJP[*iter.getNom()] = NULL;
 	}
-	
+
 	for ( map<String,*Joueur>::iterator iter = listePersonnages.begin(); iter != listePersonnages.end(); iter++ ){
 		this->AssocPJ[*iter.getOrdre()] = NULL;
 	}
-	
+
 	selection_ = false;
-	
+
 }
 
 Joueur* AssociationPersonnageJoueur::retrouverJ(Personnage *p){
@@ -72,14 +67,14 @@ Personnage* AssociationPersonnageJoueur::retrouverP(Joueur *j){
 
 vector<Personnage*> AssociationPersonnageJoueur::persosDisponible(){
 	vector<Personnage*> tmp;
-	
+
 	for ( map<int,*Joueur>::iterator iter = assocPJ.begin(); iter != assocPJ.end(); iter++ ){
 		if(iter->second ==NULL)
 			tmp.push_back(listePersonnages[iter->first]);
 	}
 	return tmp;
-	
-	
+
+
 }
 
 Joueur* AssociationPersonnageJoueur::joueurSuivantTour(){
@@ -90,7 +85,7 @@ Joueur* AssociationPersonnageJoueur::joueurSuivantTour(){
 	}
 	else
 		return NULL;
-	
+
 }
 
 void AssociationPersonnageJoueur::deplacerCurseurChoixPerso(bool init=false){
@@ -116,7 +111,7 @@ Joueur* AssociationPersonnageJoueur::joueurSuivantChoixPersonnages(){
 }
 
 Joueur* joueurSuivantDecomptePoints(){
-	
+
 }
 
 void AssociationPersonnageJoueur::couronnement(Joueur* joueur){

@@ -10,6 +10,7 @@
 #include "Specialite/Macchabee.hpp"
 
 class Joueur;
+class comportementAssassinIA;
 
 class Assassin : public Personnage{
 

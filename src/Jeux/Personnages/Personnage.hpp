@@ -13,8 +13,8 @@ class Personnage{
 
 
 	protected :	
-		string nom;
-		int numero;
+		string nom_;
+		int numero_;
 		//ComportementIA comportementIA;
 		
 
@@ -22,6 +22,7 @@ class Personnage{
 		//! Le constructeur
 		Personnage();
 		int getOrdre();
+		string getNom();
 		virtual void jouer() = 0;
 		virtual void capacite() = 0;
 		

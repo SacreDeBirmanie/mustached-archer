@@ -5,7 +5,7 @@ Assassin::Assassin(): comportementIA(new comportementAssassinIA()), nom("Assassi
 
 void Assassin::assassiner(Partie * partie, Joueur * j){
 	partie->modifierOrdreJoueur(j);
-	j->setComportement(Maccahbee);
+	j->setComportement(macchabee);
 
 }
 

@@ -8,5 +8,6 @@ class Comportement{
 		Comportement();
 		virtual void jouer(Partie * partie,Joueur *j);
 		virtual void choisirPersonnage(Partie * partie,vector<Personnage*> persosDispos,Joueur * j);
+		virtual void choisirGainTour(Joueur * j);
 
 };

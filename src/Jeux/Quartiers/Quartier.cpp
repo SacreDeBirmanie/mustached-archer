@@ -3,7 +3,7 @@
  * \brief La classe quartier
  * \author François Hallereau & Sébastien Vallée
  */
- 
+
  Quartier::Quartier(string nom, int type,int cout){
 	 nom_ = nom;
 	 type_ = type;
@@ -24,10 +24,10 @@ int Quartier::getType(){
 	return type_;
 }
 
-int getPoints(){
+int Quartier::getPoints(){
 	return this->cout_;
 }
-		
+
 bool Quartier::estMarchand(){
 	return type_==MARCHAND;
 }

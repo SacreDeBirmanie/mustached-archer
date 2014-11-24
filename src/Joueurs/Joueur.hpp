@@ -32,7 +32,7 @@ class Joueur{
 		vector<Quartier*> getMain();
 
 
-		virtual void setComportement(Personnage p)=0;
+		virtual void setComportement(Personnage * p)=0;
 		virtual void choisirPersonnage(vector<Personnage> persosDispo)=0;
 
 

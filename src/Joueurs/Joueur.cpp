@@ -13,6 +13,13 @@ string Joueur::getPseudo(){
 	return pseudo_;
 }
 
+vector<Quartier*> getMain(){
+	return main_;
+}
+
+void setComportement(){
+}
+
 void Joueur::choisirPersonnage(vector<Personnage> persosDispo){
 	this->comportement->choisirPersonnage(partie_,persosDispo,this);
 }

@@ -13,12 +13,13 @@ class Assassin : public Personnage{
 
 	private :
 		int const ordre = 1;
-		ComportementIA comportementAssassin = new ComportementAssassinIA();
+		static ComportementIA comportementAssassin = new ComportementAssassinIA();
+		static ComportementIA comportementMaccahbee = new ComportementMaccahbeeIA();
 		
 
 	public :
 		Assassin();//constructeur de la classe Assassin
-		static void assassiner(Joueur *j);
+		static void assassiner(Partie * partie,Joueur *j);
 		
 		
 };

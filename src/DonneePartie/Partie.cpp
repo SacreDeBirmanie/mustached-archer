@@ -74,6 +74,10 @@ void Partie::associer(Personnage *p, Joueur *j){
 	roles->associer(p,j);
 }
 
+void Partie::associer(Personnage *p, Joueur *j){
+
+}
+
 void Partie::proclamerLeVainqueur(){
 	map<string,int> tmp;
 	decompteDesPoints(tmp);
@@ -92,6 +96,17 @@ void Partie::proclamerLeVainqueur(){
 	cout<<"+++Et Le vainqueur est ...."<<vainqueur<<endl;
 }
 
+Vector<*quartier> piocher(int nombre){
+	return pioche->piocher(nombre);
+}
+
 int prendrePiece(int nombre){
 	this->pioche.prendrePiece();
+}
+
+void modifierOrdreJoueur(Joueur *j){
+	roles->modifierOrdreJoueur(j);
+}
+void modifierOrdreJoueur(Joueur *j, Joueur *jj){
+	roles->modifierOrdreJoueur(j,jj);
 }

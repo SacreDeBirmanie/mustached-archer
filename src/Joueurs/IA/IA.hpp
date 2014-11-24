@@ -12,7 +12,7 @@ class IA{
 
 
 	private :
-		
+		ComportementIA comportement_;
 
 	public :
 		void setComportement(Personnage p);

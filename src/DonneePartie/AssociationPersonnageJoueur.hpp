@@ -51,6 +51,9 @@ class AssociationPersonnageJoueur{
 		void deplacerCurseurChoixPerso(bool init=false);
 		void couronnement(Joueur *joueur);
 		
+		void modifierOrdreJoueur(Joueur *j);
+		void modifierOrdreJoueur(Joueur *j,Joueur *jj);
+		
 		
 };
 

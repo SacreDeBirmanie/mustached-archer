@@ -111,4 +111,32 @@ template <class T> class Chaine {
 				pointeur=pointeur->suivant;
 			}
 		}
+		
+		bool retirerElement(T elt){
+			Maillon<T> * maillonCourant = this->tete;
+			Maillon<T> * maillonPrecedent = NULL;
+			
+			bool trouve = false;
+			
+			while(trouve == false && maillonCourant != NULL){
+				if(maillonCourant->element == elt){
+					if(maillonPrecedent == NULL){
+						this->tete= this->tete->suivant;
+					}
+					else{
+						maillonPrecedent->suivant = maillonCourant->suivant;
+					}
+					trouve = true;
+				}
+				else{
+					maillonPrecedent = maillonCourant;
+					maillonCourant = maillonCourant->suivant;
+				
+				}
+					
+			}
+			
+			return trouve;
+		
+		}
 };

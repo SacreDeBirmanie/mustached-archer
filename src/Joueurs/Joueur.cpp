@@ -5,7 +5,7 @@
  */
 
 
-Joueur::Joueur(string p): pseudo(p){}
+Joueur::Joueur(string p): pseudo_(pseudo),partie_(partie){}
 
 Joueur::~Joueur(){}
 
@@ -17,22 +17,24 @@ Comportement Joueur::getComportement(){
 	return comportement_;
 }
 
-void Joueur::choisirPersonnage(Partie p, vector<Personnage> persosDispo){
+void Joueur::choisirPersonnage(Partie* p, vector<Personnage> persosDispo){
 	this->comportement.choisirPersonnage(p,persosDispo,this);
 }
-void Joueur::jouer(Partie p){
-	this->comportement->jouer(p,this);
+void Joueur::jouer(){
+	this->comportement->jouer(partie,this);
 }
 
-void Joueur::piocher(int nombre){}
+void Joueur::piocher(int nombre){
+	main_ = copy(main_.begin(),main_.end(),back_inserter(this->partie->piocher(nombre));
+}
 
 void Joueur::prendrePiece(int nombre){
-	this->pieceOr_+=this->partie.prendrePiece();
+	this->pieceOr_+=this->partie.prendrePiece(nombre);
 }
 
 bool Joueur::construire(Quartier quartier){
 	int i=0;
-	for(vector<Quartier>::iterator it = main.begin();it!=main.end();++it){
+	for(vector<Quartier*>::iterator it = main_.begin();it!=main_.end();++it){
 		//TODO vérifier le test d'égalité
 		if((&*it.getNom()).compare(quartier.getNom())==0){//le quartier est dans notre main
 			if(!cite_.estPresent(quartier.getNom())){
@@ -49,7 +51,7 @@ bool Joueur::construire(Quartier quartier){
 		}
 		++i;
 	}
-	return false;	
+	return false;
 }
 
 int Joueur::decompteDesPoints(){
@@ -63,4 +65,12 @@ int Joueur::decompteDesPoints(){
 Vector<Quartier*> getMain(){
 	return this->main_;
 
+}
+
+bool operator==(Joueur const& a, Joueur const& b){
+    //Teste si a.pseudo == b.pseudo
+    if (if a.pseudo == b.pseudo)
+        return true;
+    else
+        return false;
 }

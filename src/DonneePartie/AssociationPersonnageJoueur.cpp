@@ -38,12 +38,16 @@ int AssociationPersonnageJoueur::nbPersonnages(){
 }
 
 void AssociationPersonnageJoueur::associer(Personnage *p, Joueur *j){
-	this->AssocJP[p.getNom()] = j;
+	this->AssocJP[p->getNom()] = j;
+	this->AssocPJ[j->getPseudo()] = p;
+	*j->setComportement(Personnage *p);
 	
 }
 
 void AssociationPersonnageJoueur::associer(Joueur *j, Personnage *p){
-	this->AssocPJ[j.getPseudo()] = p;
+	this->AssocPJ[p->getOrdre()] =j;
+	this->AssocJP[j->getPseudo()] = p;
+	*j->setComportement(Personnage *p);
 }
 
 void AssociationPersonnageJoueur::reinitialiser(){
@@ -60,18 +64,18 @@ void AssociationPersonnageJoueur::reinitialiser(){
 }
 
 Joueur* AssociationPersonnageJoueur::retrouverJ(Personnage *p){
-	return *this->AssocPJ[p->getNom()];
+	return *this->AssocPJ[p->getOrdre()];
 }
 Personnage* AssociationPersonnageJoueur::retrouverP(Joueur *j){
-	return *this->AssocJP[j->getNom()];
+	return *this->AssocJP[j->getPseudo()];
 }
 
 vector<Personnage*> AssociationPersonnageJoueur::persosDisponible(){
 	vector<Personnage*> tmp;
 	
-	for ( map<String,*Joueur>::iterator iter = listePersonnages.begin(); iter != listePersonnages.end(); iter++ ){
+	for ( map<int,*Joueur>::iterator iter = assocPJ.begin(); iter != assocPJ.end(); iter++ ){
 		if(iter->second ==NULL)
-			tmp.push_back();
+			tmp.push_back(listePersonnages[iter->first]);
 	}
 	return tmp;
 	
@@ -122,5 +126,16 @@ void AssociationPersonnageJoueur::couronnement(Joueur* joueur){
 			break;
 		}
 	}
+}
+
+void modifierOrdreJoueur(Joueur * j){
+	ordreTour->retirerElement(*j);
+	ordreTour->insererQueue(*j);
+}
+
+void modifierOrdreJoueur(Joueur *j, Joueur *jj){
+	ordreTour->retirerElement(*j);
+	ordreTour->insererApres(*j,*jj);
+
 }
 

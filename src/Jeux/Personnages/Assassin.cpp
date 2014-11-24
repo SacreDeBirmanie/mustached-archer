@@ -3,8 +3,9 @@ Assassin::Assassin(): comportementIA(new comportementAssassinIA()), nom("Assassi
 
 }
 
-void Assassin::assassiner(partie p, Joueur *j){
-	
+void Assassin::assassiner(partie *partie, Joueur *j){
+	partie->modifierOrdreJoueur(j);
+	j->
 
 }
 

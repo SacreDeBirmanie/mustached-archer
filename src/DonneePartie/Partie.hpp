@@ -37,6 +37,8 @@ class Partie : public Observer{
 		void proclamerLeVainqueur();
 		void recupererJoueurs();
 		int prendrePiece(int nombre);
+		void modifierOrdreJoueur(Joueur *j);
+		void modifierOrdreJoueur(Joueur *j, Joueur *jj);
 		
 };
 

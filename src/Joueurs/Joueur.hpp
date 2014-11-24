@@ -33,7 +33,7 @@ class Joueur{
 
 
 		virtual void setComportement(Personnage * p)=0;
-		virtual void choisirPersonnage(vector<Personnage> persosDispo)=0;
+		virtual void choisirPersonnage(vector<Personnage*> persosDispo)=0;
 
 
 		void jouer();//effectue un tour de jeu

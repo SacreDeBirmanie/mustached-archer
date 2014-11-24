@@ -8,7 +8,7 @@
 
 #include <string> // pour le type std::string
 
-#include "ClassesUtiles/Aleatoire.cpp"
+#include "../../../ClassesUtiles/Aleatoire.cpp"
 
 class ComportementIA{
 

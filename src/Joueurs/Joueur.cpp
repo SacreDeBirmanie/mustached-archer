@@ -13,7 +13,7 @@ string Joueur::getPseudo(){
 	return pseudo_;
 }
 
-vector<Quartier*> getMain(){
+vector<Quartier*> Joueur::getMain(){
 	return main_;
 }
 
@@ -72,8 +72,5 @@ Vector<Quartier*> getMain(){
 
 bool operator==(Joueur const& b){
     //Teste si a.pseudo == b.pseudo
-    if (if this->pseudo == b.pseudo)
-        return true;
-    else
-        return false;
+    return this->pseudo==b.pseudo;
 }

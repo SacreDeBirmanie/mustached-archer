@@ -1,6 +1,6 @@
-class Partie;
 class Joueur;
 class Personnage;
+class Partie;
 
 class Comportement{
 

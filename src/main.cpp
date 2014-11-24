@@ -10,7 +10,9 @@
 using namespace std;
 //Autorise la creation de quartiers
 #include "Jeux/Quartiers/Quartier.hpp"
-
+#include "DonneePartie/Observer.hpp"
+#include "Jeux/Cite/Observable.hpp"
+#include "Jeux/Cite/Cite.hpp"
 
 #include "Joueurs/Joueur.hpp"
 

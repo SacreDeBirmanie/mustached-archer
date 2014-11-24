@@ -8,7 +8,7 @@
 #include <map>
 #include <string>
 
-#include "ClassesUtiles\Aleatoire.cpp.hpp"
+#include "ClassesUtiles\Aleatoire.cpp"
 
 using namespace std;
 

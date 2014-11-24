@@ -34,11 +34,15 @@ bool Joueur::construire(Quartier quartier){
 	int i=0;
 	for(vector<Quartier>::iterator it = main.begin();it!=main.end();++it){
 		//TODO vérifier le test d'égalité
-		if((&*it.getNom()).compare(quartier.getNom())==0){//le quartier est dans notre main 
-			if(quartier.getCout()<=pieceOr_){//on peut acheter le quartier
-				cite_.push_back(quartier);//on ajoute le quartier dans notre cité
-				main_.erase(main_.begin()+i);//on enlève le quartier de notre main
-				return true;
+		if((&*it.getNom()).compare(quartier.getNom())==0){//le quartier est dans notre main
+			if(!cite_.estPresent(quartier.getNom())){
+				if(quartier.getCout()<=pieceOr_){//on peut acheter le quartier
+					cite_.push_back(quartier);//on ajoute le quartier dans notre cité
+					main_.erase(main_.begin()+i);//on enlève le quartier de notre main
+					return true;
+				}
+				else
+					return false;
 			}
 			else
 				return false;

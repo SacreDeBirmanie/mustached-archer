@@ -29,11 +29,11 @@ void choisirGainTour(Joueur *j){
 
 void choisirConstruction(Joueur * j){
 	vector<int> exclus = new vector<int>();
-	int nb = Aleatoire::tirerEntierAvecExclusion(0,j->getMain().size(),exclus);
+	int nb = Aleatoire::tirerEntierAvecExclusion(exclus,0,j->getMain().size());
 	
 	while(!j->construire(j->getMain().get(nb)) && j->getMain().size()> exclus.size()){
 		exclus.push_back(nb);
-		nb = Aleatoire::tirerEntierAvecExclusion(0,j->getMain().size(),exclus)
+		nb = Aleatoire::tirerEntierAvecExclusion(exclus,0,j->getMain().size())
 	}
 
 }

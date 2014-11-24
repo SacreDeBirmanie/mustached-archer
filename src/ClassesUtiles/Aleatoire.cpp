@@ -6,6 +6,7 @@
 
 #include <cstdlib>
 #include <ctime>
+#include <vector>
 
 class Aleatoire{
 
@@ -22,17 +23,27 @@ class Aleatoire{
 			srand(time(NULL)); // initialisation de rand
 				return rand()%(fin-deb+1) + deb;
 		}
-		
-		static int tirerEntierAvecExclusion(int deb = 0, int fin = 32767, vector<int> exclusion){
+
+		static int tirerEntierAvecExclusion(std::vector<int> exclusion,int deb = 0, int fin = 32767){
 				srand(time(NULL)); // initialisation de rand
 				int nombre_aleatoire = rand()%(fin-deb+1) + deb;
-			
-				while(exclusion.find(nombre_aleatoire)){
+				bool trouve = false;
+
+				while(!trouve){
 					nombre_aleatoire = rand()%(fin-deb+1) + deb;
+					for(std::vector<int>::iterator it = exclusion.begin();it!=exclusion.end();++it){
+						if(*it==nombre_aleatoire){
+							trouve = true;
+						}
+					}
+					if(trouve)
+						trouve=false;
+					else
+						trouve =true;
 				}
-				
+
 				return nombre_aleatoire;
-				
+
 		}
 };
 

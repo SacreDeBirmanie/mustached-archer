@@ -3,3 +3,8 @@ Assassin::Assassin(): comportementIA(new comportementAssassinIA()), nom("Assassi
 
 }
 
+void Assassin::assassiner(partie p, Joueur *j){
+	
+
+}
+

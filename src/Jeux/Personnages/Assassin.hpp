@@ -18,6 +18,7 @@ class Assassin : public Personnage{
 
 	public :
 		Assassin();//constructeur de la classe Assassin
+		static void assassiner(Joueur *j);
 		
 		
 };

@@ -42,17 +42,17 @@ template <class T> class Chaine {
 				this->nbElements=0;
 			}
 		}
-		
+
 		Maillon<T> * recuperer(T element){
 			Maillon<T> *p = this->tete;
 			while(!(p==NULL) && *p.element != element){
 				p=p->suivant;
 			}
 			return *p;
-			
+
 		}
-		
-		insererApres(T elementAInserer, T elementPrec){
+
+		void insererApres(T elementAInserer, T elementPrec){
 			Maillon<T> * p = recuperer(elementPrec);
 			p.suivant = new Maillon<T>(elementAInserer,p.suivant);
 		}
@@ -80,7 +80,7 @@ template <class T> class Chaine {
 			this->nbElements=this->nbElements+1;
 
 		}
-		
+
 		void retirerTete(){
 			if(!(this->nbElements==0)){
 				Maillon<T> * ptrTete=this->tete;
@@ -90,7 +90,7 @@ template <class T> class Chaine {
 			}
 
 		}
-		
+
 		void retirerQueue(){
 			if(!(this->tete==0) && !(this->tete->suivant==NULL)){
 				Maillon<T> *p = this->tete;
@@ -102,7 +102,7 @@ template <class T> class Chaine {
 				this->nbElements=this->nbElements-1;
 			}
 		}
-		
+
 		void afficherChainage(){
 			Maillon<T> * pointeur=this->tete;
 
@@ -111,13 +111,13 @@ template <class T> class Chaine {
 				pointeur=pointeur->suivant;
 			}
 		}
-		
+
 		bool retirerElement(T elt){
 			Maillon<T> * maillonCourant = this->tete;
 			Maillon<T> * maillonPrecedent = NULL;
-			
+
 			bool trouve = false;
-			
+
 			while(trouve == false && maillonCourant != NULL){
 				if(maillonCourant->element == elt){
 					if(maillonPrecedent == NULL){
@@ -131,12 +131,12 @@ template <class T> class Chaine {
 				else{
 					maillonPrecedent = maillonCourant;
 					maillonCourant = maillonCourant->suivant;
-				
+
 				}
-					
+
 			}
-			
+
 			return trouve;
-		
+
 		}
 };

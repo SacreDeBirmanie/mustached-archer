@@ -14,11 +14,13 @@ class Macchabee : public Personnage{
 
 	private :
 		int const ordre = 1;
-		comportementIA comportementMacchabee = new comportementMacchabee();
+		string personnage_;
+		comportementIA comportementMacchabee_ = new comportementMacchabee();
 		
 
 	public :
-		Macchabee();//constructeur de la classe Macchabee
+		Macchabee(string personnage);//constructeur de la classe Macchabee
+		void jouer(Joueur * j);
 		
 		
 };

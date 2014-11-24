@@ -9,6 +9,9 @@
 #include <string>
 using namespace std;
 //Autorise la creation de quartiers
+#include "ClassesUtiles/Aleatoire.cpp"
+#include "ClassesUtiles/listeChainee.cpp"
+
 #include "Jeux/Quartiers/Quartier.hpp"
 #include "DonneePartie/Observer.hpp"
 #include "Jeux/Cite/Observable.hpp"

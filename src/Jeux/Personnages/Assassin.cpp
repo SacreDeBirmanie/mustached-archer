@@ -1,11 +1,11 @@
-Assassin::Assassin(): comportementIA(new comportementAssassinIA()), nom("Assassin"), numero(1) {
-	
+Assassin::Assassin(): comportementIA(new comportementAssassinIA()), nom("Assassin"), numero(1), maccahbee(new Macchabee()) {
+
 
 }
 
-void Assassin::assassiner(partie *partie, Joueur *j){
+void Assassin::assassiner(Partie * partie, Joueur * j){
 	partie->modifierOrdreJoueur(j);
-	j->
+	j->setComportement(Maccahbee);
 
 }
 

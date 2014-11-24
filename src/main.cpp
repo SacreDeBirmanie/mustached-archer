@@ -14,7 +14,9 @@ using namespace std;
 #include "Jeux/Cite/Observable.hpp"
 #include "Jeux/Cite/Cite.hpp"
 
+#include "Joueurs/Comportement.cpp"
 #include "Joueurs/Joueur.hpp"
+
 
 #include "Joueurs/IA/Comportements/ComportementIA.hpp"
 #include "Joueurs/IA/Comportements/ComportementAssassinIA.hpp"

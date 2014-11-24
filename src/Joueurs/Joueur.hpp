@@ -21,19 +21,19 @@ class Joueur{
 	    Cite cite_;//*************a remplacer par une classe cité pour gérer les carte avec les merveilles (retour de méthode pour les pouvoirs )********//
 		int pieceOr_;//nombre de piece d'or du joueur
 		Partie * partie_;
+		Comportement * comportement;
 
 
 
 	public :
-		Joueur(string pseudo,partie *partie);//constructeur de la classe Joueur
+		Joueur(string pseudo,Partie *partie);//constructeur de la classe Joueur
 		~Joueur();
-		string getPseudo():
-
+		string getPseudo();
 		vector<Quartier*> getMain();
 
 
 		virtual void setComportement(Personnage p)=0;
-		virtual void choisirPersonnage(Partie p, vector<Personnage> persosDispo)=0;
+		virtual void choisirPersonnage(vector<Personnage> persosDispo)=0;
 
 
 		void jouer();//effectue un tour de jeu
@@ -47,7 +47,7 @@ class Joueur{
 		//void capacite();// active la capacité spéciale du personnage choisi
 		int decompteDesPoints();
 
-		bool operator==(Joueur const& a, Joueur const& b);
+		bool operator==(Joueur const &b);
 
 };
 

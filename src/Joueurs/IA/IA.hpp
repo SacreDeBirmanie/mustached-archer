@@ -8,7 +8,7 @@
 #define IA_HPP
 
 #include <string> // pour le type std::string
-class IA{
+class IA : public Comportement{
 
 
 	private :

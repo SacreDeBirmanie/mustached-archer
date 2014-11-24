@@ -96,7 +96,7 @@ void Partie::proclamerLeVainqueur(){
 	cout<<"+++Et Le vainqueur est ...."<<vainqueur<<endl;
 }
 
-Vector<*quartier> piocher(int nombre){
+Vector<quartier*> piocher(int nombre){
 	return pioche->piocher(nombre);
 }
 

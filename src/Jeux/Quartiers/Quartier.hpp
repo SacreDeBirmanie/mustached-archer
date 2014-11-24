@@ -9,6 +9,7 @@
 
 #include <string> // pour le type std::string
 
+#define MERVEILLE 0
 #define MARCHAND  1
 #define RELIGIEUX  2
 #define NOBLE  3

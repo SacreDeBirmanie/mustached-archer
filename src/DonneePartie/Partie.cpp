@@ -52,14 +52,20 @@ void Partie::lancementDuTour(){
 	cout<<"Le tour est termine"<<endl;
 }
 
+
+void update(int taille){
+	if(taille>=limiteTailleVille)
+		villeComplete = true;
+}
+
 bool Partie::finDuJeu(){
 	return this->villeComplete;
 }
 
 void Partie::decompteDesPoints(map<string,int> &tmp){//************tableau associatif n'est pas forcément le meilleur choix********
 	
-	for ( vector<*Joueur>::iterator iter = joueurs.begin(); iter != joueurs.end(); iter++ ){
-		tmp[*iter.getPseudo()]=*iter.decompteDesPoints();
+	for ( vector<Joueur*>::iterator iter = joueurs.begin(); iter != joueurs.end(); iter++ ){
+		tmp[(*iter)->getPseudo()]=(*iter)->decompteDesPoints();
 	}
 	
 }

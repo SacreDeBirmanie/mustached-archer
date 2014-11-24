@@ -6,7 +6,7 @@
 #ifndef CITE_HPP
 #define CITE_HPP
 
-public class Cite : public Observable{
+class Cite : public Observable{
 	
 	private :
 		vector<Quartier*> quartiers; //la citadelle

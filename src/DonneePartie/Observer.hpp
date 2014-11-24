@@ -6,7 +6,7 @@
 #ifndef OBSERVER_HPP
 #define OBSERVER_HPP
 
-public class Observer
+class Observer
 {
 public:
 	virtual void update(int taille) = 0;

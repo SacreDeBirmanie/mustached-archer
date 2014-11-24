@@ -3,13 +3,13 @@
 *   \brief Définition du type Observable
 */
 
-void notify(int taille) const{
-	for(vector<Observer*>::const_iterator observers = list_observers.begin();observers != list_observers.end(); ++observers){
-		(*observers)->update(data);
+void Observable::notify(int taille){
+	for(vector<Observer*>::iterator observers = list_observers.begin();observers != list_observers.end(); ++observers){
+		(*observers)->update(taille);
 	}
 }
  
-void addObserver(Observer* observer){
+bool Observable::addObserver(Observer* observer){
 	if(!list_observers.empty()){
 		for(vector<Observer*>::iterator ob = list_observers.begin();ob != list_observers.end(); ++ob){
 			if((*ob)==observer){
@@ -21,7 +21,7 @@ void addObserver(Observer* observer){
 	return true;
 }
  
-void removeObserver(Observer* observer){
+bool Observable::removeObserver(Observer* observer){
 	if(!list_observers.empty()){
 		for(vector<Observer*>::iterator ob = list_observers.begin();ob != list_observers.end(); ++ob){
 			if((*ob)==observer){

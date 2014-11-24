@@ -23,6 +23,10 @@ int Quartier::getCout(){
 int Quartier::getType(){
 	return type_;
 }
+
+int getPoints(){
+	return this->cout_;
+}
 		
 bool Quartier::estMarchand(){
 	return type_==MARCHAND;

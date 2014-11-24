@@ -14,6 +14,7 @@ using namespace std;
 #include "Jeux/Cite/Observable.hpp"
 #include "Jeux/Cite/Cite.hpp"
 
+#include "DonneePartie/Pioche.hpp"
 #include "Joueurs/Comportement.cpp"
 #include "Joueurs/Joueur.hpp"
 
@@ -27,8 +28,6 @@ using namespace std;
 #include "Jeux/Personnages/Marchand.hpp"
 //#include "Jeux/Personnages/Condottiere.hpp"
 //#include "Jeux/Personnages/Magicien.hpp"
-
-#include "DonneePartie/Pioche.hpp"
 #include "DonneePartie/AssociationPersonnageJoueur.hpp"
 #include "DonneePartie/Partie.hpp"
 

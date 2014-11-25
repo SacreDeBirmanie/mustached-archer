@@ -64,13 +64,13 @@ Joueur* AssociationPersonnageJoueur::retrouverJ(Personnage *p){
 	return *this->assocPJ_[p->getOrdre()];
 }
 Personnage* AssociationPersonnageJoueur::retrouverP(Joueur *j){
-	return *this->assocJP_[j->getPseudo()];
+	return listePersonnages_[assocJP_[j->getPseudo()]];
 }
 
 vector<Personnage*> AssociationPersonnageJoueur::persosDisponible(){
 	vector<Personnage*> tmp;
 
-	for ( map<int,Joueur*>::iterator iter = assocPJ_.begin(); iter != assocPJ_.end(); iter++ ){
+	for ( map<int,string>::iterator iter = assocPJ_.begin(); iter != assocPJ_.end(); iter++ ){
 		if(iter->second ==NULL)
 			tmp.push_back(listePersonnages_[iter->first]);
 	}
@@ -80,9 +80,9 @@ vector<Personnage*> AssociationPersonnageJoueur::persosDisponible(){
 }
 
 Joueur* AssociationPersonnageJoueur::joueurSuivantTour(){
-	if(joueurCourant_.suivant != NULL){
+	if(joueurCourant_->suivant != NULL){
 		Maillon<Joueur*> * tmp = joueurCourant_;
-		joueurCourant_ = joueurCourant_.suivant;
+		joueurCourant_ = joueurCourant_->suivant;
 		return tmp->element;
 	}
 	else
@@ -105,7 +105,7 @@ Joueur* AssociationPersonnageJoueur::joueurSuivantChoixPersonnages(){
 		this->deplacerCurseurChoixPerso();
 		return placementJoueur_.at(choixCourant_);
 	}
-	else if(placementJoueur_.at(choixCourant).getPseudo() == couronnement_ && selection_ == false){
+	else if(placementJoueur_.at(choixCourant_).getPseudo() == couronnement_ && selection_ == false){
 		this->deplacerCurseurChoixPerso(true);
 		return placementJoueur_.at(choixCourant);
 	}
@@ -113,27 +113,27 @@ Joueur* AssociationPersonnageJoueur::joueurSuivantChoixPersonnages(){
 		return NULL;
 }
 
-Joueur* joueurSuivantDecomptePoints(){
+Joueur* AssociationPersonnageJoueur::joueurSuivantDecomptePoints(){
 
 }
 
 void AssociationPersonnageJoueur::couronnement(Joueur* j){
 	for(int i=0; i<placementJoueur_.size();++i){
-		if((j->getNom()).compare((placementJoueur_.at(i))->getNom())){
+		if((j->getPseudo()).compare((placementJoueur_.at(i))->getPseudo())){
 			couronnement_ = i;
 			break;
 		}
 	}
 }
 
-void modifierOrdreJoueur(Joueur * j){
-	ordreTour->retirerElement(*j);
-	ordreTour->insererQueue(*j);
+void AssociationPersonnageJoueur::modifierOrdreJoueur(Joueur * j){
+	ordreTour_->retirerElement(j);
+	ordreTour_->insererQueue(j);
 }
 
-void modifierOrdreJoueur(Joueur *j, Joueur *jj){
-	ordreTour->retirerElement(*j);
-	ordreTour->insererApres(*j,*jj);
+void AssociationPersonnageJoueur::modifierOrdreJoueur(Joueur *j, Joueur *jj){
+	ordreTour_->retirerElement(j);
+	ordreTour_->insererApres(j,jj);
 
 }
 

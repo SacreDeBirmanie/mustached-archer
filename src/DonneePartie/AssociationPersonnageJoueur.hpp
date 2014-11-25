@@ -54,9 +54,9 @@ class AssociationPersonnageJoueur{
 		Joueur* joueurSuivantTour();
 		Personnage* personnageAleatoire();
 		Joueur* joueurAleatoire();
-		void deplacerCurseurChoixPerso(bool init=false);
+		void deplacerCurseurChoixPerso(bool init);
+		Joueur* joueurSuivantDecomptePoints();
 		void couronnement(Joueur *joueur);
-
 		void modifierOrdreJoueur(Joueur *j);
 		void modifierOrdreJoueur(Joueur *j,Joueur *jj);
 

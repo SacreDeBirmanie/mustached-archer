@@ -6,10 +6,10 @@ void Pioche::ajouterCarte(Quartier *carte){
 	cartes->push_back(carte);
 	}
 
-vector<Quartier> Pioche::piocherCarte(int nombre){
-	vector<Quartier> tmp;
+vector<Quartier*> Pioche::piocher(int nombre){
+	vector<Quartier*> tmp;
 	for(int i =0; i<nombre;i++){
-		tmp.push_back(*this->cartes->front());
+		tmp.push_back(this->cartes->front());
 		this->cartes->erase(this->cartes->begin());//supprime le premier élément
 	}
 	return tmp;

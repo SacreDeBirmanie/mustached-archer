@@ -1,4 +1,4 @@
-template <class T> class Maillon{
+template <typename T> class Maillon{
 	public:
 		T element;
 		Maillon<T> * suivant;
@@ -10,7 +10,7 @@ template <class T> class Maillon{
 		}
 };
 
-template <class T> class Chaine {
+template <typename T> class Chaine {
 	private:
 
 		int nbElements;

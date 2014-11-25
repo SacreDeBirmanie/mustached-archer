@@ -18,9 +18,16 @@ using namespace std;
 #include "Jeux/Cite/Cite.hpp"
 
 #include "DonneePartie/Pioche.hpp"
-#include "Joueurs/Comportement.cpp"
-#include "Joueurs/Joueur.hpp"
 
+#include "DonneePartie/AssociationPersonnageJoueur.hpp"
+#include "Joueurs/Joueur.hpp"
+#include "Jeux/Personnages/Personnage.hpp"
+#include "Joueurs/Comportement.hpp"
+#include "DonneePartie/Partie.hpp"
+
+#include "DonneePartie/AssociationPersonnageJoueur.cpp"
+#include "Joueurs/Joueur.hpp"
+#include "Jeux/Personnages/Personnage.hpp"
 
 #include "Joueurs/IA/Comportements/ComportementIA.hpp"
 #include "Joueurs/IA/Comportements/ComportementAssassinIA.hpp"
@@ -31,7 +38,6 @@ using namespace std;
 #include "Jeux/Personnages/Marchand.hpp"
 //#include "Jeux/Personnages/Condottiere.hpp"
 //#include "Jeux/Personnages/Magicien.hpp"
-#include "DonneePartie/AssociationPersonnageJoueur.hpp"
 #include "DonneePartie/Partie.hpp"
 
 
@@ -42,7 +48,7 @@ int main(){
 
 
 
-	Partie * partie = new Partie(*pioche);
+	Partie * partie = new Partie(pioche);
 
 	partie.nouveauJoueur(new IA("A"));
 	partie.nouveaJoueur(new IA("B"));

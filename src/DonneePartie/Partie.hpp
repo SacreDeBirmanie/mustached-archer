@@ -14,11 +14,11 @@ class Partie : public Observer{
 
 
 	private :
-		int limiteTailleVille;//limite de quartier mettant fin à la partie
-		bool villeComplete=false;//vrai lorsqu'un joueur a au moins limiteTailleVille quartier
-		Pioche & pioche;//pioche de la partie
-		AssociationPersonnageJoueur roles;//role de chaque joueur
-		
+		int limiteTailleVille_;//limite de quartier mettant fin à la partie
+		bool villeComplete_=false;//vrai lorsqu'un joueur a au moins limiteTailleVille quartier
+		Pioche * pioche_;//pioche de la partie
+		AssociationPersonnageJoueur * roles_;//role de chaque joueur
+
 		void nouveauJoueur(Joueur *joueur);
 		void nouveauPersonnage(Personnage *personnage);
 		void entreDeuxTours();// remet les joueurs dans l'etatNeutre
@@ -27,11 +27,11 @@ class Partie : public Observer{
 		void lancementDuTour();//lance le tour une fois le choix des personnages effectué
 		void update(int taille);//Appelé si la taille d'une citadelle augmente
 		bool finDuJeu();//Vérifie si la partie peut être terminé
-		
-		
+
+
 	public :
-		Partie(Pioche pioche, int tailleVille);//constructeur de la classe Partie
-		Partie(Pioche pioche);//constructeur de la classe Partie
+		Partie(Pioche  *pioche, int tailleVille);//constructeur de la classe Partie
+		Partie(Pioche* pioche);//constructeur de la classe Partie
 		void decompteDesPoints(map<string,int> &tmp);//methode permettant de décompter les points cite de chaque joueurs enregistre dans un tableau
 		void associer(Personnage *p, Joueur *j);
 		void proclamerLeVainqueur();
@@ -39,7 +39,7 @@ class Partie : public Observer{
 		int prendrePiece(int nombre);
 		void modifierOrdreJoueur(Joueur *j);
 		void modifierOrdreJoueur(Joueur *j, Joueur *jj);
-		
+
 };
 
 

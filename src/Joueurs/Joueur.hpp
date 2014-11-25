@@ -7,9 +7,8 @@
 #ifndef JOUEUR_HPP
 #define JOUEUR_HPP
 
-class Personnage;
 class Partie;
-class Quartier;
+class Comportement;
 
 
 class Joueur{
@@ -33,7 +32,6 @@ class Joueur{
 
 
 		virtual void setComportement(Personnage * p)=0;
-		virtual void choisirPersonnage(vector<Personnage*> persosDispo)=0;
 
 
 		void jouer();//effectue un tour de jeu
@@ -44,6 +42,7 @@ class Joueur{
 		void piocher(int nombre);//pioche un nombre de carte
 		void prendrePiece(int nombre);//prend un nombre de piece
 		bool construire(Quartier * quartier);//construit un quartier dans sa cite
+		void choisirPersonnage(vector<Personnage*> persosDispo);
 		void choisirGainTour();
 		//void capacite();// active la capacité spéciale du personnage choisi
 		int decompteDesPoints();
@@ -55,5 +54,4 @@ class Joueur{
 
 
 /******************************************************************************/
-#include "Joueur.cpp"
 #endif // JOUEUR_HPP

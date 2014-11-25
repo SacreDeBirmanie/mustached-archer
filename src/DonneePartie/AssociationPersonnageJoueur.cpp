@@ -35,23 +35,23 @@ int AssociationPersonnageJoueur::nbPersonnages(){
 void AssociationPersonnageJoueur::associer(Personnage *p, Joueur *j){
 	this->assocJP_[j->getPseudo()] = p->getOrdre();
 	this->assocPJ_[p->getOrdre()] = j->getPseudo();
-	j->setComportement(Personnage *p);
+	j->setComportement(p);
 
 }
 
 void AssociationPersonnageJoueur::associer(Joueur *j, Personnage *p){
 	this->assocPJ_[p->getOrdre()] =j->getPseudo();
 	this->assocJP_[j->getPseudo()] = p->getOrdre();
-	j->setComportement(Personnage *p);
+	j->setComportement(p);
 }
 
 void AssociationPersonnageJoueur::reinitialiser(){
 	for (map<string, Joueur*>::iterator iter = listeJoueurs_.begin(); iter != listeJoueurs_.end(); iter++ ){
-		this->assocJP_[iter->getPseudo()] = NULL;
+		assocJP_[iter->first] = NULL;
 	}
 
-	for ( map<String,Joueur*>::iterator iter = listePersonnages_.begin(); iter != listePersonnages_.end(); iter++ ){
-		this->assocPJ_[iter->getOrdre()] = NULL;
+	for ( map<int,Personnage*>::iterator iter = listePersonnages_.begin(); iter != listePersonnages_.end(); iter++ ){
+		assocPJ_[iter->first] = NULL;
 	}
 
 	selection_ = false;

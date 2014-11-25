@@ -31,5 +31,4 @@ class Personnage{
 
 
 /******************************************************************************/
-#include "Personnage.cpp"
 #endif // PERSONNAGE_HPP

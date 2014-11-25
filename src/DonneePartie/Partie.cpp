@@ -53,13 +53,13 @@ void Partie::lancementDuTour(){
 }
 
 
-void update(int taille){
-	if(taille>=limiteTailleVille)
-		villeComplete = true;
+void Partie::update(int taille){
+	if(taille>=limiteTailleVille_)
+		villeComplete_ = true;
 }
 
 bool Partie::finDuJeu(){
-	return this->villeComplete;
+	return villeComplete_;
 }
 
 void Partie::decompteDesPoints(map<string,int> &tmp){//************tableau associatif n'est pas forcément le meilleur choix********
@@ -72,10 +72,6 @@ void Partie::decompteDesPoints(map<string,int> &tmp){//************tableau assoc
 
 void Partie::associer(Personnage *p, Joueur *j){
 	roles_->associer(p,j);
-}
-
-void Partie::associer(Personnage *p, Joueur *j){
-
 }
 
 void Partie::proclamerLeVainqueur(){
@@ -96,17 +92,17 @@ void Partie::proclamerLeVainqueur(){
 	cout<<"+++Et Le vainqueur est ...."<<vainqueur<<endl;
 }
 
-Vector<quartier*> piocher(int nombre){
-	return pioche->piocher(nombre);
+vector<Quartier*> Partie::piocher(int nombre){
+	return pioche_->piocher(nombre);
 }
 
-int prendrePiece(int nombre){
-	this->pioche.prendrePiece();
+int Partie::prendrePiece(int nombre){
+	return pioche_->prendrePiece(nombre);
 }
 
-void modifierOrdreJoueur(Joueur *j){
+void Partie::modifierOrdreJoueur(Joueur *j){
 	roles_->modifierOrdreJoueur(j);
 }
-void modifierOrdreJoueur(Joueur *j, Joueur *jj){
+void Partie::modifierOrdreJoueur(Joueur *j, Joueur *jj){
 	roles_->modifierOrdreJoueur(j,jj);
 }

@@ -36,6 +36,7 @@ class Partie : public Observer{
 		void associer(Personnage *p, Joueur *j);
 		void proclamerLeVainqueur();
 		void recupererJoueurs();
+		vector<Quartier*> piocher(int nombre);
 		int prendrePiece(int nombre);
 		void modifierOrdreJoueur(Joueur *j);
 		void modifierOrdreJoueur(Joueur *j, Joueur *jj);

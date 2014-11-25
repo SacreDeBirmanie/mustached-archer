@@ -14,7 +14,7 @@ class Macchabee : public Personnage{
 
 	private :
 		string personnage_;
-		comportementIA comportementMacchabee_ = new comportementMacchabee();
+		ComportementIA comportementMacchabee_ = new ComportementMacchabee();
 		
 
 	public :

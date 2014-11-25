@@ -27,7 +27,7 @@ void choisirGainTour(Joueur *j){
 }
 
 void choisirConstruction(Joueur * j){
-	vector<int> exclus = new vector<int>();
+	vector<int> exclus;
 	int nb = Aleatoire::tirerEntierAvecExclusion(exclus,0,j->getMain().size());
 
 	while(!j->construire(j->getMain().at(nb)) && j->getMain().size()> exclus.size()){

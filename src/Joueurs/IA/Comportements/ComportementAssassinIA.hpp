@@ -19,7 +19,7 @@ class ComportementAssassinIA : public ComportementIA{
 	public :
 		ComportementAssassinIA();//constructeur de la classe EtatAssassinIA
 		void jouer(Partie * p, Joueur * j);
-		Personnage choixAssassinat();
+		Personnage* choixAssassinat();
 		
 };
 

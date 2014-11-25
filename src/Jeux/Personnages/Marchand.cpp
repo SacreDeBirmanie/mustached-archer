@@ -12,9 +12,9 @@
  */
 void Marchand::capacite(){	
 	int po=0;	
-	vector<Quartier> cite = joueur->getCite();
-	for(vector<Quartier>::iterator it = cite.begin();it!=cite.end();++it){
-		if(*it.estMarchand()) //si le quartier est marchand, +1 pièce
+	vector<Quartier*> cite = joueur->getCite();
+	for(vector<Quartier*>::iterator it = cite.begin();it!=cite.end();++it){
+		if((*it)->estMarchand()) //si le quartier est marchand, +1 pièce
 			++po;
 	}
 	++po; //la pièce bonus

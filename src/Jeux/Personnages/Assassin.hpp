@@ -14,6 +14,7 @@ class Assassin : public Personnage{
 		int const ordre = 1;
 		ComportementIA comportementAssassin_ = new ComportementAssassinIA();
 		Personnage * macchabee_;
+		string nom_;
 
 
 	public :

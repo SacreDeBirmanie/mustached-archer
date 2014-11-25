@@ -54,7 +54,7 @@ template <typename T> class Chaine {
 
 		void insererApres(T elementAInserer, T elementPrec){
 			Maillon<T> * p = recuperer(elementPrec);
-			p.suivant = new Maillon<T>(elementAInserer,p.suivant);
+			p->suivant = new Maillon<T>(elementAInserer,p->suivant);
 		}
 
 		void insererTete(T element){
@@ -63,10 +63,10 @@ template <typename T> class Chaine {
 
 		}
 		void insererQueue(T element){
-			Maillon<T> mama=new Maillon<T>(element,NULL);
+			Maillon<T> *mama=new Maillon<T>(element,NULL);
 
 			if(this->tete==NULL){
-				this->tete=&mama;
+				this->tete=mama;
 			}
 			else{
 				Maillon<T>* p = this->tete;
@@ -75,7 +75,7 @@ template <typename T> class Chaine {
 				}
 
 				this->nbElements = this->nbElements+1;
-				p->suivant=&mama;
+				p->suivant=mama;
 			}
 			this->nbElements=this->nbElements+1;
 

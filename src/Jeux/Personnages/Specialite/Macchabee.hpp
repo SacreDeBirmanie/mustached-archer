@@ -13,7 +13,6 @@ class Joueur;
 class Macchabee : public Personnage{
 
 	private :
-		int const ordre = 1;
 		string personnage_;
 		comportementIA comportementMacchabee_ = new comportementMacchabee();
 		

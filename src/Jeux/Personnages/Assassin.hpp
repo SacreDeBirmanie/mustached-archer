@@ -8,16 +8,12 @@
 
 #include <string> // pour le type std::string
 #include "Specialite/Macchabee.hpp"
-
-class Joueur;
-class comportementAssassinIA;
-
 class Assassin : public Personnage{
 
 	private :
 		int const ordre = 1;
-		static ComportementIA comportementAssassin = new ComportementAssassinIA();
-		Personnage * macchabee;
+		ComportementIA comportementAssassin_ = new ComportementAssassinIA();
+		Personnage * macchabee_;
 
 
 	public :

@@ -50,13 +50,13 @@ int main(){
 
 	Partie * partie = new Partie(pioche);
 
-	partie.nouveauJoueur(new IA("A"));
-	partie.nouveaJoueur(new IA("B"));
-	partie.nouveauJoueur(new IA("C"));
-	partie.nouveauJoueur(new IA("D"));
+	partie->nouveauJoueur(new IA("A"));
+	partie->nouveaJoueur(new IA("B"));
+	partie->nouveauJoueur(new IA("C"));
+	partie->nouveauJoueur(new IA("D"));
 
-	partie.nouveauPersonnage(new Assassin());
-	partie.nouveauPersonnage(new Marchand());
+	partie->nouveauPersonnage(new Assassin());
+	partie->nouveauPersonnage(new Marchand());
 	//partie.nouveauPersonnage(new Condottiere());
 	//partie.nouveauPersonnage(new Magicien());
 

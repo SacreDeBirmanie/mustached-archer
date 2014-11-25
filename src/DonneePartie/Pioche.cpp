@@ -1,4 +1,4 @@
-Pioche::Pioche(int limiteOr) : reserveOr(limiteOr){
+Pioche::Pioche(int limiteOr=30) : reserveOr(limiteOr){
 
 }
 

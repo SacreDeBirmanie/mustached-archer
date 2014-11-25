@@ -1,4 +1,4 @@
-Assassin::Assassin(): comportementIA(new comportementAssassinIA()), nom("Assassin"), numero(1), maccahbee(new Macchabee()) {
+Assassin::Assassin(): comportementIA(new comportementAssassinIA()), nom_("Assassin"), numero_(1), maccahbee_(new Macchabee()) {
 
 
 }

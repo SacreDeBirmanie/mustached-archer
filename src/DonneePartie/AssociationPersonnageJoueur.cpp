@@ -1,57 +1,55 @@
 AssociationPersonnageJoueur::AssociationPersonnageJoueur() {
 	Joueur * j = NULL;
 
-	Chaine<string> ordreTour = new Chaine<string>();
+	Chaine<Joueur*> ordreTour = new Chaine<Joueur*>();
 }
 
 bool AssociationPersonnageJoueur::nouveauJoueur(Joueur *joueur){
-		if(this->listeJoueurs.find(joueur->getPseudo())){
-			return true;
-		}
-		else{
-			this->listeJoueurs[joueur->getPseudo()] = joueur;
-			placementJoueur.push_back(joueur->getPseudo());
+		if(listeJoueurs_.find(joueur->getPseudo())==listeJoueurs_.end()){//si le joueur n'est pas dans la map
+			listeJoueurs_[joueur->getPseudo()] = joueur;
+			placementJoueur_.push_back(joueur->getPseudo());
 			return false;
 		}
+		return true;		
 }
 bool AssociationPersonnageJoueur::nouveauPersonnage(Personnage *personnage){
-	if(this->listePersonnages.find(personnage->getOrdre())){
-		return true;
-	}
-	else{
-		this->listePersonnages[personnage->getOrdre()] = personnage;
+	if(listePersonnages_.find(personnage->getOrdre())==listePersonnages_.end()){
+		listePersonnages_[personnage->getOrdre()] = personnage;
 		return false;
 	}
+		return true;
 }
 
 int AssociationPersonnageJoueur::nbJoueurs(){
-	return this->listeJoueurs.size();
+	return listeJoueurs_.size();
 }
 
 int AssociationPersonnageJoueur::nbPersonnages(){
-	return this->listePersonnages.size();
+	return listePersonnages_.size();
 }
 
 void AssociationPersonnageJoueur::associer(Personnage *p, Joueur *j){
-	this->AssocJP[p->getNom()] = j;
-	this->AssocPJ[j->getPseudo()] = p;
-	*j->setComportement(Personnage *p);
+	//TODO ne correspond pas à la déf de AssocJP_ et AssocPJ_
+	AssocJP_[p->getNom()] = j;
+	AssocPJ_[j->getPseudo()] = p;
+	j->setComportement(p);
 
 }
 
 void AssociationPersonnageJoueur::associer(Joueur *j, Personnage *p){
-	this->AssocPJ[p->getOrdre()] =j;
-	this->AssocJP[j->getPseudo()] = p;
-	*j->setComportement(Personnage *p);
+	AssocPJ_[p->getOrdre()] =j;
+	AssocJP_[j->getPseudo()] = p;
+	j->setComportement(p);
 }
 
 void AssociationPersonnageJoueur::reinitialiser(){
-	for (map<String, Joueur> listeJoueurs::iterator iter = listeJoueurs.begin(); iter != listeJoueurs.end(); iter++ ){
-		this->AssocJP[*iter.getNom()] = NULL;
+	//TODO on ne peut pas mettre null
+	for (map<string,Joueur*>::iterator iter = listeJoueurs_.begin(); iter != listeJoueurs_.end(); iter++ ){
+		AssocJP_[iter->first] = -1;
 	}
 
-	for ( map<String,*Joueur>::iterator iter = listePersonnages.begin(); iter != listePersonnages.end(); iter++ ){
-		this->AssocPJ[*iter.getOrdre()] = NULL;
+	for ( map<int, Personnage*>::iterator iter = listePersonnages_.begin(); iter != listePersonnages_.end(); iter++ ){
+		AssocPJ_[iter->first] = "";
 	}
 
 	selection_ = false;
@@ -59,18 +57,18 @@ void AssociationPersonnageJoueur::reinitialiser(){
 }
 
 Joueur* AssociationPersonnageJoueur::retrouverJ(Personnage *p){
-	return *this->AssocPJ[p->getOrdre()];
+	return listeJoueurs_[AssocPJ_[p->getOrdre()]];
 }
 Personnage* AssociationPersonnageJoueur::retrouverP(Joueur *j){
-	return *this->AssocJP[j->getPseudo()];
+	return listePersonnages_[AssocJP_[j->getPseudo()]];
 }
 
 vector<Personnage*> AssociationPersonnageJoueur::persosDisponible(){
 	vector<Personnage*> tmp;
 
-	for ( map<int,*Joueur>::iterator iter = assocPJ.begin(); iter != assocPJ.end(); iter++ ){
-		if(iter->second ==NULL)
-			tmp.push_back(listePersonnages[iter->first]);
+	for ( map<int,string>::iterator iter = AssocPJ_.begin(); iter != AssocPJ_.end(); iter++ ){
+		if(iter->second =="")
+			tmp.push_back(listePersonnages_[iter->first]);
 	}
 	return tmp;
 
@@ -78,19 +76,20 @@ vector<Personnage*> AssociationPersonnageJoueur::persosDisponible(){
 }
 
 Joueur* AssociationPersonnageJoueur::joueurSuivantTour(){
-	if(tourCourant.suivant != NULL){
-		Maillon<Joueur*> * tmp = tourCourant;
-		tourCourant = tourCourant.suivant;
-		return tmp->element;
+	if(tourCourant_.suivant != NULL){
+		Maillon<Joueur*> tmp = tourCourant_;
+		tourCourant_ = *tourCourant_.suivant;
+		return tmp.element;
 	}
 	else
 		return NULL;
 
 }
 
-void AssociationPersonnageJoueur::deplacerCurseurChoixPerso(bool init=false){
-	if(init==false){
-			choixCourant_ = (choixCourant_ +1) % placementJoueur.size();
+void AssociationPersonnageJoueur::deplacerCurseurChoixPerso(bool init){
+	if(!init){
+			choixCourant_ = (choixCourant_ +1) % placementJoueur_.size();
+	}
 	else{
 		selection_ = true;
 		choixCourant_ = couronnement_;
@@ -98,13 +97,13 @@ void AssociationPersonnageJoueur::deplacerCurseurChoixPerso(bool init=false){
 }
 
 Joueur* AssociationPersonnageJoueur::joueurSuivantChoixPersonnages(){
-	if(placementJoueur.at(choixCourant).getPseudo() != couronnement_ && selection_ == true){
+	if((placementJoueur_.at(choixCourant_)).compare(couronnement_)!=0 && selection_ == true){
 		this->deplacerCurseurChoixPerso();
-		return placementJoueur.at(choixCourant);
+		return listeJoueurs_[placementJoueur_.at(choixCourant_)];
 	}
-	else if(placementJoueur.at(choixCourant).getPseudo() == couronnement_ && selection_ == false){
+	else if((placementJoueur_.at(choixCourant_)).compare(couronnement_)==0 && selection_ == false){
 		this->deplacerCurseurChoixPerso(true);
-		return placementJoueur.at(choixCourant);
+		return listeJoueurs_[placementJoueur_.at(choixCourant_)];
 	}
 	else
 		return NULL;
@@ -115,8 +114,8 @@ Joueur* joueurSuivantDecomptePoints(){
 }
 
 void AssociationPersonnageJoueur::couronnement(Joueur* joueur){
-	for(int i=0, i<placementJoueur.size();++i){
-		if((j->getNom()).compare((placementJoueur.at(i))->getNom())){
+	for(int i=0; i<placementJoueur_.size();++i){
+		if((j->getNom()).compare((placementJoueur_.at(i))->getNom())){
 			couronnement_ = i;
 			break;
 		}

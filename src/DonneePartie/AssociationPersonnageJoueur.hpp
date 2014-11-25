@@ -20,7 +20,7 @@ class AssociationPersonnageJoueur{
 		bool selection_;
 		int curseur_, choixCourant_;
 
-		vector<Joueur*> * placementJoueur_;//
+		vector<string> placementJoueur_;//
 
 		map<string, Joueur*> listeJoueurs_;
 		map<int, Personnage*> listePersonnages_;
@@ -28,8 +28,8 @@ class AssociationPersonnageJoueur{
 		map<string,int>  AssocJP_;
 		map<int,string> AssocPJ_;
 
-		Chaine<string> ordreTour_;
-		Maillon<string> tourCourant_;
+		Chaine<Joueur*> ordreTour_;
+		Maillon<Joueur*> tourCourant_;
 
 
 	public :

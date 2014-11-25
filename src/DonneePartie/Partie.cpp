@@ -45,8 +45,8 @@ void Partie::debuterLeJeu(){
 void Partie::lancementDuTour(){
 	Joueur * joueur = roles_->joueurSuivantTour();
 	while(joueur != NULL){
-		joueur->jouer(this);
-		joueur = joueur->joueurSuivantTour();
+		joueur->jouer();
+		joueur = roles_->joueurSuivantTour();
 	}
 
 	cout<<"Le tour est termine"<<endl;
@@ -59,13 +59,13 @@ void Partie::update(int taille){
 }
 
 bool Partie::finDuJeu(){
-	return villeComplete_;
+	return this->villeComplete_;
 }
 
 void Partie::decompteDesPoints(map<string,int> &tmp){//************tableau associatif n'est pas forcément le meilleur choix********
-
-	for ( vector<Joueur*>::iterator iter = joueurs.begin(); iter != joueurs.end(); iter++ ){
-		tmp[(*iter)->getPseudo()]=(*iter)->decompteDesPoints();
+    Joueur *joueur = roles_->joueurSuivant();
+	while(joueur!=NULL){
+		tmp[joueur->getPseudo()]=joueur->decompteDesPoints();
 	}
 
 }
@@ -97,7 +97,7 @@ vector<Quartier*> Partie::piocher(int nombre){
 }
 
 int Partie::prendrePiece(int nombre){
-	return pioche_->prendrePiece(nombre);
+	this->pioche_->prendrePiece(nombre);
 }
 
 void Partie::modifierOrdreJoueur(Joueur *j){

@@ -1,36 +1,36 @@
-Partie::Partie(Pioche * pioche, int tailleVille=8):
-pioche_(pioche), limiteTailleVille_(tailleVille), roles_(new AssociationPersonnageJoueur()) {
+Partie::Partie(Pioche & pioche, int tailleVille=8):
+pioche(pioche), limiteTailleVille(tailleVille){
 
 }
 
 void Partie::nouveauJoueur(Joueur *joueur){
-	if(roles_->nouveauJoueur(joueur))
+	if(roles.nouveauJoueur(joueur))
 		cout<<"Le joueur "<<joueur->getPseudo()<<" a deja ete ajoute dans la partie";
 }
 
 void Partie::nouveauPersonnage(Personnage *personnage){
-	if(roles_->nouveauPersonnage(personnage))
+	if(roles.nouveauPersonnage(*personnage))
 		cout<<"Le personnage "<<personnage->getNom()<<" a deja ete ajoute dans la partie";
 }
 
 void Partie::entreDeuxTours(){
-	roles_->reinitialiser();
+	roles->reinitialiser();
 }
 
 
 
 void Partie::choixDesPersonnages(){
 	cout<<"Les joueurs vont choisir leur personnages"<<endl;
-	Joueur *joueur = roles_->joueurSuivantChoixPersonnages();
+	Joueur *joueur = roles->joueurSuivantChoixPersonnages();
 	while(joueur != NULL){
-		joueur->choisirPersonnage(roles_->persosDisponible());
-		joueur = roles_->joueurSuivantChoixPersonnages();
+		joueur->choisirPersonnages();
+		*joueur = roles->joueurSuivantChoixPersonnages();
 	}
 	cout<<"Tout le monde a choisit son personnage, le tour va pouvoir commencer"<<endl;
 }
 
 void Partie::debuterLeJeu(){
-	if(roles_->nbJoueurs()>=roles_->nbPersonnages())
+	if(roles.nbJoueurs()>=roles.nbPersonnages())
 		cout<<"impossible de demarrer la partie, il manque des personnages"<<endl;
 	else{
 		while(!finDuJeu()){
@@ -43,12 +43,12 @@ void Partie::debuterLeJeu(){
 }
 
 void Partie::lancementDuTour(){
-	Joueur * joueur = roles_->joueurSuivantTour();
+	Joueur * joueur = joueur->joueurSuivantTour();
 	while(joueur != NULL){
 		joueur->jouer(this);
 		joueur = joueur->joueurSuivantTour();
 	}
-
+	
 	cout<<"Le tour est termine"<<endl;
 }
 
@@ -63,15 +63,15 @@ bool Partie::finDuJeu(){
 }
 
 void Partie::decompteDesPoints(map<string,int> &tmp){//************tableau associatif n'est pas forcément le meilleur choix********
-
+	
 	for ( vector<Joueur*>::iterator iter = joueurs.begin(); iter != joueurs.end(); iter++ ){
 		tmp[(*iter)->getPseudo()]=(*iter)->decompteDesPoints();
 	}
-
+	
 }
 
 void Partie::associer(Personnage *p, Joueur *j){
-	roles_->associer(p,j);
+	roles->associer(p,j);
 }
 
 void Partie::associer(Personnage *p, Joueur *j){
@@ -81,18 +81,18 @@ void Partie::associer(Personnage *p, Joueur *j){
 void Partie::proclamerLeVainqueur(){
 	map<string,int> tmp;
 	decompteDesPoints(tmp);
-
+	
 	string vainqueur = NULL;
-
+	
 	cout<<"|| DECOMPTE DES POINTS ||"<<endl;
 	for(map<string,int>::iterator it=tmp.begin() ; it!=tmp.end() ; ++it){
-
+		
 		cout<<it->first<<" : "<<it->second<<endl;
 		if(it->second > tmp[vainqueur]){
 			vainqueur = it->first;
 		}
 	}
-
+	
 	cout<<"+++Et Le vainqueur est ...."<<vainqueur<<endl;
 }
 
@@ -105,8 +105,8 @@ int prendrePiece(int nombre){
 }
 
 void modifierOrdreJoueur(Joueur *j){
-	roles_->modifierOrdreJoueur(j);
+	roles->modifierOrdreJoueur(j);
 }
 void modifierOrdreJoueur(Joueur *j, Joueur *jj){
-	roles_->modifierOrdreJoueur(j,jj);
+	roles->modifierOrdreJoueur(j,jj);
 }

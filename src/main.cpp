@@ -52,10 +52,10 @@ int main(){
 
 
 
-	Partie * partie = new Partie(pioche);
+	Partie * partie = new Partie(const &pioche);
 
 	partie->nouveauJoueur(new IA("A"));
-	partie->nouveaJoueur(new IA("B"));
+	partie->nouveauJoueur(new IA("B"));
 	partie->nouveauJoueur(new IA("C"));
 	partie->nouveauJoueur(new IA("D"));
 

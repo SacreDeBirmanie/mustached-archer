@@ -99,11 +99,11 @@ void AssociationPersonnageJoueur::deplacerCurseurChoixPerso(bool init){
 }
 
 Joueur* AssociationPersonnageJoueur::joueurSuivantChoixPersonnages(){
-	if(placementJoueur_.at(choixCourant_).getPseudo() != couronnement_ && selection_ == true){
+	if(choixCourant_ != couronnement_ && selection_ == true){
 		deplacerCurseurChoixPerso(false);
 		return placementJoueur_.at(choixCourant_);
 	}
-	else if(placementJoueur_.at(choixCourant_).getPseudo() == couronnement_ && selection_ == false){
+	else if(choixCourant_ == couronnement_ && selection_ == false){
 		deplacerCurseurChoixPerso(true);
 		return placementJoueur_.at(choixCourant_);
 	}

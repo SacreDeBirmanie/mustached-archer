@@ -29,15 +29,19 @@ using namespace std;
 #include "Joueurs/Joueur.hpp"
 #include "Jeux/Personnages/Personnage.hpp"
 
-#include "Joueurs/IA/Comportements/ComportementIA.hpp"
-#include "Joueurs/IA/Comportements/ComportementAssassinIA.hpp"
-#include "Joueurs/IA/Comportements/ComportementMarchandIA.hpp"
+//On ne doit inclure que les personnages a fortiori
+//#include "Joueurs/IA/Comportements/ComportementIA.hpp"
+//#include "Joueurs/IA/Comportements/ComportementAssassinIA.hpp"
+//#include "Joueurs/IA/Comportements/ComportementMarchandIA.hpp"
 //Autorise la creation des personnages de la liste
 #include "Jeux/Personnages/Personnage.hpp"
 #include "Jeux/Personnages/Assassin.hpp"
 #include "Jeux/Personnages/Marchand.hpp"
 //#include "Jeux/Personnages/Condottiere.hpp"
 //#include "Jeux/Personnages/Magicien.hpp"
+
+//Pensez à mettre tous les includes dans partie.hpp plutôt que dans le main !!!
+
 #include "DonneePartie/Partie.hpp"
 
 

@@ -1,13 +1,13 @@
 Cite::Cite(){}
 
 int Cite::valeur(){
-	int valeur=0;
+	int val =0;
 	if(!quartiers.empty()){
 		for(vector<Quartier*>::iterator quartier=quartiers.begin();quartier!=quartiers.end();++quartier){
-			valeur+=(*quartier)->getCout();
+			val+=(*quartier)->getCout();
 		}
 	}
-	return valeur;	
+	return val;	
 }
 
 bool Cite::estPresent(Quartier* q){
@@ -24,7 +24,7 @@ bool Cite::estPresent(Quartier* q){
 bool Cite::ajouterQuartier(Quartier* q){
 	if(!estPresent(q)){
 		quartiers.push_back(q);
-		notify(quartiers.size());
+		notify((unsigned int)quartiers.size());
 		return true;
 	}
 	return false;
@@ -41,7 +41,7 @@ bool Cite::supprimerQuartier(Quartier* q){
 }
 
 void Cite::afficher(){
-	int taille = quartiers.size();
+	int taille = (unsigned int)quartiers.size();
 	if(taille <= 0){
 		cout<<"La citadelle est vide"<<endl;
 	}

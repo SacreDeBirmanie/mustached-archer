@@ -4,8 +4,8 @@ template <typename T> class Maillon{
 		Maillon<T> * suivant;
 
 
-		Maillon(T element, Maillon<T> * maillon){
-			this->element=element;
+		Maillon(T elt, Maillon<T> * maillon){
+			this->element=elt;
 			this->suivant=maillon;
 		}
 };

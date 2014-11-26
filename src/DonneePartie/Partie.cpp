@@ -1,5 +1,5 @@
 Partie::Partie(Pioche * pioche, int tailleVille=8):
-pioche_(pioche), limiteTailleVille_(tailleVille), roles_(new AssociationPersonnageJoueur()) {
+pioche_(pioche), limiteTailleVille_(tailleVille), roles_(new AssociationPersonnageJoueur()) , villeComplete_(false) {
 
 }
 

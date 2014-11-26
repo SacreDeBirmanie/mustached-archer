@@ -14,7 +14,7 @@ class Pioche{
 
 
 	private :
-		vector<Quartier*> * cartes = new vector<Quartier*>;
+		vector<Quartier*> cartes;
 		int reserveOr;
 
 

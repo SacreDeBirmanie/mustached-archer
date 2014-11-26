@@ -20,12 +20,12 @@ class Aleatoire{
 		Aleatoire(){}
 
 		static int tirerEntier(int deb = 0, int fin = 32767){
-			srand(time(NULL)); // initialisation de rand
+			srand((unsigned int)time(NULL)); // initialisation de rand
 				return rand()%(fin-deb+1) + deb;
 		}
 
 		static int tirerEntierAvecExclusion(std::vector<int> exclusion,int deb = 0, int fin = 32767){
-				srand(time(NULL)); // initialisation de rand
+				srand((unsigned int)time(NULL)); // initialisation de rand
 				int nombre_aleatoire = rand()%(fin-deb+1) + deb;
 				bool trouve = false;
 

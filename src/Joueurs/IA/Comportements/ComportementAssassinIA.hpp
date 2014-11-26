@@ -7,7 +7,6 @@
 #define ETATASSASSINIA_HPP
 
 #include <string> // pour le type std::string
-#include "../../../Jeux/Personnages/Assassin.hpp"
 
 class ComportementAssassinIA : public ComportementIA{
 

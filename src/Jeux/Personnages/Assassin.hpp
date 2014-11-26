@@ -12,7 +12,7 @@ class Assassin : public Personnage{
 
 	private :
 		int const ordre = 1;
-		ComportementIA comportementAssassin_ = new ComportementAssassinIA();
+		ComportementIA comportementAssassin_;
 		Personnage * macchabee_;
 		string nom_;
 
@@ -25,7 +25,8 @@ class Assassin : public Personnage{
 };
 
 
-
+#include "../../Joueurs/IA/Comportements/ComportementAssassinIA.hpp"
+#include "../../Joueurs/IA/Comportements/Specialite/ComportementMacchabeeIA.hpp"
 /******************************************************************************/
 #include "Assassin.cpp"
 #endif // ASSASSIN_HPP

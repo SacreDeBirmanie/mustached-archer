@@ -6,3 +6,5 @@ class ComportementMacchabeeIA : public ComportementIA{
 		virtual void choisirPersonnage(Partie * partie,vector<Personnage*> persosDispos,Joueur * j);
 		virtual void choisirGainTour(Joueur * j);
 		virtual void choisirConstruction(Joueur * j);
+
+};

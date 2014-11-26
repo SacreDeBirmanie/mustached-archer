@@ -106,3 +106,11 @@ void Partie::modifierOrdreJoueur(Joueur *j){
 void Partie::modifierOrdreJoueur(Joueur *j, Joueur *jj){
 	roles_->modifierOrdreJoueur(j,jj);
 }
+
+Joueur* Partie::retrouverJ(Personnage *p){
+    return roles_->retrouverJ(p);
+}
+
+Personnage* Partie::retrouverP(Joueur *j){
+   return roles_->retrouverP(j);
+}

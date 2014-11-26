@@ -7,8 +7,6 @@
 #ifndef QUARTIER_HPP
 #define QUARTIER_HPP
 
-#include <string> // pour le type std::string
-
 #define MERVEILLE 0
 #define MARCHAND  1
 #define RELIGIEUX  2
@@ -22,9 +20,9 @@ class Quartier{
 		string nom_;
 		int type_;
 		int cout_;
-		
 
-		
+
+
 
 	public :
 		Quartier(string nom,int type,int cout);
@@ -37,7 +35,7 @@ class Quartier{
 		bool estReligieux();
 		bool estNoble();
 		bool estMilitaire();
-		
+
 };
 
 

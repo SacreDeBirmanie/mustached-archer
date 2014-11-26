@@ -12,8 +12,8 @@ class ComportementIA : public Comportement{
 
 
 	private :
-		
-		
+
+
 
 	public :
 		ComportementIA();//constructeur de la classe ComportementIA
@@ -21,11 +21,10 @@ class ComportementIA : public Comportement{
 		void choisirPersonnage(Partie * p, vector<Personnage*> persosDispo,Joueur * j);
 		void choisirGainTour(Joueur *j);
 		void choisirConstruction(Joueur * j);
-		
+
 };
 
 
 
 /******************************************************************************/
-#include "ComportementIA.cpp"
 #endif // COMPORTEMENTIA_HPP

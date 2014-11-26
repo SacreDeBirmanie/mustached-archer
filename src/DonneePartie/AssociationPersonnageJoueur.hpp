@@ -7,11 +7,6 @@
 #ifndef ASSOCIATIONPERSONNAGEJOUEUR_HPP
 #define ASSOCIATIONPERSONNAGEJOUEUR_HPP
 
-#include <string> // pour le type std::string
-#include <vector>  //for std::vector
-class Joueur;
-class Personnage;
-
 class AssociationPersonnageJoueur{
 
 

@@ -7,20 +7,16 @@
 #ifndef JOUEUR_HPP
 #define JOUEUR_HPP
 
-class Partie;
-class Comportement;
-
-
 class Joueur{
 
 
 	protected :
 		string pseudo_;
 		vector<Quartier*> main_;//cartes dans la main du joueur
-	    Cite cite_;//*************a remplacer par une classe cité pour gérer les carte avec les merveilles (retour de méthode pour les pouvoirs )********//
+	    Cite * cite_;//*************a remplacer par une classe cité pour gérer les carte avec les merveilles (retour de méthode pour les pouvoirs )********//
 		int pieceOr_;//nombre de piece d'or du joueur
 		Partie * partie_;
-		Comportement comportement_;
+		Comportement * comportement_;
 
 
 
@@ -54,4 +50,5 @@ class Joueur{
 
 
 /******************************************************************************/
+#include "Joueur.cpp"
 #endif // JOUEUR_HPP

@@ -18,15 +18,18 @@ vector<Quartier*> Joueur::getMain(){
 }
 
 void Joueur::piocher(int nombre){
-	main_ = copy(main_.begin(),main_.end(),back_inserter(this->partie_->piocher(nombre));
+    vector<Quartier*> tmp = this->partie_->piocher(nombre);
+    vector<int>::iterator it = tmp.begin();
+
+	main_.assign(it,tmp.end());
 }
 
 void Joueur::prendrePiece(int nombre){
-	this->pieceOr_+=this->partie_->prendrePiece(nombre);
+	pieceOr_+=this->partie_->prendrePiece(nombre);
 }
 
 void Joueur::choisirPersonnage(vector<Personnage*> persosDispo){
-	this->comportement->choisirPersonnage(partie_,persosDispo,this);
+	comportement_->choisirPersonnage(partie_,persosDispo,this);
 }
 
 bool Joueur::construire(Quartier *quartier){
@@ -34,9 +37,9 @@ bool Joueur::construire(Quartier *quartier){
 	for(vector<Quartier*>::iterator it = main_.begin();it!=main_.end();++it){
 		//TODO vérifier le test d'égalité
 		if(((*it)->getNom()).compare(quartier->getNom())==0){//le quartier est dans notre main
-			if(!cite_.estPresent(quartier)){
+			if(!cite_->estPresent(quartier)){
 				if(quartier->getCout()<=pieceOr_){//on peut acheter le quartier
-					cite_.ajouterQuartier(quartier);//on ajoute le quartier dans notre cité
+					cite_->ajouterQuartier(quartier);//on ajoute le quartier dans notre cité
 					main_.erase(main_.begin()+i);//on enlève le quartier de notre main
 					return true;
 				}
@@ -52,7 +55,7 @@ bool Joueur::construire(Quartier *quartier){
 }
 
 void Joueur::choisirGainTour(){
-    comportement->choisirGainTour(this);
+    comportement_->choisirGainTour(this);
 }
 
 int Joueur::decompteDesPoints(){
@@ -63,12 +66,7 @@ int Joueur::decompteDesPoints(){
 	return total;
 }
 
-vector<Quartier*> Joueur::getMain(){
-	return this->main_;
-
-}
-
 bool operator==(Joueur const& b){
     //Teste si a.pseudo == b.pseudo
-    return this->pseudo==b.pseudo;
+    return this->pseudo_==b.pseudo_;
 }

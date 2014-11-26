@@ -4,10 +4,10 @@
 * Classe abstraite qui définit la classe Personnage
 */
 
-Personnage::Personnage(string nom, int numero, ComportementIA comp) :
+Personnage::Personnage(string nom, int numero, ComportementIA * comp) :
 	nom_(nom), numero_(numero), comportementIA_(comp)
 {
-	
+
 }
 
 int Personnage::getOrdre(){
@@ -18,6 +18,6 @@ string Personnage::getNom(){
 	return nom_;
 }
 
-ComportementIA Personnage::getComportementIA(){
+ComportementIA* Personnage::getComportementIA(){
 	return comportementIA_;
 }

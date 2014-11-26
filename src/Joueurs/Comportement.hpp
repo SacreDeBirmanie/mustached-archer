@@ -1,6 +1,5 @@
-class Joueur;
-class Personnage;
-class Partie;
+#ifndef COMPORTEMENT_HPP
+#define COMPORTEMENT_HPP
 
 class Comportement{
 
@@ -12,3 +11,5 @@ class Comportement{
 		virtual void choisirConstruction(Joueur * j);
 
 };
+
+#endif // COMPORTEMENT_HPP

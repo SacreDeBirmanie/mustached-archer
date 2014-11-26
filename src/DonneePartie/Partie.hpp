@@ -10,6 +10,27 @@
 
 #include <string> // pour le type std::string
 #include <vector>  //for std::vector
+#include <map>
+
+//inclusion des classes independantes necessaires
+#include "Observer.hpp"
+#include "../Jeux/Cite/Observable.hpp"
+
+#include "../ClassesUtiles/Aleatoire.cpp"
+#include "../ClassesUtiles/listeChainee.cpp"
+#include "../Jeux/Quartiers/Quartier.hpp"
+
+//inclusion des classes dependantes
+#include "../Jeux/Cite/Cite.hpp"
+#include "Pioche.hpp"
+
+//inclusion des classes interdependantes
+class Joueur;
+class Personnage;
+#include "AssociationPersonnageJoueur.hpp"
+
+
+
 class Partie : public Observer{
 
 
@@ -39,10 +60,20 @@ class Partie : public Observer{
 		int prendrePiece(int nombre);
 		void modifierOrdreJoueur(Joueur *j);
 		void modifierOrdreJoueur(Joueur *j, Joueur *jj);
+		Joueur* retrouverJ(Personnage *p);
+		Personnage* retrouverP(Joueur *j);
 
 };
 
+//inclusion des classes dépendants de partie
+#include "../Joueurs/Comportement.hpp"
+#include "../Joueurs/IA/Comportements/ComportementIA.hpp"
+#include "../Jeux/Personnages/Personnage.hpp"
+#include "../Joueurs/Joueur.hpp"
+#include "../Joueurs/IA/IA.hpp"
 
+#include "../Joueurs/IA/Comportements/ComportementIA.cpp"
+#include "AssociationPersonnageJoueur.cpp"
 
 /******************************************************************************/
 #include "Partie.cpp"

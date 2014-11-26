@@ -6,8 +6,6 @@
 
 #ifndef IA_HPP
 #define IA_HPP
-
-#include <string> // pour le type std::string
 class IA : public Joueur{
 
 

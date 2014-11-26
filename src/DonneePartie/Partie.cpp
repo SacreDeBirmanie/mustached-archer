@@ -3,16 +3,6 @@ pioche_(pioche), limiteTailleVille_(tailleVille), roles_(new AssociationPersonna
 
 }
 
-void Partie::nouveauJoueur(Joueur *joueur){
-	if(roles_->nouveauJoueur(joueur))
-		cout<<"Le joueur "<<joueur->getPseudo()<<" a deja ete ajoute dans la partie";
-}
-
-void Partie::nouveauPersonnage(Personnage *personnage){
-	if(roles_->nouveauPersonnage(personnage))
-		cout<<"Le personnage "<<personnage->getNom()<<" a deja ete ajoute dans la partie";
-}
-
 void Partie::entreDeuxTours(){
 	roles_->reinitialiser();
 }
@@ -60,6 +50,16 @@ void Partie::update(int taille){
 
 bool Partie::finDuJeu(){
 	return this->villeComplete_;
+}
+
+void Partie::nouveauJoueur(Joueur *joueur){
+	if(roles_->nouveauJoueur(joueur))
+		cout<<"Le joueur "<<joueur->getPseudo()<<" a deja ete ajoute dans la partie";
+}
+
+void Partie::nouveauPersonnage(Personnage *personnage){
+	if(roles_->nouveauPersonnage(personnage))
+		cout<<"Le personnage "<<personnage->getNom()<<" a deja ete ajoute dans la partie";
 }
 
 void Partie::decompteDesPoints(map<string,int> &tmp){//************tableau associatif n'est pas forcément le meilleur choix********

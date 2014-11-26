@@ -1,6 +1,5 @@
-Macchabee::Macchabee(string personnage):personnage_(personnage), comportementMacchabeeIA_(new ComportementMacchabeeIA()){}
+Macchabee::Macchabee():nom_("Macchabee"),int numero_(-1), comportementIA_(new ComportementMacchabeeIA()){}
 
-void Macchabee::jouer(Joueur * j){
-	cout<<j->getPseudo()<<" etait le personnage "<< personnage_ << " assassine !"<<endl;
-
-}
+/*void etreAssassine(Partie * p,Joueur *j){
+	j->setComportement(this);
+}*/

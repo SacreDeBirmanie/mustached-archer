@@ -15,7 +15,7 @@ class IA : public Comportement{
 		ComportementIA comportement_;
 
 	public :
-		void setComportement(Personnage p);
+		void setComportement(Personnage *p);
 };
 
 

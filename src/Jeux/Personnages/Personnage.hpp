@@ -15,7 +15,7 @@ class Personnage{
 	protected :	
 		string nom_;
 		int numero_;
-		//ComportementIA comportementIA;
+		ComportementIA comportementIA_;
 		
 
 	public :
@@ -23,8 +23,7 @@ class Personnage{
 		Personnage();
 		int getOrdre();
 		string getNom();
-		virtual void jouer() = 0;
-		virtual void capacite() = 0;
+		ComportementIA getComportementIA();
 		
 };
 

@@ -13,3 +13,7 @@ int Personnage::getOrdre(){
 string Personnage::getNom(){
 	return nom_;
 }
+
+ComportementIA Personnage::getComportementIA(){
+	return comportementIA_;
+}

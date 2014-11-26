@@ -11,17 +11,11 @@
 class Assassin : public Personnage{
 
 	private :
-		int const ordre = 1;
-		ComportementIA comportementAssassin_;
 		Personnage * macchabee_;
-		string nom_;
-
 
 	public :
 		Assassin();//constructeur de la classe Assassin
 		static void assassiner(Partie * partie,Joueur *j);
-		void capacite();
-		void jouer();
 
 
 };

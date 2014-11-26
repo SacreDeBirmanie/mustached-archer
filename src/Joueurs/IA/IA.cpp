@@ -2,6 +2,6 @@ IA::IA(){
 
 }
 
-void IA::setComportement(Personnage p){
-	this->comportement = p.getComportementIA();
+void IA::setComportement(Personnage *p){
+	comportement_ = p->getComportementIA();
 }

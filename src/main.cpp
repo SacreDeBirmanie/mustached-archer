@@ -28,6 +28,8 @@ using namespace std;
 #include "DonneePartie/AssociationPersonnageJoueur.cpp"
 #include "Joueurs/Joueur.hpp"
 #include "Jeux/Personnages/Personnage.hpp"
+#include "Joueurs/IA/Comportements/ComportementIA.hpp"
+#include "Joueurs/IA/IA.hpp"
 
 //On ne doit inclure que les personnages a fortiori
 //#include "Joueurs/IA/Comportements/ComportementIA.hpp"
@@ -43,7 +45,6 @@ using namespace std;
 //Pensez à mettre tous les includes dans partie.hpp plutôt que dans le main !!!
 
 #include "DonneePartie/Partie.hpp"
-
 
 
 int main(){

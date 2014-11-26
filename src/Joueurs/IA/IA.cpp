@@ -1,4 +1,4 @@
-IA::IA(){
+IA::IA(string pseudo,Partie * partie) : Joueur(pseudo,partie){
 
 }
 

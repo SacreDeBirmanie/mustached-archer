@@ -13,5 +13,5 @@ void ComportementAssassinIA::jouer(Partie *p, Joueur *j){
 }
 
 Personnage* ComportementAssassinIA::choixAssassinat(Partie * p, Joueur * j){
-
+	
 }

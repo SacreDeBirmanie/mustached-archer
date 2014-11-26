@@ -1,0 +1,11 @@
+<NotepadPlus>
+    <Session activeView="0">
+        <mainView activeIndex="3">
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="800" startPos="0" endPos="337" selMode="0" lang="C++" encoding="-1" filename="D:\sebastienvallee\Documents\Universite\License3\POO\mustached-archer\src\Joueurs\Comportement.hpp" backupFilePath="" originalFileLastModifTimestamp="1417006094" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="696" startPos="239" endPos="239" selMode="0" lang="C++" encoding="-1" filename="D:\sebastienvallee\Documents\Universite\License3\POO\mustached-archer\src\Joueurs\IA\Comportements\ComportementIA.hpp" backupFilePath="" originalFileLastModifTimestamp="1417007773" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="640" startPos="470" endPos="470" selMode="0" lang="C++" encoding="-1" filename="D:\sebastienvallee\Documents\Universite\License3\POO\mustached-archer\src\Joueurs\IA\Comportements\ComportementAssassinIA.hpp" backupFilePath="" originalFileLastModifTimestamp="1417004141" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="847" startPos="332" endPos="332" selMode="0" lang="C++" encoding="-1" filename="D:\sebastienvallee\Documents\Universite\License3\POO\mustached-archer\src\Joueurs\IA\Comportements\Specialite\ComportementMacchabeeIA.hpp" backupFilePath="" originalFileLastModifTimestamp="1417009642" />
+        </mainView>
+        <subView activeIndex="0" />
+    </Session>
+</NotepadPlus>

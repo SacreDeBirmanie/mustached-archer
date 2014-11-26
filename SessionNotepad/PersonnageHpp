@@ -1,0 +1,10 @@
+<NotepadPlus>
+    <Session activeView="0">
+        <mainView activeIndex="2">
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="640" startPos="387" endPos="430" selMode="0" lang="C++" encoding="-1" filename="D:\sebastienvallee\Documents\Universite\License3\POO\mustached-archer\src\Jeux\Personnages\Personnage.hpp" backupFilePath="" originalFileLastModifTimestamp="1417008831" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="656" startPos="0" endPos="0" selMode="0" lang="C++" encoding="-1" filename="D:\sebastienvallee\Documents\Universite\License3\POO\mustached-archer\src\Jeux\Personnages\Assassin.hpp" backupFilePath="" originalFileLastModifTimestamp="1417004355" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="664" startPos="0" endPos="0" selMode="0" lang="C++" encoding="-1" filename="D:\sebastienvallee\Documents\Universite\License3\POO\mustached-archer\src\Jeux\Personnages\Specialite\Macchabee.hpp" backupFilePath="" originalFileLastModifTimestamp="1417004355" />
+        </mainView>
+        <subView activeIndex="0" />
+    </Session>
+</NotepadPlus>

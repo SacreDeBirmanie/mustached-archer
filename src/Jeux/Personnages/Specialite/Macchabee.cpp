@@ -1,4 +1,4 @@
-Macchabee::Macchabee():nom_("Macchabee"),int numero_(-1), comportementIA_(new ComportementMacchabeeIA()){}
+Macchabee::Macchabee():Personnage("Macchabee",-1,new ComportementMacchabeeIA()){}
 
 /*void etreAssassine(Partie * p,Joueur *j){
 	j->setComportement(this);

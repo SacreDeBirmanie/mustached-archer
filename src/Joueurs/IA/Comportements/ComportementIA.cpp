@@ -10,7 +10,7 @@ void jouer(Partie * p, Joueur * j){
 
 }
 
-void choisirPersonnage(Partie *p, Joueur *j, vector<Personnage*> persosDispo){
+void choisirPersonnage(Partie *p, vector<Personnage*> persosDispo,Joueur *j){
 	int nb = Aleatoire::tirerEntier(0,persosDispo.size());
 	p->associer(persosDispo.at(nb),j);
 }

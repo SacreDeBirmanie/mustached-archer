@@ -5,7 +5,7 @@
  */
 
 
-Joueur::Joueur(string pseudo,Partie* partie): pseudo_(pseudo),partie_(partie){}
+Joueur::Joueur(string pseudo,Partie* partie): pseudo_(pseudo),partie_(partie), cite_(new Cite()),pieceOr_(0){}
 
 Joueur::~Joueur(){}
 
@@ -17,22 +17,16 @@ vector<Quartier*> Joueur::getMain(){
 	return main_;
 }
 
-void setComportement(){
-}
-
-void Joueur::choisirPersonnage(vector<Personnage*> persosDispo){
-	this->comportement->choisirPersonnage(partie_,persosDispo,this);
-}
-void Joueur::jouer(){
-	this->comportement->jouer(partie_,this);
-}
-
 void Joueur::piocher(int nombre){
 	main_ = copy(main_.begin(),main_.end(),back_inserter(this->partie_->piocher(nombre));
 }
 
 void Joueur::prendrePiece(int nombre){
 	this->pieceOr_+=this->partie_->prendrePiece(nombre);
+}
+
+void Joueur::choisirPersonnage(vector<Personnage*> persosDispo){
+	this->comportement->choisirPersonnage(partie_,persosDispo,this);
 }
 
 bool Joueur::construire(Quartier *quartier){

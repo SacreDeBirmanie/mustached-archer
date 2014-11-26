@@ -8,13 +8,13 @@
 #define IA_HPP
 
 #include <string> // pour le type std::string
-class IA : public Comportement{
+class IA : public Joueur{
 
 
 	private :
-		ComportementIA comportement_;
 
 	public :
+		IA(string pseudo,Partie * partie);
 		void setComportement(Personnage *p);
 };
 

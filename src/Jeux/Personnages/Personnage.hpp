@@ -20,7 +20,7 @@ class Personnage{
 
 	public :
 		//! Le constructeur
-		Personnage();
+		Personnage(string nom, int numero, ComportementIA comp);
 		int getOrdre();
 		string getNom();
 		ComportementIA getComportementIA();

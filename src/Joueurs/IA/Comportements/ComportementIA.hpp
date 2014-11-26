@@ -8,7 +8,7 @@
 
 #include <string> // pour le type std::string
 
-class ComportementIA{
+class ComportementIA : public Comportement{
 
 
 	private :
@@ -18,8 +18,9 @@ class ComportementIA{
 	public :
 		ComportementIA();//constructeur de la classe ComportementIA
 		void jouer(Partie * p, Joueur * j);
-		void choisirPersonnage(Partie * p, vector<Personnage*> persosDispo);
+		void choisirPersonnage(Partie * p, vector<Personnage*> persosDispo,Joueur * j);
 		void choisirGainTour(Joueur *j);
+		void choisirConstruction(Joueur * j);
 		
 };
 

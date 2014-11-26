@@ -20,21 +20,21 @@ class Joueur{
 	    Cite cite_;//*************a remplacer par une classe cité pour gérer les carte avec les merveilles (retour de méthode pour les pouvoirs )********//
 		int pieceOr_;//nombre de piece d'or du joueur
 		Partie * partie_;
-		Comportement * comportement;
+		Comportement comportement_;
 
 
 
 	public :
 		Joueur(string pseudo,Partie *partie);//constructeur de la classe Joueur
-		~Joueur();
+		~Joueur();//lol zzzfzfzf
 		string getPseudo();
 		vector<Quartier*> getMain();
 
 
-		virtual void setComportement(Personnage * p)=0;
+		virtual void setComportement(Personnage * p);
 
 
-		void jouer();//effectue un tour de jeu
+		virtual void jouer();//effectue un tour de jeu
 
 
 		//void choisirPersonnage();//permet au joueur de choisir un personnage

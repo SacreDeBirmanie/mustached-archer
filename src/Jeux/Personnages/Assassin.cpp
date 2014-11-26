@@ -1,4 +1,4 @@
-Assassin::Assassin(): comportementIA_(new comportementAssassinIA()), nom_("Assassin"), numero_(1), macchabee_(new Macchabee()) {}
+Assassin::Assassin(): Personnage("Assassin",1,new ComportementAssassinIA()), macchabee_(new Macchabee()) {}
 
 void Assassin::assassiner(Partie * partie, Joueur * j){
 	partie->modifierOrdreJoueur(j);

@@ -55,10 +55,10 @@ int main(){
 
 	Partie * partie = new Partie(const &pioche);
 
-	partie->nouveauJoueur(new IA("A"));
-	partie->nouveauJoueur(new IA("B"));
-	partie->nouveauJoueur(new IA("C"));
-	partie->nouveauJoueur(new IA("D"));
+	partie->nouveauJoueur(new IA("A",partie));
+	partie->nouveauJoueur(new IA("B",partie));
+	partie->nouveauJoueur(new IA("C",partie));
+	partie->nouveauJoueur(new IA("D",partie));
 
 	partie->nouveauPersonnage(new Assassin());
 	partie->nouveauPersonnage(new Marchand());

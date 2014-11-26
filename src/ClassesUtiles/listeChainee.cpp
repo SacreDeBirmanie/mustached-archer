@@ -45,10 +45,10 @@ template <typename T> class Chaine {
 
 		Maillon<T> * recuperer(T element){
 			Maillon<T> *p = this->tete;
-			while(!(p==NULL) && *p.element != element){
+			while(!(p==NULL) && p->element != element){
 				p=p->suivant;
 			}
-			return *p;
+			return p;
 
 		}
 

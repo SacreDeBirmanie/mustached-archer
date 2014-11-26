@@ -19,8 +19,7 @@ class Partie : public Observer{
 		Pioche * pioche_;//pioche de la partie
 		AssociationPersonnageJoueur * roles_;//role de chaque joueur
 
-		void nouveauJoueur(Joueur *joueur);
-		void nouveauPersonnage(Personnage *personnage);
+
 		void entreDeuxTours();// remet les joueurs dans l'etatNeutre
 		void choixDesPersonnages(); //permet à chaque joueur de choisir son personnage
 		void debuterLeJeu();//debute la partie
@@ -32,6 +31,8 @@ class Partie : public Observer{
 	public :
 		Partie(Pioche  *pioche, int tailleVille);//constructeur de la classe Partie
 		Partie(Pioche* pioche);//constructeur de la classe Partie
+		void nouveauJoueur(Joueur *joueur);
+		void nouveauPersonnage(Personnage *personnage);
 		void decompteDesPoints(map<string,int> &tmp);//methode permettant de décompter les points cite de chaque joueurs enregistre dans un tableau
 		void associer(Personnage *p, Joueur *j);
 		void proclamerLeVainqueur();

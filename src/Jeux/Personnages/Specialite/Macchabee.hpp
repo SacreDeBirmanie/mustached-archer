@@ -8,7 +8,7 @@
 #define MACCHABEE_HPP
 
 #include <string> // pour le type std::string
-#include "../../../Joueurs/IA/Comportements/Specialite/ComportementMacchabeeIA.hpp"
+//#include "../../../Joueurs/IA/Comportements/Specialite/ComportementMacchabeeIA.hpp"
 
 
 class Macchabee : public Personnage{

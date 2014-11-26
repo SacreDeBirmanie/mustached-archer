@@ -20,13 +20,15 @@ class Assassin : public Personnage{
 	public :
 		Assassin();//constructeur de la classe Assassin
 		static void assassiner(Partie * partie,Joueur *j);
+		void capacite();
+		void jouer();
 
 
 };
 
 
 #include "../../Joueurs/IA/Comportements/ComportementAssassinIA.hpp"
-#include "../../Joueurs/IA/Comportements/Specialite/ComportementMacchabeeIA.hpp"
+//#include "../../Joueurs/IA/Comportements/Specialite/ComportementMacchabeeIA.hpp"
 /******************************************************************************/
 #include "Assassin.cpp"
 #endif // ASSASSIN_HPP

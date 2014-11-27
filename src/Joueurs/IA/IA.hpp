@@ -14,6 +14,7 @@ class IA : public Joueur{
 	public :
 		IA(string pseudo,Partie * partie);
 		void setComportement(Personnage *p);
+		void jouer();
 };
 
 

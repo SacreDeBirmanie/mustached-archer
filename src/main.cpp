@@ -32,7 +32,7 @@ int main(){
 	//partie.nouveauPersonnage(new Condottiere());
 	//partie.nouveauPersonnage(new Magicien());
 
-	//partie.debuterLeJeu();
+	partie->debuterLeJeu();
 
 	return EXIT_SUCCESS;
 }

@@ -15,11 +15,6 @@ vector<Quartier*> Joueur::getMain(){
 	return main_;
 }
 
-void setComportement(Personnage * p){}
-
-
-void jouer(){}
-
 void Joueur::piocher(int nombre){
     vector<Quartier*> tmp = this->partie_->piocher(nombre);
     vector<Quartier*>::iterator it = tmp.begin();
@@ -57,7 +52,9 @@ void Joueur::choisirPersonnage(vector<Personnage*> persosDispo){
 	comportement_->choisirPersonnage(partie_,persosDispo,this);
 }
 
-void choisirGainTour(){}
+void Joueur::choisirGainTour(){
+    comportement_->choisirGainTour(this);
+}
 
 int Joueur::decompteDesPoints(){
 	int total = 0;

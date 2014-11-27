@@ -1,4 +1,4 @@
-ComportementMacchabeeIA::ComportementMacchabeeIA(){
+ComportementMacchabeeIA::ComportementMacchabeeIA():ComportementIA(){
 
 }
 

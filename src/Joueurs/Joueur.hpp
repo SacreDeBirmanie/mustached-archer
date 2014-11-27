@@ -24,12 +24,8 @@ class Joueur{
 		Joueur(string pseudo,Partie *partie);//constructeur de la classe Joueur
 		string getPseudo();
 		vector<Quartier*> getMain();
-
-
-		void setComportement(Personnage * p);
-
-
-		void jouer();//effectue un tour de jeu
+        virtual void setComportement(Personnage * p)= 0;
+        virtual void jouer()=0;//effectue un tour de jeu
 
 
 		//void choisirPersonnage();//permet au joueur de choisir un personnage

@@ -46,7 +46,6 @@ class AssociationPersonnageJoueur{
 		void deplacerCurseurChoixPerso(bool init);
 		Joueur* joueurSuivantChoixPersonnages();
 		Joueur* joueurSuivantDecomptePoints();
-		Joueur* joueurSuivant();
 		void couronnement(Joueur *joueur);
 		void modifierOrdreJoueur(Joueur *j);
 		void modifierOrdreJoueur(Joueur *j,Joueur *jj);

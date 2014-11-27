@@ -43,19 +43,19 @@ class Partie : public Observer{
 
 		void entreDeuxTours();// remet les joueurs dans l'etatNeutre
 		void choixDesPersonnages(); //permet à chaque joueur de choisir son personnage
-		void debuterLeJeu();//debute la partie
 		void lancementDuTour();//lance le tour une fois le choix des personnages effectué
 		void update(int taille);//Appelé si la taille d'une citadelle augmente
 		bool finDuJeu();//Vérifie si la partie peut être terminé
+		void proclamerLeVainqueur();
 
 
 	public :
 		Partie(Pioche  *pioche, int tailleVille);//constructeur de la classe Partie
 		void nouveauJoueur(Joueur *joueur);
 		void nouveauPersonnage(Personnage *personnage);
+		void debuterLeJeu();//debute la partie
 		void decompteDesPoints(map<string,int> *tmp);//methode permettant de décompter les points cite de chaque joueurs enregistre dans un tableau
 		void associer(Personnage *p, Joueur *j);
-		void proclamerLeVainqueur();
 		vector<Quartier*> piocher(int nombre);
 		int prendrePiece(int nombre);
 		void modifierOrdreJoueur(Joueur *j);

@@ -2,11 +2,11 @@
 #define COMPORTEMENT_HPP
 
 class Comportement{
-
-	public :
+    public :
 		Comportement();
-		virtual void jouer(Partie * p,Joueur *j);
-	
+
+		virtual void jouer(Partie * p,Joueur *j) = 0;
+
 		void choisirPersonnage(Partie * p, vector<Personnage*> persosDispo,Joueur * j);
 		void choisirGainTour(Joueur * j);
 		void choisirConstruction(Joueur * j);

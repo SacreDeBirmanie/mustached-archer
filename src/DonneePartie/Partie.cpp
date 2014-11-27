@@ -54,16 +54,16 @@ bool Partie::finDuJeu(){
 
 void Partie::nouveauJoueur(Joueur *joueur){
 	if(roles_->nouveauJoueur(joueur))
-		cout<<"Le joueur "<<joueur->getPseudo()<<" a deja ete ajoute dans la partie";
+		cout<<"Le joueur "<<joueur->getPseudo()<<" a deja ete ajoute dans la partie"<<endl;
 }
 
 void Partie::nouveauPersonnage(Personnage *personnage){
 	if(roles_->nouveauPersonnage(personnage))
-		cout<<"Le personnage "<<personnage->getNom()<<" a deja ete ajoute dans la partie";
+		cout<<"Le personnage "<<personnage->getNom()<<" a deja ete ajoute dans la partie"<<endl;
 }
 
 void Partie::decompteDesPoints(map<string,int> *tmp){//************tableau associatif n'est pas forcément le meilleur choix********
-    Joueur *joueur = roles_->joueurSuivant();
+    Joueur *joueur = roles_->joueurSuivantDecomptePoints();
 	while(joueur!=NULL){
 		(*tmp)[joueur->getPseudo()]=joueur->decompteDesPoints();
 	}

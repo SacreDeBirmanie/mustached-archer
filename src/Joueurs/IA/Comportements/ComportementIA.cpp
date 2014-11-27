@@ -2,20 +2,20 @@
 *   Fichier ComportementIA.cpp
 */
 
-ComportementIA::ComportementIA(){
+ComportementIA::ComportementIA():Comportement(){
 
 }
 
-void jouer(Partie * p, Joueur * j){
+void ComportementIA::jouer(Partie * p, Joueur * j){
 
 }
 
-void choisirPersonnage(Partie *p, vector<Personnage*> persosDispo,Joueur *j){
+void ComportementIA::choisirPersonnage(Partie *p, vector<Personnage*> persosDispo,Joueur *j){
 	int nb = Aleatoire::tirerEntier(0,persosDispo.size());
 	p->associer(persosDispo.at(nb),j);
 }
 
-void choisirGainTour(Joueur *j){
+void ComportementIA::choisirGainTour(Joueur *j){
 	int nb = Aleatoire::tirerEntier(0,1);
 
 	if(nb == 0)
@@ -26,7 +26,7 @@ void choisirGainTour(Joueur *j){
 
 }
 
-void choisirConstruction(Joueur * j){
+void ComportementIA::choisirConstruction(Joueur * j){
 	vector<int> exclus;
 	int nb = Aleatoire::tirerEntierAvecExclusion(exclus,0,(unsigned int)j->getMain().size());
 

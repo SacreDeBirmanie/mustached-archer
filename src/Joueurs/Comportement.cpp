@@ -1,13 +1,5 @@
-class Joueur;
-class Personnage;
-class Partie;
+Comportement::Comportement(){}
 
-class Comportement{
-
-	public :
-		Comportement();
-		virtual void jouer(Partie * p,Joueur *j);
-		virtual void choisirPersonnage(Partie * partie,vector<Personnage*> persosDispos,Joueur * j);
-		virtual void choisirGainTour(Joueur * j);
-
-};
+void Comportement::choisirPersonnage(Partie * p, vector<Personnage*> persosDispo,Joueur * j){}
+void Comportement::choisirGainTour(Joueur * j){}
+void Comportement::choisirConstruction(Joueur * j){}

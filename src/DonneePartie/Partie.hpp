@@ -53,7 +53,7 @@ class Partie : public Observer{
 		Partie(Pioche  *pioche, int tailleVille);//constructeur de la classe Partie
 		void nouveauJoueur(Joueur *joueur);
 		void nouveauPersonnage(Personnage *personnage);
-		void decompteDesPoints(map<string,int> &tmp);//methode permettant de décompter les points cite de chaque joueurs enregistre dans un tableau
+		void decompteDesPoints(map<string,int> *tmp);//methode permettant de décompter les points cite de chaque joueurs enregistre dans un tableau
 		void associer(Personnage *p, Joueur *j);
 		void proclamerLeVainqueur();
 		vector<Quartier*> piocher(int nombre);

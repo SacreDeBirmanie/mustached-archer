@@ -62,10 +62,10 @@ void Partie::nouveauPersonnage(Personnage *personnage){
 		cout<<"Le personnage "<<personnage->getNom()<<" a deja ete ajoute dans la partie";
 }
 
-void Partie::decompteDesPoints(map<string,int> &tmp){//************tableau associatif n'est pas forcément le meilleur choix********
+void Partie::decompteDesPoints(map<string,int> *tmp){//************tableau associatif n'est pas forcément le meilleur choix********
     Joueur *joueur = roles_->joueurSuivant();
 	while(joueur!=NULL){
-		tmp[joueur->getPseudo()]=joueur->decompteDesPoints();
+		(*tmp)[joueur->getPseudo()]=joueur->decompteDesPoints();
 	}
 
 }
@@ -75,16 +75,16 @@ void Partie::associer(Personnage *p, Joueur *j){
 }
 
 void Partie::proclamerLeVainqueur(){
-	map<string,int> tmp;
+	map<string,int> *tmp;
 	decompteDesPoints(tmp);
 
 	string vainqueur = NULL;
 
 	cout<<"|| DECOMPTE DES POINTS ||"<<endl;
-	for(map<string,int>::iterator it=tmp.begin() ; it!=tmp.end() ; ++it){
+	for(map<string,int>::iterator it=tmp->begin() ; it!=tmp->end() ; ++it){
 
 		cout<<it->first<<" : "<<it->second<<endl;
-		if(it->second > tmp[vainqueur]){
+		if(it->second > (*tmp)[vainqueur]){
 			vainqueur = it->first;
 		}
 	}

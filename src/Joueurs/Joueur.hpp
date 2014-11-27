@@ -22,15 +22,14 @@ class Joueur{
 
 	public :
 		Joueur(string pseudo,Partie *partie);//constructeur de la classe Joueur
-		~Joueur();//lol zzzfzfzf
 		string getPseudo();
 		vector<Quartier*> getMain();
 
 
-		virtual void setComportement(Personnage * p);
+		void setComportement(Personnage * p);
 
 
-		virtual void jouer();//effectue un tour de jeu
+		void jouer();//effectue un tour de jeu
 
 
 		//void choisirPersonnage();//permet au joueur de choisir un personnage

@@ -10,7 +10,7 @@
 class Assassin : public Personnage{
 
 	private :
-		static Personnage * macchabee_ = new Macchabee();
+		static Macchabee * macchabee_;
 
 	public :
 		Assassin();//constructeur de la classe Assassin

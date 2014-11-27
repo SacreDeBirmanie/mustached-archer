@@ -7,8 +7,6 @@
 
 Joueur::Joueur(string pseudo,Partie* partie): pseudo_(pseudo),partie_(partie), cite_(new Cite()),pieceOr_(0){}
 
-Joueur::~Joueur(){}
-
 string Joueur::getPseudo(){
 	return pseudo_;
 }
@@ -17,19 +15,20 @@ vector<Quartier*> Joueur::getMain(){
 	return main_;
 }
 
+void setComportement(Personnage * p){}
+
+
+void jouer(){}
+
 void Joueur::piocher(int nombre){
     vector<Quartier*> tmp = this->partie_->piocher(nombre);
-    vector<int>::iterator it = tmp.begin();
+    vector<Quartier*>::iterator it = tmp.begin();
 
 	main_.assign(it,tmp.end());
 }
 
 void Joueur::prendrePiece(int nombre){
 	pieceOr_+=this->partie_->prendrePiece(nombre);
-}
-
-void Joueur::choisirPersonnage(vector<Personnage*> persosDispo){
-	comportement_->choisirPersonnage(partie_,persosDispo,this);
 }
 
 bool Joueur::construire(Quartier *quartier){
@@ -54,9 +53,11 @@ bool Joueur::construire(Quartier *quartier){
 	return false;
 }
 
-void Joueur::choisirGainTour(){
-    comportement_->choisirGainTour(this);
+void Joueur::choisirPersonnage(vector<Personnage*> persosDispo){
+	comportement_->choisirPersonnage(partie_,persosDispo,this);
 }
+
+void choisirGainTour(){}
 
 int Joueur::decompteDesPoints(){
 	int total = 0;
@@ -66,7 +67,7 @@ int Joueur::decompteDesPoints(){
 	return total;
 }
 
-bool operator==(Joueur const& b){
+bool Joueur::operator==(Joueur const& b){
     //Teste si a.pseudo == b.pseudo
     return this->pseudo_==b.pseudo_;
 }

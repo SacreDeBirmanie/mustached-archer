@@ -24,6 +24,9 @@ class Joueur{
 		Joueur(string pseudo,Partie *partie);//constructeur de la classe Joueur
 		string getPseudo();
 		vector<Quartier*> getMain();
+		Comportement* getComportement();
+		int getPieceOr();
+		void setPieceOr(int piece);
         virtual void setComportement(Personnage * p)= 0;
         virtual void jouer()=0;//effectue un tour de jeu
 

@@ -1,8 +1,8 @@
-/*
-   Fichier Marchand.hpp
-
-   Définition du type Marchand
-*/
+/*!
+ * \file Marchand.cpp
+ * \brief Classe Marchand qui hérite de personnage
+ * \author François Hallereau & Sébastien Vallée
+ */
 
 #ifndef MARCHAND_HPP
 #define MARCHAND_HPP
@@ -20,7 +20,7 @@ class Marchand : public Personnage{
 	public :
 		Marchand();//constructeur de la classe Marchand
 		//int recevoirVert(Carte[] cite);
-		void capacite();
+		void capacite(Joueur* joueur);
 		void jouer();
 };
 

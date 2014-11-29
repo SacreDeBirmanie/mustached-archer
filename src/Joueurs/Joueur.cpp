@@ -15,6 +15,17 @@ vector<Quartier*> Joueur::getMain(){
 	return main_;
 }
 
+Comportement* Joueur::getComportement(){
+	return comportement_;
+}
+
+int Joueur::getPieceOr(){
+	return pieceOr_;
+}
+void Joueur::setPieceOr(int piece){
+	pieceOr_=piece;
+}
+
 void Joueur::piocher(int nombre){
     vector<Quartier*> tmp = this->partie_->piocher(nombre);
     vector<Quartier*>::iterator it = tmp.begin();

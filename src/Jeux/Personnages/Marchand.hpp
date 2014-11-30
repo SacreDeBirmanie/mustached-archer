@@ -19,7 +19,6 @@ class Marchand : public Personnage{
 
 	public :
 		Marchand(string nom, int ordre, ComportementMachine* comp);//constructeur de la classe Marchand
-		//int recevoirVert(Carte[] cite);
 		void capacite(Joueur* joueur);
 };
 

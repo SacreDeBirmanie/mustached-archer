@@ -28,7 +28,7 @@ class Joueur{
 		Comportement* getComportement();
 		int getPieceOr();
 		void setPieceOr(int piece);
-		Cite* getCite();
+		vector<Quartier*> recupererCite();
         virtual void setComportement(Personnage * p)= 0;
         virtual void jouer()=0;//effectue un tour de jeu
 
@@ -38,9 +38,9 @@ class Joueur{
 		void piocher(int nombre);//pioche un nombre de carte
 		void prendrePiece(int nombre);//prend un nombre de piece
 		bool construire(Quartier * quartier);//construit un quartier dans sa cite
+		bool detruire(Quartier * quartier);
 		void choisirPersonnage(vector<Personnage*> persosDispo);
 		void choisirGainTour();
-		//void capacite();// active la capacité spéciale du personnage choisi
 		int compterQuartiersMarchands();
 		int compterQuartiersReligieux();
 		int compterQuartiersNobles();

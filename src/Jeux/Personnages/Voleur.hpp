@@ -7,9 +7,6 @@
 #ifndef VOLEUR_HPP
 #define VOLEUR_HPP
 
-#include <string> // pour le type std::string
-#include "Personnage.hpp"
-
 class Voleur : public Personnage{
 
 

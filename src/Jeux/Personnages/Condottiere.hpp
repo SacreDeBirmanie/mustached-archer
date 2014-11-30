@@ -18,9 +18,9 @@ class Condottiere : public Personnage{
 
 
 	public :
-		Condottiere();//constructeur de la classe Condottiere
-		void capacite(Joueur* joueur);
-		bool destruction(Joueur * condo, Joueur * cible, Quartier * quartier);
+		Condottiere(string nom, int ordre, ComportementMachine* comp);//constructeur de la classe Condottiere
+		static void capacite(Joueur* joueur);
+		static bool destruction(Joueur * condo, Joueur * cible, Quartier * quartier);
 
 };
 

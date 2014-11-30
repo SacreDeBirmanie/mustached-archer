@@ -9,11 +9,6 @@ using namespace std;
 #include "DonneePartie/Partie.hpp"
 #include "DonneePartie/FabriquePersonnage.hpp"
 
-#include "Jeux/Personnages/Assassin.hpp"
-#include "Jeux/Personnages/Marchand.hpp"
-#include "Jeux/Personnages/Condottiere.hpp"
-#include "Jeux/Personnages/Magicien.hpp"
-#include "Jeux/Personnages/Voleur.hpp"
 
 int main(){
 

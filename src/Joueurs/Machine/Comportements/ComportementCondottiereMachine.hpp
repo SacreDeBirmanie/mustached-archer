@@ -17,8 +17,8 @@ class ComportementCondottiere : public ComportementMachine{
 
 	public :
 		ComportementCondottiere();//constructeur de la classe EtatCondottiere
-		Joueur choixJoueurQuartier();
-		Carte choixQuartierDetruit(Joueur joueur);
+		void jouer(Partie * partie, Joueur * joueur);
+		void choixDestruction(partie * partie , Joueur * joueur);
 		
 };
 

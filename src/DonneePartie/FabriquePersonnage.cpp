@@ -3,33 +3,33 @@ FabriquePersonnage::FabriquePersonnage(){
 }
 
 Personnage * FabriquePersonnage::FabriquePersonnage::creerAssassin(){
-	return new Assassin("Assassin",1,new ComportementAssassinMachine);
+	return new Assassin("Assassin",1,new ComportementAssassinMachine());
 }
 
 Personnage * FabriquePersonnage::creerVoleur(){
-	return new Voleur("Voleur",1,new ComportementVoleurMachine);
+	return (new Voleur("Voleur",2,new ComportementVoleurMachine()));
 }
 
 Personnage * FabriquePersonnage::creerMagicien(){
-	return new Magicien("Magicien",1,new ComportementMagicienMachine);
+	return new Magicien("Magicien",3,new ComportementMagicienMachine());
 }
 
 Personnage * FabriquePersonnage::creerRoi(){
-	return new Roi("Roi",1,new ComportementRoiMachine);
+	return new Roi("Roi",4,new ComportementRoiMachine());
 }
 
 Personnage * FabriquePersonnage::creerEveque(){
-	return new Eveque("Eveque",1,new ComportementEvequeMachine);
+	return new Eveque("Eveque",5,new ComportementEvequeMachine());
 }
 
 Personnage * FabriquePersonnage::creerMarchand(){
-	return new creerMarchand("creerMarchand",1,new ComportementcreerMarchandMachine);
+	return new creerMarchand("creerMarchand",6,new ComportementcreerMarchandMachine());
 }
 
 Personnage * FabriquePersonnage::creerArchitecte(){
-	return new Architecte("Architecte",1,new ComportementArchitecteMachine);
+	return new Architecte("Architecte",7,new ComportementArchitecteMachine());
 }
 
 Personnage * FabriquePersonnage::creerCondottiere(){
-	return new Condottiere("Condottiere",1,new ComportementCondottiereMachine);
+	return new Condottiere("Condottiere",8,new ComportementCondottiereMachine());
 }

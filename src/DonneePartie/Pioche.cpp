@@ -47,11 +47,21 @@ vector<Quartier*> Pioche::piocher(int nombre){
 * \brief Méthode qui remet des cartes en dessous de la pioche
 * \param q les cartes remises
 */
-void Pioche::defausserCarte(vector<Quartier> q){
-	for ( vector<Quartier>::iterator iter = q.begin(); iter != q.end(); iter++ ){
+void Pioche::defausserCarte(vector<Quartier*> quartiers){
+	for ( vector<Quartier*>::iterator iter = quartiers.begin(); iter != quartiers.end(); iter++ ){
 		this->cartes.push_back(&*iter);
 	}
 }
+
+/*!
+* \brief Méthode qui remet une carte en dessous de la pioche
+* \param q la carte remise
+*/
+void Pioche::defausserCarte(Quartier * quartier){
+
+		this->cartes.push_back(quartier);
+}
+
 
 //--------------------------------------------------
 /*!

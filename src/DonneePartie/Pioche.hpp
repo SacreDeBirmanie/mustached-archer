@@ -31,7 +31,8 @@ class Pioche{
 		~Pioche();
 		void ajouterCarte(Quartier *carte);
 		vector<Quartier*> piocher(int nombre);
-		void defausserCarte(vector<Quartier>);
+		void defausserCarte(vector<Quartier*> quartiers);
+		void defausserCarte(Quartier * quartier);
 		int prendrePiece(int nombre);
 
 };

@@ -13,7 +13,7 @@ class Assassin : public Personnage{
 		static Macchabee * macchabee_;
 
 	public :
-		Assassin();//constructeur de la classe Assassin
+		Assassin(string nom, int ordre, ComportementMachine* comp);//constructeur de la classe Assassin
 		static void assassiner(Partie * partie,Personnage* perso);
 
 

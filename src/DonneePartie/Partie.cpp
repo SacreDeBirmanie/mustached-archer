@@ -168,6 +168,22 @@ vector<Quartier*> Partie::piocher(int nombre){
 	return pioche_->piocher(nombre);
 }
 
+/*!
+* \brief Méthode qui defausse des cartes en dessous de la pioche
+* \param les quartiers a defausser
+*/
+void Partie::defausserCarte(vector<Quartier*> quartiers){
+    pioche_->defausserCarte(quartiers);
+}
+
+/*!
+* \brief Méthode qui defausse une carte en dessous de la pioche
+* \param le quartier a defausser
+*/
+void Partie::defausserCarte(Quartier * quartier){
+    pioche_->defausserCarte(quartier);
+}
+
 //--------------------------------------------------
 /*!
 * \brief Méthode qui retire des pièces de la banque

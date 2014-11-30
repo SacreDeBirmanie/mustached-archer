@@ -17,7 +17,7 @@ class ComportementVoleurMachine : public ComportementMachine{
 
 	public :
 		ComportementVoleurMachine();//constructeur de la classe EtatVoleurMachine
-		void jouer();
+		void jouer(Partie * partie, Joueur * joueur);
 		Personnage choixVole();
 		
 };

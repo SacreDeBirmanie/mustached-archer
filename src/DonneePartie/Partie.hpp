@@ -66,6 +66,8 @@ class Partie : public Observer{
 		void decompteDesPoints(map<string,int> *tmp);
 		void associer(Personnage *p, Joueur *j);
 		vector<Quartier*> piocher(int nombre);
+		void defausserCarte(vector<Quartier*> quartiers);
+		void defausserCarte(Quartier * quartier);
 		int prendrePiece(int nombre);
 		void modifierOrdreJoueur(Joueur *j);
 		void modifierOrdreJoueur(Joueur *j, Joueur *jj);

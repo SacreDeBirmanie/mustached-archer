@@ -31,8 +31,8 @@ void Joueur::setPieceOr(int piece){
 	pieceOr_=piece;
 }
 
-Cite* Joueur::getCite(){
-	return cite_;
+vector<Quartier*> Joueur::recupererCite(){
+	return cite_->recupererCite();
 }
 
 void Joueur::piocher(int nombre){
@@ -66,6 +66,16 @@ bool Joueur::construire(Quartier *quartier){
 		++i;
 	}
 	return false;
+}
+
+bool Joueur::detruire(Quartier * quartier){
+    if(cite->estPresent()){
+        cite->supprimerQuartier(quartier);
+        partie->defausserCarte(quartier);
+        return true;
+    }
+    else
+        return false;
 }
 
 void Joueur::choisirPersonnage(vector<Personnage*> persosDispo){

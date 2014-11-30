@@ -17,7 +17,7 @@ class Magicien : public Personnage{
 
 
 	public :
-		Magicien();//constructeur de la classe Magicien
+		Magicien(string nom, int ordre, ComportementMachine* comp);//constructeur de la classe Magicien
 		static void echangerMainContreJoueur(Joueur * joueur, Joueur* vole);
 		static void echangerMaincontrePioche(vector<Quartier> cartes, Joueur* joueur);
 

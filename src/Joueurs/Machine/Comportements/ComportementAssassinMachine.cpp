@@ -18,7 +18,7 @@ void ComportementAssassinMachine::choixAssassinat(Partie * p, Joueur * j){
 	int i;
 
 	while(!trouve && exclus.size() < tmp.size()){
-		i = Aleatoire::tirerEntierAvecExclusion(exclus,0,tmp.size());
+		i = Aleatoire::tirerEntierAvecExclusion(exclus,0,tmp.size()-1);
 		if(tmp.at(i) != j){
 			trouve = true;
 			Assassin::assassiner(p,p->retrouverP(tmp.at(i)));

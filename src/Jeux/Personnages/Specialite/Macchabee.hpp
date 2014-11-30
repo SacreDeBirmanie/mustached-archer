@@ -7,7 +7,6 @@
 #ifndef MACCHABEE_HPP
 #define MACCHABEE_HPP
 
-#include <string> // pour le type std::string
 #include "../../../Joueurs/Machine/Comportements/Specialite/ComportementMacchabeeMachine.hpp"
 
 
@@ -18,7 +17,6 @@ class Macchabee : public Personnage{
 
 	public :
 		Macchabee();//constructeur de la classe Macchabee
-		//void etreAssassine(Partie * p, Joueur * j);
 		
 		
 };

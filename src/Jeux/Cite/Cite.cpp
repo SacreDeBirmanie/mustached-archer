@@ -35,6 +35,15 @@ int Cite::valeur(){
 
 //--------------------------------------------------
 /*!
+* \brief Méthode qui retourne la cite sous forme de vecteur de quartier
+* \return la cité
+*/
+vector<Quartier*> Cite::recupererCite(){
+    return quartiers_;
+}
+
+//--------------------------------------------------
+/*!
 * \brief Méthode qui teste si un quartier est présent
 * \param q le quartier
 * \return vrai si le quartier est présent

@@ -1,17 +1,26 @@
-/**
-*   Fichier Cite.hpp
-*   \brief Définition du type Cite
+/*!
+* \file Cite.hpp
+* \brief Fichier contenant les entêtes de la classe Cite
+* \author François Hallereau
+* \author Sébastien Vallée
+* \date 12.2014
 */
 
 #ifndef CITE_HPP
 #define CITE_HPP
 
+//--------------------------------------------------
+/*!
+* \class Cite
+* \brief Classe implémentant la Citadelle
+*/
 class Cite : public Observable{
 	
 	private :
 		vector<Quartier*> quartiers_; //la citadelle
 	public :
 		Cite();//le constructeur
+		~Cite();
 		int valeur(); //retourne la valeur de la citadelle
 		bool estPresent(Quartier* q);//test si un quartier est présent
 		bool ajouterQuartier(Quartier* q);//ajoute un quartier à la citadelle

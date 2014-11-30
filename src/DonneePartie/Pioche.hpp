@@ -11,6 +11,11 @@
 
 #include <algorithm>
 
+//--------------------------------------------------
+/*!
+* \class Pioche
+* \brief Classe gérant la pioche et la banque du jeu
+*/
 class Pioche{
 
 

@@ -6,10 +6,10 @@
 
 #ifndef MAGICIEN_HPP
 #define MAGICIEN_HPP
-s
+
 #include <string> // pour le type std::string
 
-class Magicien{
+class Magicien : public Personnage{
 
 
 	private :
@@ -18,8 +18,8 @@ class Magicien{
 
 	public :
 		Magicien();//constructeur de la classe Magicien
-		void echangerMainContreJoueur(Joueur joueur);
-		Carte[] echangerMaincontrePioche(Carte[] cartes, Joueur joueur);
+		void echangerMainContreJoueur(Joueur* joueur);
+		void echangerMaincontrePioche(vector<Quartier> cartes, Joueur* joueur);
 		
 };
 

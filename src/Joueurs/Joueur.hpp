@@ -13,8 +13,8 @@ class Joueur{
 	protected :
 		string pseudo_;
 		vector<Quartier*> main_;//cartes dans la main du joueur
-	    Cite * cite_;//*************a remplacer par une classe cité pour gérer les carte avec les merveilles (retour de méthode pour les pouvoirs )********//
 		int pieceOr_;//nombre de piece d'or du joueur
+		Cite* cite_;
 		Partie * partie_;
 		Comportement * comportement_;
 
@@ -24,9 +24,11 @@ class Joueur{
 		Joueur(string pseudo,Partie *partie);//constructeur de la classe Joueur
 		string getPseudo();
 		vector<Quartier*> getMain();
+		void setMain(vector<Quartier*> main);
 		Comportement* getComportement();
 		int getPieceOr();
 		void setPieceOr(int piece);
+		Cite* getCite();
         virtual void setComportement(Personnage * p)= 0;
         virtual void jouer()=0;//effectue un tour de jeu
 

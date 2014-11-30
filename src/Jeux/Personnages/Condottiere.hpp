@@ -15,13 +15,12 @@ class Condottiere : public Personnage{
 
 
 	private :
-		ComportementcompIA
 		
 
 	public :
 		Condottiere();//constructeur de la classe Condottiere
-		int recevoirRouge();
-		int detruireQuartier(Joueur joueurD,Carte quartier);
+		void capacite(Joueur* condottiere,Joueur* cible, Quartier* quartier);
+		void jouer();
 		
 };
 

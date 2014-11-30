@@ -15,6 +15,10 @@ vector<Quartier*> Joueur::getMain(){
 	return main_;
 }
 
+void setMain(vector<Quartier*> main){
+	main_=main;
+}
+
 Comportement* Joueur::getComportement(){
 	return comportement_;
 }
@@ -22,8 +26,13 @@ Comportement* Joueur::getComportement(){
 int Joueur::getPieceOr(){
 	return pieceOr_;
 }
+
 void Joueur::setPieceOr(int piece){
 	pieceOr_=piece;
+}
+
+int Joueur::getCite(){
+	return cite_;
 }
 
 void Joueur::piocher(int nombre){

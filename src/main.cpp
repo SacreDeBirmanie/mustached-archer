@@ -7,6 +7,7 @@
 using namespace std;
 //Autorise la creation de quartiers
 #include "DonneePartie/Partie.hpp"
+#include "DonneePartie/FabriquePersonnage.hpp"
 
 #include "Jeux/Personnages/Assassin.hpp"
 #include "Jeux/Personnages/Marchand.hpp"
@@ -18,20 +19,20 @@ int main(){
 
 	Pioche *pioche =  new Pioche();
 
+    Partie * partie = new Partie(pioche);
 
+    FabriquePersonnage * fabrique = new FabriquePersonnage();
 
-	Partie * partie = new Partie(pioche);
+	partie->nouveauJoueur(new Machine("A",partie));
+	partie->nouveauJoueur(new Machine("B",partie));
+	partie->nouveauJoueur(new Machine("C",partie));
+	partie->nouveauJoueur(new Machine("D",partie));
 
-	partie->nouveauJoueur(new IA("A",partie));
-	partie->nouveauJoueur(new IA("B",partie));
-	partie->nouveauJoueur(new IA("C",partie));
-	partie->nouveauJoueur(new IA("D",partie));
-
-	partie->nouveauPersonnage(new Assassin());
-	partie->nouveauPersonnage(new Marchand());
-	partie->nouveauPersonnage(new Condottiere());
-	partie->nouveauPersonnage(new Magicien());
-	partie->nouveauPersonnage(new Voleur());
+	partie->nouveauPersonnage(fabrique->creerAssassin());
+	partie->nouveauPersonnage(fabrique->creerAssassin());
+	partie->nouveauPersonnage(fabrique->creerAssassin());
+	partie->nouveauPersonnage(fabrique->creerAssassin());
+	partie->nouveauPersonnage(fabrique->creerAssassin());
 
 	partie->debuterLeJeu();
 

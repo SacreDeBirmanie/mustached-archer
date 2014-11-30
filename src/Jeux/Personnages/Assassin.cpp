@@ -1,5 +1,5 @@
 Macchabee* Assassin::macchabee_ = new Macchabee();
-Assassin::Assassin(): Personnage("Assassin",1,new ComportementAssassinIA()) {}
+Assassin::Assassin(): Personnage("Assassin",1,new ComportementAssassinMachine()) {}
 
 void Assassin::assassiner(Partie * partie, Personnage * perso){
     Joueur * joueur = partie->retrouverJ(perso);

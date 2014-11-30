@@ -15,10 +15,10 @@ class Voleur : public Personnage{
 
 	private :
 
-		
+
 
 	public :
-		Voleur();
+		Voleur(string nom, int ordre, ComportementMachine * comp);
 		static void voler(Joueur* voleur,Joueur* vole);
 };
 

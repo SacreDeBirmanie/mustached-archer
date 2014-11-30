@@ -15,7 +15,7 @@ class Neutre : public Personnage{
 
 
 	private :
-		ComportementcompIA
+		ComportementcompMachine
 		
 
 	public :

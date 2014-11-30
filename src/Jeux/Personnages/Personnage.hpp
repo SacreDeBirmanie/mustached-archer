@@ -12,15 +12,15 @@ class Personnage{
 	protected :
 		string nom_;
 		int numero_;
-		ComportementIA * comportementIA_;
+		ComportementMachine * comportementMachine_;
 
 
 	public :
 		//! Le constructeur
-		Personnage(string nom, int numero, ComportementIA * comp);
+		Personnage(string nom, int numero, ComportementMachine * comp);
 		int getOrdre();
 		string getNom();
-		ComportementIA* getComportementIA();
+		ComportementMachine* getComportementMachine();
 
 };
 

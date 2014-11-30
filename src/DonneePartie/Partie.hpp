@@ -35,13 +35,13 @@ class Personnage;
 //--------------------------------------------------
 /*!
 * \class Partie
-* \brief Classe gérant une partie 
+* \brief Classe gérant une partie
 */
 class Partie : public Observer{
 
 
 	private :
-	
+
 	//attributs
 		int limiteTailleVille_; //!< limite de quartier mettant fin à la partie
 		bool villeComplete_; //!< vrai lorsqu'un joueur a au moins #limiteTailleVille_ quartier
@@ -50,10 +50,10 @@ class Partie : public Observer{
 
 	//méthodes privées
 		void entreDeuxTours();
-		void choixDesPersonnages(); 
+		void choixDesPersonnages();
 		void lancementDuTour();
 		void update(int taille);
-		bool finDuJeu();/
+		bool finDuJeu();
 		void proclamerLeVainqueur();
 
 
@@ -79,12 +79,12 @@ class Partie : public Observer{
 
 //inclusion des classes dépendants de partie
 #include "../Joueurs/Comportement.hpp"
-#include "../Joueurs/IA/Comportements/ComportementIA.hpp"
+#include "../Joueurs/Machine/Comportements/ComportementMachine.hpp"
 #include "../Jeux/Personnages/Personnage.hpp"
 #include "../Joueurs/Joueur.hpp"
-#include "../Joueurs/IA/IA.hpp"
+#include "../Joueurs/Machine/Machine.hpp"
 
-#include "../Joueurs/IA/Comportements/ComportementIA.cpp"
+#include "../Joueurs/Machine/Comportements/ComportementMachine.cpp"
 #include "AssociationPersonnageJoueur.cpp"
 
 /******************************************************************************/

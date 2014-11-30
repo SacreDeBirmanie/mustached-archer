@@ -37,6 +37,7 @@ class Quartier{
 		~Quartier();
 		string getNom();
 		int getCout();
+		int getPoints();
 		int getType();
 		bool estMarchand();
 		bool estReligieux();

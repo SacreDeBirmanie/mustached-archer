@@ -46,6 +46,14 @@ int Quartier::getCout(){
 
 //--------------------------------------------------
 /*!
+* \brief permet de connaitre le nombre de points rapporté par la carte
+* \return le nombre de points
+*/
+int Quartier::getPoints(){
+    return cout_;
+}
+//--------------------------------------------------
+/*!
 * \brief Accesseur de l'attribut #type_
 * \return le type
 */

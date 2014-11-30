@@ -49,7 +49,7 @@ vector<Quartier*> Pioche::piocher(int nombre){
 */
 void Pioche::defausserCarte(vector<Quartier*> quartiers){
 	for ( vector<Quartier*>::iterator iter = quartiers.begin(); iter != quartiers.end(); iter++ ){
-		this->cartes.push_back(&*iter);
+		this->cartes.push_back(*iter);
 	}
 }
 

@@ -69,9 +69,9 @@ bool Joueur::construire(Quartier *quartier){
 }
 
 bool Joueur::detruire(Quartier * quartier){
-    if(cite->estPresent()){
-        cite->supprimerQuartier(quartier);
-        partie->defausserCarte(quartier);
+    if(cite_->estPresent(quartier)){
+        cite_->supprimerQuartier(quartier);
+        partie_->defausserCarte(quartier);
         return true;
     }
     else

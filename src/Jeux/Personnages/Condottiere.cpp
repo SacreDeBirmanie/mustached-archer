@@ -10,9 +10,9 @@
  * Chaque quartier militaire lui rapporte une pièce d'or
  * il peut en plus détruire un quartier
  */
- 
+
  Condottiere::Condottiere(string nom, int ordre, ComportementMachine* comp): Personnage(nom,ordre,comp){
- 
+
  }
 
 void Condottiere::capacite(Joueur * joueur){
@@ -22,7 +22,7 @@ void Condottiere::capacite(Joueur * joueur){
 bool Condottiere::destruction(Joueur * condo, Joueur * cible, Quartier * quartier){
 	if(quartier->getCout()-1<= condo->getPieceOr()){
 		if(cible->detruire(quartier)){
-			condo->setPieceOr(condo->getPieceOr()-quartier->getCout()+1)
+			condo->setPieceOr(condo->getPieceOr()-quartier->getCout()+1);
 			return true;
 		}
 		else

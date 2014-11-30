@@ -19,7 +19,7 @@ AssociationPersonnageJoueur::AssociationPersonnageJoueur() {
 /*!
 * \brief Destructeur de la classe
 */
-AssociationPersonnageJoueur::AssociationPersonnageJoueur() {}
+AssociationPersonnageJoueur::~AssociationPersonnageJoueur() {}
 
 
 //--------------------------------------------------

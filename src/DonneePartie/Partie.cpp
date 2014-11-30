@@ -1,14 +1,37 @@
+/*!
+* \file Partie.cpp
+* \brief Fichier contenant l'implémentation de la classe Partie
+* \author François Hallereau
+* \author Sébastien Vallée
+* \date 12.2014
+*/
+
+//--------------------------------------------------
+/*!
+* \brief Constructeur de la classe
+*/
 Partie::Partie(Pioche * pioche, int tailleVille=8):
-pioche_(pioche), limiteTailleVille_(tailleVille), roles_(new AssociationPersonnageJoueur()) , villeComplete_(false) {
+pioche_(pioche), limiteTailleVille_(tailleVille), roles_(new AssociationPersonnageJoueur()) , villeComplete_(false) {}
 
-}
+//--------------------------------------------------
+/*!
+* \brief Destructeur de la classe
+*/
+Partie::~Partie(){}
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui réinitialise l'association des personnages à chaque fin de tour
+*/
 void Partie::entreDeuxTours(){
 	roles_->reinitialiser();
 }
 
 
-
+//--------------------------------------------------
+/*!
+* \brief Méthode qui invite les joueurs à choisir les personnages
+*/
 void Partie::choixDesPersonnages(){
 	cout<<"Les joueurs vont choisir leur personnages"<<endl;
 	Joueur *joueur = roles_->joueurSuivantChoixPersonnages();
@@ -19,6 +42,10 @@ void Partie::choixDesPersonnages(){
 	cout<<"Tout le monde a choisit son personnage, le tour va pouvoir commencer"<<endl;
 }
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui lance la partie
+*/
 void Partie::debuterLeJeu(){
 	if(roles_->nbJoueurs()>=roles_->nbPersonnages())
 		cout<<"impossible de demarrer la partie, il manque des personnages"<<endl;
@@ -32,6 +59,10 @@ void Partie::debuterLeJeu(){
 	}
 }
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui lance un tour
+*/
 void Partie::lancementDuTour(){
 	Joueur * joueur = roles_->joueurSuivantTour();
 	while(joueur != NULL){
@@ -42,27 +73,52 @@ void Partie::lancementDuTour(){
 	cout<<"Le tour est termine"<<endl;
 }
 
-
+//--------------------------------------------------
+/*!
+* \brief Méthode qui reçoit les tailles des différentes cités
+* \param taille la taille d'une cité
+*/
 void Partie::update(int taille){
 	if(taille>=limiteTailleVille_)
 		villeComplete_ = true;
 }
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui retourne la valeur de l'attribut villeComplete_
+* \return vrai si un joueur à fini sa cité
+* \see #villeComplete_
+*/
 bool Partie::finDuJeu(){
-	return this->villeComplete_;
+	return villeComplete_;
 }
 
-void Partie::nouveauJoueur(Joueur *joueur){
+//--------------------------------------------------
+/*!
+* \brief Méthode qui ajoute un nouveau joueur
+* \param joueur le nouveau joueur
+*/
+void Partie::nouveauJoueur(Joueur* joueur){
 	if(roles_->nouveauJoueur(joueur))
 		cout<<"Le joueur "<<joueur->getPseudo()<<" a deja ete ajoute dans la partie"<<endl;
 }
 
-void Partie::nouveauPersonnage(Personnage *personnage){
+//--------------------------------------------------
+/*!
+* \brief Méthode qui ajoute un nouveau personnage
+* \param personnage le nouveau personnage
+*/
+void Partie::nouveauPersonnage(Personnage* personnage){
 	if(roles_->nouveauPersonnage(personnage))
 		cout<<"Le personnage "<<personnage->getNom()<<" a deja ete ajoute dans la partie"<<endl;
 }
 
-void Partie::decompteDesPoints(map<string,int> *tmp){//************tableau associatif n'est pas forcément le meilleur choix********
+//--------------------------------------------------
+/*!
+* \brief Méthode qui fait le décompte des points
+* \param tmp la liste des joueurs avec leurs points respectifs
+*/
+void Partie::decompteDesPoints(map<string,int>* tmp){
     Joueur *joueur = roles_->joueurSuivantDecomptePoints();
 	while(joueur!=NULL){
 		(*tmp)[joueur->getPseudo()]=joueur->decompteDesPoints();
@@ -70,10 +126,20 @@ void Partie::decompteDesPoints(map<string,int> *tmp){//************tableau assoc
 
 }
 
-void Partie::associer(Personnage *p, Joueur *j){
+//--------------------------------------------------
+/*!
+* \brief Méthode qui associe joueur à un personnage
+* \param p le personnage
+* \param j le joueur
+*/
+void Partie::associer(Personnage* p, Joueur* j){
 	roles_->associer(p,j);
 }
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui détermine le vainqueur
+*/
 void Partie::proclamerLeVainqueur(){
 	map<string,int> *tmp;
 	decompteDesPoints(tmp);
@@ -92,36 +158,86 @@ void Partie::proclamerLeVainqueur(){
 	cout<<"+++Et Le vainqueur est ...."<<vainqueur<<endl;
 }
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui tire des cartes de la pioche
+* \param nombre le nombre de cartes
+*/
 vector<Quartier*> Partie::piocher(int nombre){
 	return pioche_->piocher(nombre);
 }
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui retire des pièces de la banque
+* \param nombre le nombre de pièces
+*/
 int Partie::prendrePiece(int nombre){
 	this->pioche_->prendrePiece(nombre);
 }
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui place le joueur à la fin de la liste
+* \param j Le joueur
+*/
 void Partie::modifierOrdreJoueur(Joueur *j){
 	roles_->modifierOrdreJoueur(j);
 }
-void Partie::modifierOrdreJoueur(Joueur *j, Joueur *jj){
-	roles_->modifierOrdreJoueur(j,jj);
+
+//--------------------------------------------------
+/*!
+* \brief Méthode qui place un joueur après un autre
+* \param j1 Le joueur qui sera déplacé
+* \param j2 Le joueur derrière lequel j1 sera placé
+*/
+void Partie::modifierOrdreJoueur(Joueur* j1, Joueur* j2){
+	roles_->modifierOrdreJoueur(j1,j2);
 }
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui retrouve le joueur associé à un personnage
+* \param p Le personnage
+* \return Le joueur
+*/
 Joueur* Partie::retrouverJ(Personnage *p){
     return roles_->retrouverJ(p);
 }
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui retrouve le personnage associé à un joueur
+* \param j Le joueur
+* \return Le personnage
+*/
 Personnage* Partie::retrouverP(Joueur *j){
    return roles_->retrouverP(j);
 }
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui retourne le nombre de joueurs
+* \return Le nombre de joueurs
+*/
 int Partie::nbJoueurs(){
     return roles_->nbJoueurs();
 }
+
+//--------------------------------------------------
+/*!
+* \brief Méthode qui retourne le nombre de personnages
+* \return le nombre de personnages
+*/
 int Partie::nbPersonnages(){
     return roles_->nbPersonnages();
 }
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui retourne la liste des joueurs
+* \return La liste
+*/
 vector<Joueur*> Partie::recupererListeJoueurs(){
     return roles_->recupererListeJoueurs();
 }

@@ -1,6 +1,9 @@
-/**
-*   Fichier Pioche.hpp
-*   \brief Définition du type Pioche
+/*!
+* \file Pioche.hpp
+* \brief Fichier contenant les entêtes de la classe Pioche
+* \author François Hallereau
+* \author Sébastien Vallée
+* \date 12.2014
 */
 
 #ifndef PIOCHE_HPP
@@ -12,14 +15,15 @@ class Pioche{
 
 
 	private :
-		vector<Quartier*> cartes;
-		int reserveOr;
+		vector<Quartier*> cartes;//!< la pioche de cartes
+		int reserveOr;//!< la banque
 
 
 
 
 	public :
-		Pioche(int limiteOr);//constructeur de la classe Pioche
+		Pioche(int limiteOr);
+		~Pioche();
 		void ajouterCarte(Quartier *carte);
 		vector<Quartier*> piocher(int nombre);
 		void defausserCarte(vector<Quartier>);

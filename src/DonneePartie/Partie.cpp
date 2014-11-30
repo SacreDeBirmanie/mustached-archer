@@ -162,6 +162,7 @@ void Partie::proclamerLeVainqueur(){
 /*!
 * \brief Méthode qui tire des cartes de la pioche
 * \param nombre le nombre de cartes
+* \return les cartes piochées
 */
 vector<Quartier*> Partie::piocher(int nombre){
 	return pioche_->piocher(nombre);
@@ -171,9 +172,10 @@ vector<Quartier*> Partie::piocher(int nombre){
 /*!
 * \brief Méthode qui retire des pièces de la banque
 * \param nombre le nombre de pièces
+* \return les pièces
 */
 int Partie::prendrePiece(int nombre){
-	this->pioche_->prendrePiece(nombre);
+	return pioche_->prendrePiece(nombre);
 }
 
 //--------------------------------------------------

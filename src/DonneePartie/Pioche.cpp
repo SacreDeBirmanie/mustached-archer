@@ -1,11 +1,38 @@
-Pioche::Pioche(int limiteOr=30) : reserveOr(limiteOr){
+/*!
+* \file Pioche.cpp
+* \brief Fichier contenant l'implémentation de la classe Pioche
+* \author François Hallereau
+* \author Sébastien Vallée
+* \date 12.2014
+*/
 
+//--------------------------------------------------
+/*!
+* \brief Constructeur de la classe
+*/
+Pioche::Pioche(int limiteOr=30) : reserveOr(limiteOr){}
+
+//--------------------------------------------------
+/*!
+* \brief Destructeur de la classe
+*/
+Pioche::~Pioche(){}
+
+//--------------------------------------------------
+/*!
+* \brief Méthode qui remet une carte en dessous de la pioche
+* \param carte les cartes remises dans la pioche
+*/
+void Pioche::ajouterCarte(Quartier* carte){
+	cartes.push_back(carte);
 }
 
-void Pioche::ajouterCarte(Quartier *carte){
-	cartes.push_back(carte);
-	}
-
+//--------------------------------------------------
+/*!
+* \brief Méthode qui pioche des cartes
+* \param nombre le nombre de cartes
+* \return les cartes
+*/
 vector<Quartier*> Pioche::piocher(int nombre){
 	vector<Quartier*> tmp;
 	for(int i =0; i<nombre;i++){
@@ -15,20 +42,31 @@ vector<Quartier*> Pioche::piocher(int nombre){
 	return tmp;
 }
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui remet des cartes en dessous de la pioche
+* \param q les cartes remises
+*/
 void Pioche::defausserCarte(vector<Quartier> q){
 	for ( vector<Quartier>::iterator iter = q.begin(); iter != q.end(); iter++ ){
 		this->cartes.push_back(&*iter);
 	}
 }
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui retire des pièces de la banque
+* \param nombre le nombre de pièces
+* \return les pièces
+*/
 int Pioche::prendrePiece(int nombre){
-	if(this->reserveOr-nombre>=0){
-		this->reserveOr = this->reserveOr-nombre;
+	if(reserveOr-nombre>=0){
+		reserveOr = reserveOr-nombre;
 		return nombre;
 	}
 	else{
-		int tmp = this->reserveOr;
-		this->reserveOr=0;
+		int tmp = reserveOr;
+		reserveOr=0;
 		return tmp;
 	}
 }

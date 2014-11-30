@@ -43,10 +43,10 @@ class Partie : public Observer{
 	private :
 	
 	//attributs
-		int limiteTailleVille_; //!<limite de quartier mettant fin à la partie
-		bool villeComplete_; //!<vrai lorsqu'un joueur a au moins limiteTailleVille quartier
-		Pioche * pioche_; //!<pioche de la partie
-		AssociationPersonnageJoueur * roles_; //!<role de chaque joueur
+		int limiteTailleVille_; //!< limite de quartier mettant fin à la partie
+		bool villeComplete_; //!< vrai lorsqu'un joueur a au moins limiteTailleVille quartier
+		Pioche * pioche_; //!< pioche de la partie
+		AssociationPersonnageJoueur * roles_; //!< role de chaque joueur
 
 	//méthodes privées
 		void entreDeuxTours();

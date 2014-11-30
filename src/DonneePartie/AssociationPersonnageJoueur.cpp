@@ -1,11 +1,34 @@
+/*!
+* \file AssociationPersonnageJoueur.cpp
+* \brief Fichier contenant l'implémentation de la classe AssociationPersonnageJoueur
+* \author François Hallereau
+* \author Sébastien Vallée
+* \date 12.2014
+*/
+
+//--------------------------------------------------
+/*!
+* \brief Constructeur de la classe
+*/
 AssociationPersonnageJoueur::AssociationPersonnageJoueur() {
-
-
 	ordreTour_ = new Chaine<Joueur*>();
 	joueurCourant_ = NULL;
 }
 
-bool AssociationPersonnageJoueur::nouveauJoueur(Joueur *joueur){
+//--------------------------------------------------
+/*!
+* \brief Destructeur de la classe
+*/
+AssociationPersonnageJoueur::AssociationPersonnageJoueur() {}
+
+
+//--------------------------------------------------
+/*!
+* \brief Méthode qui ajoute un joueur
+* \param joueur Le joueur à ajouter
+* \return vrai si le joueur a été ajouté
+*/
+bool AssociationPersonnageJoueur::nouveauJoueur(Joueur* joueur){
 		if(listeJoueurs_.find(joueur->getPseudo())!= listeJoueurs_.end()){
 			return false;
 		}
@@ -15,6 +38,13 @@ bool AssociationPersonnageJoueur::nouveauJoueur(Joueur *joueur){
 			return true;
 		}
 }
+
+//--------------------------------------------------
+/*!
+* \brief Méthode qui ajoute un personnage
+* \param personnage Le personnage à ajouter
+* \return vrai si le personnage a été ajouté
+*/
 bool AssociationPersonnageJoueur::nouveauPersonnage(Personnage *personnage){
 	if(listePersonnages_.find(personnage->getOrdre())!=listePersonnages_.end()){
 		return false;
@@ -25,27 +55,53 @@ bool AssociationPersonnageJoueur::nouveauPersonnage(Personnage *personnage){
 	}
 }
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui retourne le nombre de joueurs
+* \return Le nombre de joueurs
+*/
 int AssociationPersonnageJoueur::nbJoueurs(){
 	return listeJoueurs_.size();
 }
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui retourne le nombre de personnages
+* \return le nombre de personnages
+*/
 int AssociationPersonnageJoueur::nbPersonnages(){
 	return listePersonnages_.size();
 }
 
-void AssociationPersonnageJoueur::associer(Personnage *p, Joueur *j){
-	this->assocJP_[j->getPseudo()] = p->getOrdre();
-	this->assocPJ_[p->getOrdre()] = j->getPseudo();
+//--------------------------------------------------
+/*!
+* \brief Méthode qui associe un joueur à un personnage
+* \param j Le joueur à associer
+* \param p Le personnage à associer
+*/
+void AssociationPersonnageJoueur::associer(Personnage* p, Joueur* j){
+	assocJP_[j->getPseudo()] = p->getOrdre();
+	assocPJ_[p->getOrdre()] = j->getPseudo();
 	j->setComportement(p);
 
 }
 
-void AssociationPersonnageJoueur::associer(Joueur *j, Personnage *p){
-	this->assocPJ_[p->getOrdre()] =j->getPseudo();
-	this->assocJP_[j->getPseudo()] = p->getOrdre();
+//--------------------------------------------------
+/*!
+* \brief Méthode qui associe un joueur à un personnage
+* \param j Le joueur à associer
+* \param p Le personnage à associer
+*/
+void AssociationPersonnageJoueur::associer(Joueur* j, Personnage* p){
+	assocPJ_[p->getOrdre()] =j->getPseudo();
+	assocJP_[j->getPseudo()] = p->getOrdre();
 	j->setComportement(p);
 }
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui réinitialise les associations
+*/
 void AssociationPersonnageJoueur::reinitialiser(){
 	for (map<string, Joueur*>::iterator iter = listeJoueurs_.begin(); iter != listeJoueurs_.end(); iter++ ){
 		assocJP_[iter->first] = -1;
@@ -56,16 +112,33 @@ void AssociationPersonnageJoueur::reinitialiser(){
 	}
 
 	selection_ = false;
-
 }
 
-Joueur* AssociationPersonnageJoueur::retrouverJ(Personnage *p){
+//--------------------------------------------------
+/*!
+* \brief Méthode qui retrouve le joueur associé à un personnage
+* \param p Le personnage
+* \return Le joueur
+*/
+Joueur* AssociationPersonnageJoueur::retrouverJ(Personnage* p){
 	return listeJoueurs_[assocPJ_[p->getOrdre()]];
 }
-Personnage* AssociationPersonnageJoueur::retrouverP(Joueur *j){
+
+//--------------------------------------------------
+/*!
+* \brief Méthode qui retrouve le personnage associé à un joueur
+* \param j Le joueur
+* \return Le personnage
+*/
+Personnage* AssociationPersonnageJoueur::retrouverP(Joueur* j){
 	return listePersonnages_[assocJP_[j->getPseudo()]];
 }
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui retourne la liste des personnages disponibles
+* \return La liste de personnages
+*/
 vector<Personnage*> AssociationPersonnageJoueur::persosDisponible(){
 	vector<Personnage*> tmp;
 
@@ -74,10 +147,13 @@ vector<Personnage*> AssociationPersonnageJoueur::persosDisponible(){
 			tmp.push_back(listePersonnages_[iter->first]);
 	}
 	return tmp;
-
-
 }
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui appelle le prochain joueur à jouer
+* \return Le joueur
+*/
 Joueur* AssociationPersonnageJoueur::joueurSuivantTour(){
 	if(joueurCourant_->suivant != NULL){
 		Maillon<Joueur*> * tmp = joueurCourant_;
@@ -88,7 +164,11 @@ Joueur* AssociationPersonnageJoueur::joueurSuivantTour(){
 		return NULL;
 }
 
-
+//--------------------------------------------------
+/*!
+* \brief 
+* \param init 
+*/
 void AssociationPersonnageJoueur::deplacerCurseurChoixPerso(bool init){
 	if(init==false)
 			choixCourant_ = (choixCourant_ +1) % placementJoueur_.size();
@@ -98,6 +178,11 @@ void AssociationPersonnageJoueur::deplacerCurseurChoixPerso(bool init){
 	}
 }
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui invite le prochain joueur à choisir son personnage
+* \return Le joueur
+*/
 Joueur* AssociationPersonnageJoueur::joueurSuivantChoixPersonnages(){
 	if(choixCourant_ != couronnement_ && selection_ == true){
 		deplacerCurseurChoixPerso(false);
@@ -111,10 +196,20 @@ Joueur* AssociationPersonnageJoueur::joueurSuivantChoixPersonnages(){
 		return NULL;
 }
 
+//--------------------------------------------------
+/*!
+* \brief 
+* \return 
+*/
 Joueur* AssociationPersonnageJoueur::joueurSuivantDecomptePoints(){
 	return NULL;
 }
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui couronne un joueur
+* \param j Le joueur
+*/
 void AssociationPersonnageJoueur::couronnement(Joueur* j){
 	for(int i=0; i<placementJoueur_.size();++i){
 		if((j->getPseudo()).compare((placementJoueur_.at(i))->getPseudo())){
@@ -124,17 +219,32 @@ void AssociationPersonnageJoueur::couronnement(Joueur* j){
 	}
 }
 
-void AssociationPersonnageJoueur::modifierOrdreJoueur(Joueur * j){
+//--------------------------------------------------
+/*!
+* \brief Méthode qui place le joueur à la fin de la liste
+* \param j Le joueur
+*/
+void AssociationPersonnageJoueur::modifierOrdreJoueur(Joueur* j){
 	ordreTour_->retirerElement(j);
 	ordreTour_->insererQueue(j);
 }
 
-void AssociationPersonnageJoueur::modifierOrdreJoueur(Joueur *j, Joueur *jj){
-	ordreTour_->retirerElement(j);
-	ordreTour_->insererApres(j,jj);
-
+//--------------------------------------------------
+/*!
+* \brief Méthode qui place un joueur après un autre
+* \param j1 Le joueur qui sera déplacé
+* \param j2 Le joueur derrière lequel j1 sera placé
+*/
+void AssociationPersonnageJoueur::modifierOrdreJoueur(Joueur* j1, Joueur* j2){
+	ordreTour_->retirerElement(j1);
+	ordreTour_->insererApres(j1,j2);
 }
 
+//--------------------------------------------------
+/*!
+* \brief Méthode qui retourne la liste des joueurs
+* \return La liste
+*/
 vector<Joueur*> AssociationPersonnageJoueur::recupererListeJoueurs(){
     return placementJoueur_;
 }

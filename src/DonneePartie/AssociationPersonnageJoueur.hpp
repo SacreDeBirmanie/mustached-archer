@@ -1,37 +1,41 @@
-/*
-   Fichier AssociationPersonnageJoueur.hpp
-
-   Définition du type AssociationPersonnageJoueur
+/*!
+* \file AssociationPersonnageJoueur.hpp
+* \brief Fichier contenant les entêtes de la classe AssociationPersonnageJoueur
+* \author François Hallereau
+* \author Sébastien Vallée
+* \date 12.2014
 */
 
 #ifndef ASSOCIATIONPERSONNAGEJOUEUR_HPP
 #define ASSOCIATIONPERSONNAGEJOUEUR_HPP
 
+//--------------------------------------------------
+/*!
+* \class AssociationPersonnageJoueur
+* \brief Classe gérant l'attribution des personnages entre chaque joueur
+*/
+
 class AssociationPersonnageJoueur{
 
 
 	private :
-		int couronnement_; // savoir le joueur commencant à choisir son personnage
-		bool selection_;
-		int curseur_, choixCourant_;
-
-		vector<Joueur*> placementJoueur_;//
-
-
-		map<string, Joueur*> listeJoueurs_;
-		map<int, Personnage*> listePersonnages_;
-
-		map<string,int>  assocJP_;
-		map<int,string> assocPJ_;
-
-
-		Chaine<Joueur*> *ordreTour_;
-		Maillon<Joueur*> *joueurCourant_;
+		int couronnement_; //!<  désigne le joueur qui commence le tour
+		bool selection_; //!< 
+		int curseur_; //!< 
+		int choixCourant_; //!< 
+		vector<Joueur*> placementJoueur_;//!< 
+		map<string, Joueur*> listeJoueurs_;//!< Liste des joueurs de la partie
+		map<int, Personnage*> listePersonnages_;//!< Liste des personnages de la partie
+		map<string,int>  assocJP_;//!< liste associant un joueur à un personnage
+		map<int,string> assocPJ_;//!< liste associant un personnage à un joueur
+		Chaine<Joueur*> *ordreTour_;//!< liste chainé qui contient les joueurs dans l'ordre du tour
+		Maillon<Joueur*> *joueurCourant_;//!< le joueur en train de jouer
 
 
 	public :
 		AssociationPersonnageJoueur();
-
+		~AssociationPersonnageJoueur();
+		
 		bool nouveauJoueur(Joueur *joueur);
 		bool nouveauPersonnage(Personnage *personnage);
 		int nbJoueurs();
@@ -49,7 +53,6 @@ class AssociationPersonnageJoueur{
 		void couronnement(Joueur *joueur);
 		void modifierOrdreJoueur(Joueur *j);
 		void modifierOrdreJoueur(Joueur *j,Joueur *jj);
-
 		vector<Joueur*> recupererListeJoueurs();
 
 

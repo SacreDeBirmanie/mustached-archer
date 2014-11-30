@@ -50,6 +50,8 @@ class AssociationPersonnageJoueur{
 		void modifierOrdreJoueur(Joueur *j);
 		void modifierOrdreJoueur(Joueur *j,Joueur *jj);
 
+		vector<Joueur*> recupererListeJoueurs();
+
 
 };
 

@@ -7,7 +7,7 @@ int Cite::valeur(){
 			val+=(*quartier)->getCout();
 		}
 	}
-	return val;	
+	return val;
 }
 
 bool Cite::estPresent(Quartier* q){
@@ -35,46 +35,46 @@ bool Cite::supprimerQuartier(Quartier* q){
 		if(((*quartier)->getNom()).compare(q->getNom())==0){
 			quartiers_.erase(quartier);
 			return true;
-		}	
+		}
 	}
 	return false;
 }
 
 int Cite::compterQuartiersMarchands(){
 	int cpt =0;
-	for(vector<Quartier*>::iterator it = quartiers_.begin();it!=quartiers_.end();++it){ 
-		if(it->estMarchand())
+	for(vector<Quartier*>::iterator it = quartiers_.begin();it!=quartiers_.end();++it){
+		if((*it)->estMarchand())
 			cpt++;
 	}
-	
+
 	return cpt;
-			
+
 }
 int Cite::compterQuartiersReligieux(){
 	int cpt =0;
-	for(vector<Quartier*>::iterator it = quartiers_.begin();it!=quartiers_.end();++it){ 
-		if(it->estReligieux())
+	for(vector<Quartier*>::iterator it = quartiers_.begin();it!=quartiers_.end();++it){
+		if((*it)->estReligieux())
 			cpt++;
 	}
-	
+
 	return cpt;
 }
 int Cite::compterQuartiersNobles(){
 	int cpt =0;
-	for(vector<Quartier*>::iterator it = quartiers_.begin();it!=quartiers_.end();++it){ 
-		if(it->estNoble())
+	for(vector<Quartier*>::iterator it = quartiers_.begin();it!=quartiers_.end();++it){
+		if((*it)->estNoble())
 			cpt++;
 	}
-	
+
 	return cpt;
 }
 int Cite::compterQuartiersMilitaires(){
 	int cpt =0;
-	for(vector<Quartier*>::iterator it = quartiers_.begin();it!=quartiers_.end();++it){ 
-		if(it->estMilitaire())
+	for(vector<Quartier*>::iterator it = quartiers_.begin();it!=quartiers_.end();++it){
+		if((*it)->estMilitaire())
 			cpt++;
 	}
-	
+
 	return cpt;
 }
 

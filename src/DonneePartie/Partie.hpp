@@ -63,6 +63,11 @@ class Partie : public Observer{
 		Joueur* retrouverJ(Personnage *p);
 		Personnage* retrouverP(Joueur *j);
 
+		int nbJoueurs();
+		int nbPersonnages();
+
+		vector<Joueur*> recupererListeJoueurs();
+
 };
 
 //inclusion des classes dépendants de partie

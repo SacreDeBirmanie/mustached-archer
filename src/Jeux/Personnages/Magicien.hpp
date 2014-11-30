@@ -14,13 +14,13 @@ class Magicien : public Personnage{
 
 	private :
 
-		
+
 
 	public :
 		Magicien();//constructeur de la classe Magicien
-		void echangerMainContreJoueur(Joueur* joueur);
-		void echangerMaincontrePioche(vector<Quartier> cartes, Joueur* joueur);
-		
+		static void echangerMainContreJoueur(Joueur * joueur, Joueur* vole);
+		static void echangerMaincontrePioche(vector<Quartier> cartes, Joueur* joueur);
+
 };
 
 

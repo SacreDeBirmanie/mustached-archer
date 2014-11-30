@@ -114,3 +114,14 @@ Joueur* Partie::retrouverJ(Personnage *p){
 Personnage* Partie::retrouverP(Joueur *j){
    return roles_->retrouverP(j);
 }
+
+int Partie::nbJoueurs(){
+    return roles_->nbJoueurs();
+}
+int Partie::nbPersonnages(){
+    return roles_->nbPersonnages();
+}
+
+vector<Joueur*> Partie::recupererListeJoueurs(){
+    return roles_->recupererListeJoueurs();
+}

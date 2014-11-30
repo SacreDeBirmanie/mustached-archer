@@ -8,6 +8,8 @@
 #include <ctime>
 #include <vector>
 
+#define GARDIEN 1
+
 class Aleatoire{
 
 
@@ -24,12 +26,13 @@ class Aleatoire{
 				return rand()%(fin-deb+1) + deb;
 		}
 
-		static int tirerEntierAvecExclusion(std::vector<int> exclusion,int deb = 0, int fin = 32767){
+		static int tirerEntierAvecExclusion(std::vector<int> &exclusion,int deb = 0, int fin = 32767){
 				srand((unsigned int)time(NULL)); // initialisation de rand
 				int nombre_aleatoire = rand()%(fin-deb+1) + deb;
 				bool trouve = false;
+				int cpt = 0;
 
-				while(!trouve){
+				while(!trouve && GARDIEN>cpt){
 					nombre_aleatoire = rand()%(fin-deb+1) + deb;
 					for(std::vector<int>::iterator it = exclusion.begin();it!=exclusion.end();++it){
 						if(*it==nombre_aleatoire){
@@ -40,6 +43,7 @@ class Aleatoire{
 						trouve=false;
 					else
 						trouve =true;
+                    cpt++;
 				}
 
 				return nombre_aleatoire;

@@ -13,7 +13,7 @@ bool AssociationPersonnageJoueur::nouveauJoueur(Joueur *joueur){
 			listeJoueurs_[joueur->getPseudo()] = joueur;
 			placementJoueur_.push_back(joueur);
 			return true;
-		}	
+		}
 }
 bool AssociationPersonnageJoueur::nouveauPersonnage(Personnage *personnage){
 	if(listePersonnages_.find(personnage->getOrdre())!=listePersonnages_.end()){
@@ -133,5 +133,9 @@ void AssociationPersonnageJoueur::modifierOrdreJoueur(Joueur *j, Joueur *jj){
 	ordreTour_->retirerElement(j);
 	ordreTour_->insererApres(j,jj);
 
+}
+
+vector<Joueur*> AssociationPersonnageJoueur::recupererListeJoueurs(){
+    return placementJoueur_;
 }
 

@@ -11,19 +11,10 @@
  * il peut en plus détruire un quartier
  */
 
-void Condottiere::capacite(Joueur* condottiere,Joueur* cible, Quartier* quartier){
-	int po=2;
-	vector<Quartier*> cite = condottiere->getCite();
-	for(vector<Quartier*>::iterator it = cite.begin();it!=cite.end();++it){
-		if((*it)->estMilitaire()) //si le quartier est militaire, +1 pièce
-			++po;
-	}
-	condottiere->prendrePiece(po);
+void Condottiere::capacite(Joueur * joueur){
+	joueur->prendrePiece(joueur->compterQuartiersMilitaires());
+}
 
-	//Destruction d'un quartier
-	if(cible!=NULL){//le condottiere décide d'attaquer un joueur
-		Cite* cite = cible->getCite();
-		if(cite->estPresent(quartier))
-			cite->supprimerQuartier(quartier);
-	}
+bool Condottiere::destruction(Joueur * condo, Joueur * cible, Quartier * quartier){
+
 }

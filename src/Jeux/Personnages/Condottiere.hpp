@@ -15,13 +15,13 @@ class Condottiere : public Personnage{
 
 
 	private :
-		
+
 
 	public :
 		Condottiere();//constructeur de la classe Condottiere
-		void capacite(Joueur* condottiere,Joueur* cible, Quartier* quartier);
-		void jouer();
-		
+		void capacite(Joueur* joueur);
+		bool destruction(Joueur * condo, Joueur * cible, Quartier * quartier);
+
 };
 
 

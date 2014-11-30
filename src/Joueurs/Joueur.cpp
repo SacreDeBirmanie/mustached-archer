@@ -42,6 +42,17 @@ void Joueur::piocher(int nombre){
 	main_.assign(it,tmp.end());
 }
 
+void Joueur::defausser(vector<Quartier*> cartes){
+    for(vector<Quartier*>::iterator it = cartes.begin();it!=cartes.end();++it){
+        for(vector<Quartier*>::iterator iter = main_.begin();iter!=main_.end();++iter){
+            if(*iter==*it){
+                main_.erase(iter);
+            }
+        }
+        partie_->defausserCarte(*it);
+    }
+}
+
 void Joueur::prendrePiece(int nombre){
 	pieceOr_+=this->partie_->prendrePiece(nombre);
 }

@@ -17,10 +17,8 @@ class ComportementMagicienMachine : public ComportementMachine{
 
 	public :
 		ComportementMagicienMachine();//constructeur de la classe EtatMagicienMachine
-		void jouer();
+		void jouer(Partie * partie,Joueur * joueur);
 		void choixPouvoir();
-		Joueur choixEchangeJoueurs();
-		Carte[] choix!echangePioche();
 		
 		
 };

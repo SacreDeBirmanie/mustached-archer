@@ -36,6 +36,7 @@ class Joueur{
 		//void choisirPersonnage();//permet au joueur de choisir un personnage
 
 		void piocher(int nombre);//pioche un nombre de carte
+		void defausser(vector<Quartier*> cartes);
 		void prendrePiece(int nombre);//prend un nombre de piece
 		bool construire(Quartier * quartier);//construit un quartier dans sa cite
 		bool detruire(Quartier * quartier);

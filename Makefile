@@ -1,8 +1,8 @@
 CC=g++
 FLAG=-std=c++11
-FILE=main.cpp
+FILE=src/main.cpp
 NAME=Citadelle
-LAUNCH=./Citadelle
+LAUNCH=./src/Citadelle
 RM=rm
 
 all: compil

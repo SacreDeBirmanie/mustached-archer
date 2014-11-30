@@ -19,8 +19,7 @@ class Voleur : public Personnage{
 
 	public :
 		Voleur();
-		void capacite(Joueur* voleur,Joueur* vole);
-		void jouer();
+		static void voler(Joueur* voleur,Joueur* vole);
 };
 
 

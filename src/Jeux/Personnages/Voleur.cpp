@@ -9,7 +9,7 @@ void Voleur::capacite(Joueur* voleur,Joueur* vole){
 		cout<<"Erreur, ce personnage ne peut être volé"<<endl;
 	}
 	else{
-		voleur->prendrePiece(vole->getPieceOr());
+		voleur->setPieceOr(vole->getPieceOr() + voleur->getPieceOr());
 		vole->setPieceOr(0);	
 	}
 	

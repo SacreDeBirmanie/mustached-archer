@@ -17,7 +17,7 @@ class ComportementMarchandIA : public ComportementIA{
 
 	public :
 		ComportementMarchandIA();//constructeur de la classe EtatMarchandIA
-		void jouer();
+		void jouer(Partie * p, Joueur * joueur);
 		
 };
 

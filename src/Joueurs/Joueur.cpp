@@ -15,7 +15,7 @@ vector<Quartier*> Joueur::getMain(){
 	return main_;
 }
 
-void setMain(vector<Quartier*> main){
+void Joueur::setMain(vector<Quartier*> main){
 	main_=main;
 }
 
@@ -31,7 +31,7 @@ void Joueur::setPieceOr(int piece){
 	pieceOr_=piece;
 }
 
-int Joueur::getCite(){
+Cite* Joueur::getCite(){
 	return cite_;
 }
 
@@ -74,6 +74,19 @@ void Joueur::choisirPersonnage(vector<Personnage*> persosDispo){
 
 void Joueur::choisirGainTour(){
     comportement_->choisirGainTour(this);
+}
+
+int Joueur::compterQuartiersMarchands(){
+	return cite_->compterQuartiersMarchands();
+}
+int Joueur::compterQuartiersReligieux(){
+	return cite_->compterQuartiersReligieux();
+}
+int Joueur::compterQuartiersNobles(){
+	return cite_->compterQuartiersNobles();
+}
+int Joueur::compterQuartiersMilitaires(){
+	return cite_->compterQuartiersMilitaires();
 }
 
 int Joueur::decompteDesPoints(){

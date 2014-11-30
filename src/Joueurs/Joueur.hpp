@@ -41,6 +41,10 @@ class Joueur{
 		void choisirPersonnage(vector<Personnage*> persosDispo);
 		void choisirGainTour();
 		//void capacite();// active la capacité spéciale du personnage choisi
+		int compterQuartiersMarchands();
+		int compterQuartiersReligieux();
+		int compterQuartiersNobles();
+		int compterQuartiersMilitaires();
 		int decompteDesPoints();
 
 		bool operator==(Joueur const &b);

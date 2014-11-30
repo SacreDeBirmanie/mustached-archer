@@ -4,4 +4,6 @@
 
 ComportementMarchandIA::ComportementMarchandIA(){}
 
-void ComportementMarchandIA::jouer(){}
+void ComportementMarchandIA::jouer(Partie * p, Joueur * joueur){
+	
+}

@@ -17,7 +17,7 @@
 class Cite : public Observable{
 	
 	private :
-		vector<Quartier*> quartiers_; //la citadelle
+		vector<Quartier*> quartiers_; //!< la citadelle
 	public :
 		Cite();//le constructeur
 		~Cite();

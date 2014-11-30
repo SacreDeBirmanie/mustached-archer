@@ -1,20 +1,26 @@
-/**
-*   Fichier Merveille.hpp
-*   \brief Définition du type Merveille
+/*!
+* \file Merveille.hpp
+* \brief Fichier contenant les entêtes de la classe Merveille
+* \author François Hallereau
+* \author Sébastien Vallée
+* \date 12.2014
 */
 
 #ifndef MERVEILLE_HPP
 #define MERVEILLE_HPP
 
 
-
+//--------------------------------------------------
+/*!
+* \class Merveille
+* \brief Classe implémentant les Merveilles
+*/
 class Merveille : public Quartier{
 
-	private :
-		
-
 	public :
-		Merveille();//constructeur de la classe Assassin
+		Merveille(string nom, int type,int cout);
+		~Merveille();
+		virtual void pouvoir() = 0;
 		
 		
 };

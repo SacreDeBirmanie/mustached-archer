@@ -1,8 +1,10 @@
 /*!
- * \file Quartier.hpp
- * \brief Définition de la classe quartier
- * \author François Hallereau & Sébastien Vallée
- */
+* \file Quartier.hpp
+* \brief Fichier contenant les entêtes de la classe Quartier
+* \author François Hallereau
+* \author Sébastien Vallée
+* \date 12.2014
+*/
 
 #ifndef QUARTIER_HPP
 #define QUARTIER_HPP
@@ -13,13 +15,19 @@
 #define NOBLE  3
 #define MILITAIRE  4
 
+//--------------------------------------------------
+/*!
+* \class Quartier
+* \brief Classe implémentant les quartiers
+*/
+
 class Quartier{
 
 
 	protected :
-		string nom_;
-		int type_;
-		int cout_;
+		string nom_;//!< le nom du quartier
+		int type_;//!< le type du quartier
+		int cout_;//!< le cout du quartier
 
 
 
@@ -30,7 +38,6 @@ class Quartier{
 		string getNom();
 		int getCout();
 		int getType();
-		int getPoints();
 		bool estMarchand();
 		bool estReligieux();
 		bool estNoble();

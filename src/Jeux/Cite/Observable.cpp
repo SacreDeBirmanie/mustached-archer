@@ -1,5 +1,5 @@
 /*!
-* \file Pioche.cpp
+* \file Observable.cpp
 * \brief Fichier contenant l'implémentation de la classe Observable
 * \author François Hallereau
 * \author Sébastien Vallée
@@ -12,8 +12,9 @@
 * \param taille la taille de la cité
 */
 void Observable::notify(int taille){
+	taille_=taille;
 	for(vector<Observer*>::iterator observers = list_observers.begin();observers != list_observers.end(); ++observers){
-		(*observers)->update(taille);
+		(*observers)->update(taille_);
 	}
 }
 

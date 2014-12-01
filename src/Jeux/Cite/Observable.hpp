@@ -17,7 +17,8 @@
 class Observable{
 	
 private:
-	vector<Observer*> list_observers;//!< liste des Observers
+	vector<Observer*> list_observers;//!< liste des Observers	
+	int taille_;
  
 public:
 	void notify(int taille);

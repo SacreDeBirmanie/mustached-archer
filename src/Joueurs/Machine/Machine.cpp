@@ -41,6 +41,6 @@ void Machine::jouer(){
 * \param persosDispo les personnages disponibles
 */
 void Machine::choisirPersonnage(vector<Personnage*> persosDispo){
-	int nb = Aleatoire::tirerEntier(0,persosDispo.size());
+	int nb = Aleatoire::tirerEntier(0,persosDispo.size()-1);
 	partie_->associer(persosDispo.at(nb),this);
 }

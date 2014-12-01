@@ -20,9 +20,9 @@ class AssociationPersonnageJoueur{
 
 	private :
 		int couronnement_; //!<  désigne le joueur qui commence le tour
-		bool selection_; //!<
+		bool selection_; //!< vrai si le joueur couronné à choisi son perso
 		int curseur_; //!<
-		int choixCourant_; //!<
+		int choixCourant_; //!<le joueur qui choisi son perso
 		vector<Joueur*> placementJoueur_;//!<
 		map<string, Joueur*> listeJoueurs_;//!< Liste des joueurs de la partie
 		map<int, Personnage*> listePersonnages_;//!< Liste des personnages de la partie

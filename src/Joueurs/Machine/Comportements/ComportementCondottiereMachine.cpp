@@ -1,7 +1,30 @@
-ComportementCondottiereMachine::ComportementCondottiereMachine():ComportementMachine(){
+/*!
+* \file ComportementCondottiereMachine.cpp
+* \brief Fichier contenant l'implémentation de la classe ComportementCondottiereMachine
+* \author François Hallereau
+* \author Sébastien Vallée
+* \date 12.2014
+*/
 
-}
+//--------------------------------------------------
+/*!
+* \brief Constructeur de la classe
+*/
+ComportementCondottiereMachine::ComportementCondottiereMachine():ComportementMachine(){}
 
+//--------------------------------------------------
+/*!
+* \brief Destructeur de la classe
+*/
+ComportementCondottiereMachine::~ComportementCondottiereMachine(){}
+
+
+//--------------------------------------------------
+/*!
+* \brief méthode de jeu pour le condottiere machine
+* \param partie la partie
+* \param joueur le joueur
+*/
 void ComportementCondottiereMachine::jouer(Partie * partie, Joueur * joueur){
 	Condottiere::capacite(joueur);
 	choisirGainTour(joueur);
@@ -10,6 +33,13 @@ void ComportementCondottiereMachine::jouer(Partie * partie, Joueur * joueur){
 
 }
 
+
+//--------------------------------------------------
+/*!
+* \brief méthode pour détruire un quartier
+* \param partie la partie
+* \param joueur le joueur
+*/
 void ComportementCondottiereMachine::choixDestruction(Partie * partie , Joueur * joueur){
 	vector<Joueur*> tmp = partie->recupererListeJoueurs();
 	vector<int> exclus;

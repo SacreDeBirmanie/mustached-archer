@@ -1,12 +1,19 @@
-/**
-*   Fichier ComportementAssassinMachine.hpp
-*   Définition du type ComportementAssassinMachine
+/*!
+* \file ComportementAssassinMachine.hpp
+* \brief Fichier contenant les entêtes de la classe ComportementAssassinMachine
+* \author François Hallereau
+* \author Sébastien Vallée
+* \date 12.2014
 */
 
 #ifndef COMPORTEMENTASSASSINMACHINE_HPP
 #define COMPORTEMENTASSASSINMACHINE_HPP
 
-
+//--------------------------------------------------
+/*!
+* \class ComportementAssassinMachine
+* \brief Classe gérant le comportement machine pour le perso assassin
+*/
 class ComportementAssassinMachine : public ComportementMachine{
 
 
@@ -15,7 +22,8 @@ class ComportementAssassinMachine : public ComportementMachine{
 		
 
 	public :
-		ComportementAssassinMachine();//constructeur de la classe EtatAssassinMachine
+		ComportementAssassinMachine();
+		~ComportementAssassinMachine();
 		void jouer(Partie * p, Joueur * j);
 		void choixAssassinat(Partie * p, Joueur * j);
 		

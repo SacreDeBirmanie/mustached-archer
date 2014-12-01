@@ -33,9 +33,9 @@ template <typename T> class Chaine {
 				Maillon<T> * suivant;
 				Maillon<T> * ptr = this->tete;
 
-				while(!(this->ptr==NULL)){
-					suivant=this->ptr->suivant;
-					free(this->ptr);
+				while(!(ptr==NULL)){
+					suivant=ptr->suivant;
+					free(ptr);
 					ptr=suivant;
 				}
 				this->tete=0;

@@ -31,6 +31,8 @@ class AssociationPersonnageJoueur{
 		Chaine<Joueur*> *ordreTour_;//!< liste chainé qui contient les joueurs dans l'ordre du tour
 		Maillon<Joueur*> *joueurCourant_;//!< le joueur en train de jouer
 
+		vector<int> recupererListeOrdre();//!< retourne un vector trié des ordres des personnages
+
 
 	public :
 		AssociationPersonnageJoueur();

@@ -72,7 +72,10 @@ void Partie::couronnement(Joueur *joueur){
 void Partie::lancementDuTour(){
 	cout<<"le tour debute"<<endl;
 	Joueur * joueur = roles_->joueurSuivantTour();
+	cout<<"le joueur est selectionne"<<endl;
 	while(joueur != NULL){
+        cout<<"on est dedans !"<<endl;
+        cout<<"Au joueur :"<<joueur->getPseudo()<<endl;
 		joueur->jouer();
 		joueur = roles_->joueurSuivantTour();
 	}

@@ -21,7 +21,18 @@ AssociationPersonnageJoueur::AssociationPersonnageJoueur() {
 */
 AssociationPersonnageJoueur::~AssociationPersonnageJoueur() {}
 
-
+/*!
+* \brief Méthode qui permet de recuperer les ordre des personnages presents
+* \return un vecteur contenant des entiers représentant les numeros des personnages
+*/
+vector<int> AssociationPersonnageJoueur::recupererListeOrdre(){
+	vector<int> tmp;
+	for(map<int,Personnage*>::iterator iter = listePersonnages_.begin();iter !=listePersonnages_.end();iter++){
+		tmp.push_back(iter->first);
+	}
+	std::sort(tmp.begin(),tmp.end());
+	return tmp;
+}
 //--------------------------------------------------
 /*!
 * \brief Méthode qui ajoute un joueur
@@ -103,7 +114,7 @@ void AssociationPersonnageJoueur::associer(Joueur* j, Personnage* p){
 * \brief Méthode qui réinitialise les associations
 */
 void AssociationPersonnageJoueur::reinitialiser(){
-	for (map<string, int>::iterator iter = assocJP_.begin(); iter != assocJP_.end(); iter++ ){
+	for (map<string, Joueur*>::iterator iter = listeJoueurs_.begin(); iter != listeJoueurs_.end(); iter++ ){
 		assocJP_[iter->first] = -1;
 	}
 
@@ -112,6 +123,7 @@ void AssociationPersonnageJoueur::reinitialiser(){
 	}
 
 	selection_ = false;
+	joueurCourant_ = NULL;
 }
 
 //--------------------------------------------------
@@ -155,16 +167,20 @@ vector<Personnage*> AssociationPersonnageJoueur::persosDisponible(){
 * \return Le joueur
 */
 Joueur* AssociationPersonnageJoueur::joueurSuivantTour(){
-	if(joueurCourant_->suivant != NULL){
+	if(joueurCourant_ != NULL){
 		Maillon<Joueur*> * tmp = joueurCourant_;
 		joueurCourant_ = joueurCourant_->suivant;
 		return tmp->element;
 	}
 	else{
-		for(map<int,string>::Iterator it = assocPJ_)
-		ordreTour_->
-	}
-		
+			vector<int> tmp = recupererListeOrdre();
+			ordreTour_->reinitialiser();
+			for(vector<int>::iterator it = tmp.begin();it!=tmp.end();it++){
+				if(assocPJ_[(*it)]!="undefined")
+					ordreTour_->insererQueue(listeJoueurs_[assocPJ_[*it]]);
+			}
+		}
+
 }
 
 //--------------------------------------------------

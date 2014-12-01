@@ -5,11 +5,11 @@ Pour plus de renseignement sur le jeu : [INFO](http://fr.wikipedia.org/wiki/Cita
 
 ## Compilation
 ```$ make
-...```
+```
 
 ## Utilisation
 ```$ make run
-...```
+```
 
 ## Contributors
 * François Hallereau

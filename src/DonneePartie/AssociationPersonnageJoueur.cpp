@@ -103,12 +103,12 @@ void AssociationPersonnageJoueur::associer(Joueur* j, Personnage* p){
 * \brief Méthode qui réinitialise les associations
 */
 void AssociationPersonnageJoueur::reinitialiser(){
-	for (map<string, Joueur*>::iterator iter = listeJoueurs_.begin(); iter != listeJoueurs_.end(); iter++ ){
+	for (map<string, int>::iterator iter = assocJP_.begin(); iter != assocJP_.end(); iter++ ){
 		assocJP_[iter->first] = -1;
 	}
 
 	for ( map<int,Personnage*>::iterator iter = listePersonnages_.begin(); iter != listePersonnages_.end(); iter++ ){
-		assocPJ_[iter->first] = "";
+		assocPJ_[iter->first] = "Undefined";
 	}
 
 	selection_ = false;
@@ -143,7 +143,7 @@ vector<Personnage*> AssociationPersonnageJoueur::persosDisponible(){
 	vector<Personnage*> tmp;
 
 	for ( map<int,string>::iterator iter = assocPJ_.begin(); iter != assocPJ_.end(); iter++ ){
-		if(iter->second =="")
+		if(iter->second =="Undefined")
 			tmp.push_back(listePersonnages_[iter->first]);
 	}
 	return tmp;
@@ -160,8 +160,11 @@ Joueur* AssociationPersonnageJoueur::joueurSuivantTour(){
 		joueurCourant_ = joueurCourant_->suivant;
 		return tmp->element;
 	}
-	else
-		return NULL;
+	else{
+		for(map<int,string>::Iterator it = assocPJ_)
+		ordreTour_->
+	}
+		
 }
 
 //--------------------------------------------------

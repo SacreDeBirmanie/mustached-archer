@@ -48,7 +48,7 @@ class Joueur{
 		void prendrePiece(int nombre);//prend un nombre de piece
 		bool construire(Quartier * quartier);//construit un quartier dans sa cite
 		bool detruire(Quartier * quartier);
-		void choisirPersonnage(vector<Personnage*> persosDispo);
+		virtual void choisirPersonnage(vector<Personnage*> persosDispo)=0;
 		void choisirGainTour();
 		int compterQuartiersMarchands();
 		int compterQuartiersReligieux();

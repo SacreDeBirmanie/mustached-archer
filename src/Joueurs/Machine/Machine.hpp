@@ -14,6 +14,7 @@ class Machine : public Joueur{
 	public :
 		Machine(string pseudo,Partie * partie);
 		void setComportement(Personnage *p);
+		void choisirPersonnage(vector<Personnage*> persosDispo);
 		void jouer();
 };
 

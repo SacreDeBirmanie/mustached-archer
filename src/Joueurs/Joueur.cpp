@@ -165,14 +165,18 @@ bool Joueur::detruire(Quartier * quartier){
         return false;
 }
 
+<<<<<<< HEAD
 //--------------------------------------------------
 /*!
 * \brief Méthode qui permet au joueur de choisir un personnage
 * \param persosDispo les personnages disponibles
 */
 void Joueur::choisirPersonnage(vector<Personnage*> persosDispo){
+=======
+/*void Joueur::choisirPersonnage(vector<Personnage*> persosDispo){
+>>>>>>> b1c77289fe6daa94e2bb7d7226f16e00d34d4750
 	comportement_->choisirPersonnage(partie_,persosDispo,this);
-}
+}*/
 
 //--------------------------------------------------
 /*!

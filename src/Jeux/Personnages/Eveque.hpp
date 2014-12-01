@@ -1,12 +1,19 @@
 /*!
- * \file Eveque.hpp
- * \brief Classe Eveque qui hérite de personnage
- * \author François Hallereau & Sébastien Vallée
- */
+* \file Eveque.hpp
+* \brief Fichier contenant les entêtes de la classe Eveque
+* \author François Hallereau
+* \author Sébastien Vallée
+* \date 12.2014
+*/
 
 #ifndef EVEQUE_HPP
 #define EVEQUE_HPP
 
+//--------------------------------------------------
+/*!
+* \class Eveque
+* \brief Classe implémentant le personnage Eveque
+*/
 class Eveque : public Personnage{
 
 
@@ -16,6 +23,7 @@ class Eveque : public Personnage{
 
 	public :
 		Eveque(string nom, int ordre, ComportementMachine * comp);
+		~Eveque();
 		static void capacite(Joueur* joueur);
 };
 

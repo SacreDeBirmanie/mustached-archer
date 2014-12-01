@@ -1,12 +1,19 @@
-/*
-   Fichier Condottiere.hpp
-
-   Définition du type Condottiere
+/*!
+* \file Condottiere.hpp
+* \brief Fichier contenant les entêtes de la classe Condottiere
+* \author François Hallereau
+* \author Sébastien Vallée
+* \date 12.2014
 */
 
 #ifndef CONDOTTIERE_HPP
 #define CONDOTTIERE_HPP
 
+//--------------------------------------------------
+/*!
+* \class Condottiere
+* \brief Classe implémentant le personnage Condottiere
+*/
 class Condottiere : public Personnage{
 
 
@@ -15,6 +22,7 @@ class Condottiere : public Personnage{
 
 	public :
 		Condottiere(string nom, int ordre, ComportementMachine* comp);//constructeur de la classe Condottiere
+		~Condottiere();
 		static void capacite(Joueur* joueur);
 		static bool destruction(Joueur * condo, Joueur * cible, Quartier * quartier);
 

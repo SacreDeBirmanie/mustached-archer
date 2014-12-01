@@ -20,6 +20,8 @@ Machine::Machine(string pseudo,Partie * partie) : Joueur(pseudo,partie){}
 */
 Machine::~Machine(){}
 
+
+
 void Machine::setComportement(Personnage *p){
 	comportement_ = p->getComportementMachine();
 }

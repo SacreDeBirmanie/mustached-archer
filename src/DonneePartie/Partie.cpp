@@ -109,7 +109,7 @@ bool Partie::finDuJeu(){
 * \param joueur le nouveau joueur
 */
 void Partie::nouveauJoueur(Joueur* joueur){
-	if(roles_->nouveauJoueur(joueur))
+	if(!roles_->nouveauJoueur(joueur))
 		cout<<"Le joueur "<<joueur->getPseudo()<<" a deja ete ajoute dans la partie"<<endl;
 }
 
@@ -119,7 +119,7 @@ void Partie::nouveauJoueur(Joueur* joueur){
 * \param personnage le nouveau personnage
 */
 void Partie::nouveauPersonnage(Personnage* personnage){
-	if(roles_->nouveauPersonnage(personnage))
+	if(!roles_->nouveauPersonnage(personnage))
 		cout<<"Le personnage "<<personnage->getNom()<<" a deja ete ajoute dans la partie"<<endl;
 }
 

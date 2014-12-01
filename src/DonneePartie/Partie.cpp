@@ -40,6 +40,7 @@ void Partie::choixDesPersonnages(){
 	while(joueur != NULL){
 		joueur->choisirPersonnage(roles_->persosDisponible());
 		joueur = roles_->joueurSuivantChoixPersonnages();
+		Sleep(200);
 	}
 	cout<<"Tout le monde a choisit son personnage, le tour va pouvoir commencer"<<endl;
 }
@@ -78,6 +79,7 @@ void Partie::lancementDuTour(){
         cout<<"Au joueur :"<<joueur->getPseudo()<<endl;
 		joueur->jouer();
 		joueur = roles_->joueurSuivantTour();
+		Sleep(200);
 	}
 
 	cout<<"Le tour est termine"<<endl;

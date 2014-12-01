@@ -9,6 +9,7 @@
 #ifndef PARTIE_HPP
 #define PARTIE_HPP
 
+#include<windows.h>
 
 #include <string> // pour le type std::string
 #include <vector>  //for std::vector

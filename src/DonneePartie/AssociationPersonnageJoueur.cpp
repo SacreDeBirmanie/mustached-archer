@@ -229,19 +229,16 @@ Joueur* AssociationPersonnageJoueur::joueurSuivantChoixPersonnages(){
 * \return
 */
 Joueur* AssociationPersonnageJoueur::joueurSuivantDecomptePoints(){
-	if(joueurCourant_ != NULL){
-		Maillon<Joueur*> * tmp = joueurCourant_;
-		joueurCourant_ = joueurCourant_->suivant;
-		return tmp->element;
+	if(choixCourant_ != couronnement_ && selection_ == true){
+		deplacerCurseurChoixPerso(false);
+		return placementJoueur_.at(choixCourant_);
 	}
-	else{
-			vector<int> tmp = recupererListeOrdre();
-			ordreTour_->reinitialiser();
-			for(vector<int>::iterator it = tmp.begin();it!=tmp.end();it++){
-				if(assocPJ_[(*it)]!="undefined")
-					ordreTour_->insererQueue(listeJoueurs_[assocPJ_[*it]]);
-			}
-		}
+	else if(choixCourant_ == couronnement_ && selection_ == false){
+		deplacerCurseurChoixPerso(true);
+		return placementJoueur_.at(choixCourant_);
+	}
+	else
+		return NULL;
 }
 
 //--------------------------------------------------

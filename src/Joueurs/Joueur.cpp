@@ -1,8 +1,10 @@
 /*!
- * \file Joueur.cpp
- * \brief La classe Joueur
- * \author François Hallereau & Sébastien Vallée
- */
+* \file Joueur.cpp
+* \brief Fichier contenant l'implémentation de la classe Joueur
+* \author François Hallereau
+* \author Sébastien Vallée
+* \date 12.2014
+*/
 
 //--------------------------------------------------
 /*!

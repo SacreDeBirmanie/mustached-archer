@@ -1,27 +1,34 @@
-/*
-   Fichier Joueur.hpp
-
-   Définition du type Joueur
+/*!
+* \file Joueur.hpp
+* \brief Fichier contenant les entêtes de la classe Joueur
+* \author François Hallereau
+* \author Sébastien Vallée
+* \date 12.2014
 */
-
 #ifndef JOUEUR_HPP
 #define JOUEUR_HPP
 
+//--------------------------------------------------
+/*!
+* \class Joueur
+* \brief Classe implémentant le type abstrait Joueur
+*/
 class Joueur{
 
 
 	protected :
-		string pseudo_;
-		vector<Quartier*> main_;//cartes dans la main du joueur
-		int pieceOr_;//nombre de piece d'or du joueur
-		Cite* cite_;
-		Partie * partie_;
-		Comportement * comportement_;
+		string pseudo_;//!< le pseudo du joueur
+		vector<Quartier*> main_;//!< cartes dans la main du joueur
+		int pieceOr_;//!< nombre de piece d'or du joueur
+		Cite* cite_;//!< la citadelle du joueur
+		Partie * partie_;//!< la partie en cours
+		Comportement * comportement_;//!< le comportement du joueur
 
 
 
 	public :
 		Joueur(string pseudo,Partie *partie);//constructeur de la classe Joueur
+		~Joueur();
 		string getPseudo();
 		vector<Quartier*> getMain();
 		void setMain(vector<Quartier*> main);

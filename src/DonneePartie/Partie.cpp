@@ -9,6 +9,8 @@
 //--------------------------------------------------
 /*!
 * \brief Constructeur de la classe
+* \param pioche la pioche du jeu
+* \param tailleVille le critère mettant fin à un partie, vaut 8 si non spécifié
 */
 Partie::Partie(Pioche * pioche, int tailleVille=8):
 pioche_(pioche), limiteTailleVille_(tailleVille), roles_(new AssociationPersonnageJoueur()) , villeComplete_(false) {}

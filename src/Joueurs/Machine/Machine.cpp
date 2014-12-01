@@ -18,7 +18,7 @@ Machine::Machine(string pseudo,Partie * partie) : Joueur(pseudo,partie){}
 /*!
 * \brief Destructeur de la classe
 */
-Machine::~Machine();
+Machine::~Machine(){}
 
 void Machine::setComportement(Personnage *p){
 	comportement_ = p->getComportementMachine();

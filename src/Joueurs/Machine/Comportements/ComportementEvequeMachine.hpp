@@ -17,7 +17,7 @@ class ComportementEvequeMachine : public ComportementMachine{
 
 	public :
 		ComportementEvequeMachine();//constructeur de la classe
-		void jouer();
+		void jouer(Partie * p, Joueur * joueur);
 		
 };
 

@@ -12,16 +12,16 @@ void ComportementAssassinMachine::jouer(Partie *p, Joueur *j){
 }
 
 void ComportementAssassinMachine::choixAssassinat(Partie * p, Joueur * j){
-	vector<Joueur*> tmp =  p->recupererListeJoueurs();
+	vector<Personnage*> tmp =  p->recupererListePersonnages();
 	vector<int> exclus;
 	bool trouve = false;
 	int i;
 
 	while(!trouve && exclus.size() < tmp.size()){
 		i = Aleatoire::tirerEntierAvecExclusion(exclus,0,tmp.size()-1);
-		if(tmp.at(i) != j){
+		if(tmp.at(i) != p->retrouverP(j)){
 			trouve = true;
-			Assassin::assassiner(p,p->retrouverP(tmp.at(i)));
+			Assassin::assassiner(p,tmp.at(i));
 		}
 
 	}

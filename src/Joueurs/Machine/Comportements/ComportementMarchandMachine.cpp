@@ -2,10 +2,10 @@
 *   Fichier ComportementMarchandMachine.cpp
 */
 
-ComportementMarchandMachine::ComportementMarchandMachine(){}
+ComportementMarchandMachine::ComportementMarchandMachine():ComportementMachine(){}
 
-void ComportementMarchandMachine::jouer(Partie * p, Joueur * joueur){
-	choisirGainTour(j);
+void ComportementMarchandMachine::jouer(Partie * partie, Joueur * joueur){
+	choisirGainTour(joueur);
 	Marchand::capacite(joueur);
-	choisirConstruction(j);
+	choisirConstruction(joueur);
 }

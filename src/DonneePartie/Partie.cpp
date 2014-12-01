@@ -59,6 +59,10 @@ void Partie::debuterLeJeu(){
 	}
 }
 
+void Partie::couronnement(Joueur *joueur){
+    roles_->couronnement(joueur);
+}
+
 //--------------------------------------------------
 /*!
 * \brief Méthode qui lance un tour
@@ -258,4 +262,13 @@ int Partie::nbPersonnages(){
 */
 vector<Joueur*> Partie::recupererListeJoueurs(){
     return roles_->recupererListeJoueurs();
+}
+
+//--------------------------------------------------
+/*!
+* \brief Méthode qui retourne la liste des personnages
+* \return La liste
+*/
+vector<Personnage*> Partie::recupererListePersonnages(){
+    return roles_->recupererListePersonnages();
 }

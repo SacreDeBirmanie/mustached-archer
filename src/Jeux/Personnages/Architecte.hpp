@@ -7,8 +7,6 @@
 #ifndef ARCHITECTE_HPP
 #define ARCHITECTE_HPP
 
-#include <string> // pour le type std::string
-#include "Personnage.hpp"
 
 class Architecte : public Personnage{
 
@@ -18,13 +16,12 @@ class Architecte : public Personnage{
 		
 
 	public :
-		Architecte();
-		void capacite(Joueur* joueur);
-		void jouer();
+		Architecte(string nom, int ordre, ComportementMachine * comp);
+		static void capacite(Joueur* joueur);
 };
 
 
-
+#include "../../Joueurs/Machine/Comportements/ComportementArchitecteMachine.hpp"
 /******************************************************************************/
 #include "Architecte.cpp"
 #endif // ARCHITECTE_HPP

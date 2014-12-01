@@ -9,7 +9,7 @@ void Magicien::echangerMainContreJoueur(Joueur* magicien,Joueur* vole){
 }
 
 
-void echangerMaincontrePioche(vector<Quartier*> cartes, Joueur* joueur){
+void Magicien::echangerMainContrePioche(vector<Quartier*> cartes, Joueur* joueur){
 	int n = cartes.size();
 	joueur->defausser(cartes);
 	joueur->piocher(n);

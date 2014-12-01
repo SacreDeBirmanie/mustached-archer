@@ -3,20 +3,18 @@
  * \brief Classe Roi qui hérite de personnage
  * \author François Hallereau & Sébastien Vallée
  */
+Roi::Roi(string nom, int ordre, ComportementMachine * comp): Personnage(nom,ordre,comp){
 
+}
 
 /*!
  * \brief Méthode qui défini la capacité du roi
  * Chaque quartier noble lui rapporte une pièce d'or
  */
-void Roi::capacite(Joueur* joueur){	
-	int po=0;	
-	vector<Quartier*> cite = joueur->getCite();
-	for(vector<Quartier*>::iterator it = cite.begin();it!=cite.end();++it){
-		if((*it)->estNoble()) //si le quartier est noble, +1 pièce
-			++po;
-	}
-	joueur->prendrePiece(po);
+void Roi::capacite(Partie * partie, Joueur* joueur){
+	joueur->prendrePiece(joueur->compterQuartiersNobles());
+	partie->couronnement(joueur);
+
 }
 
 

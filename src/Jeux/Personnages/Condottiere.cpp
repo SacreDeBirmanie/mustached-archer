@@ -4,7 +4,7 @@
  * \author François Hallereau & Sébastien Vallée
  */
 
- Condottiere::Condottiere(string nom, int ordre, ComportementMachine* comp): Personnage(nom,ordre,comp){
+Condottiere::Condottiere(string nom, int ordre, ComportementMachine* comp): Personnage(nom,ordre,comp){
 
  }
 

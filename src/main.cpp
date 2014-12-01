@@ -24,10 +24,10 @@ int main(){
 	partie->nouveauJoueur(new Machine("D",partie));
 
 	partie->nouveauPersonnage(fabrique->creerAssassin());
-	partie->nouveauPersonnage(fabrique->creerAssassin());
-	partie->nouveauPersonnage(fabrique->creerAssassin());
-	partie->nouveauPersonnage(fabrique->creerAssassin());
-	partie->nouveauPersonnage(fabrique->creerAssassin());
+	partie->nouveauPersonnage(fabrique->creerCondottiere());
+	partie->nouveauPersonnage(fabrique->creerMagicien());
+	partie->nouveauPersonnage(fabrique->creerVoleur());
+	partie->nouveauPersonnage(fabrique->creerRoi());
 
 	partie->debuterLeJeu();
 

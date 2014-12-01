@@ -20,10 +20,10 @@ class AssociationPersonnageJoueur{
 
 	private :
 		int couronnement_; //!<  désigne le joueur qui commence le tour
-		bool selection_; //!< 
-		int curseur_; //!< 
-		int choixCourant_; //!< 
-		vector<Joueur*> placementJoueur_;//!< 
+		bool selection_; //!<
+		int curseur_; //!<
+		int choixCourant_; //!<
+		vector<Joueur*> placementJoueur_;//!<
 		map<string, Joueur*> listeJoueurs_;//!< Liste des joueurs de la partie
 		map<int, Personnage*> listePersonnages_;//!< Liste des personnages de la partie
 		map<string,int>  assocJP_;//!< liste associant un joueur à un personnage
@@ -35,7 +35,7 @@ class AssociationPersonnageJoueur{
 	public :
 		AssociationPersonnageJoueur();
 		~AssociationPersonnageJoueur();
-		
+
 		bool nouveauJoueur(Joueur *joueur);
 		bool nouveauPersonnage(Personnage *personnage);
 		int nbJoueurs();
@@ -54,6 +54,7 @@ class AssociationPersonnageJoueur{
 		void modifierOrdreJoueur(Joueur *j);
 		void modifierOrdreJoueur(Joueur *j,Joueur *jj);
 		vector<Joueur*> recupererListeJoueurs();
+		vector<Personnage*> recupererListePersonnages();
 
 
 };

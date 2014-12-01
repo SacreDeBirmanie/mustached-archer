@@ -1,29 +1,30 @@
-ComportementCondottiere::ComportementCondottiere(){
+ComportementCondottiereMachine::ComportementCondottiereMachine():ComportementMachine(){
 
 }
 
-ComportementCondottiere::jouer(Partie * partie, Joueur * joueur){
+void ComportementCondottiereMachine::jouer(Partie * partie, Joueur * joueur){
 	Condottiere::capacite(joueur);
-	choisirGainTour(j);
-	choisirConstruction(j);
-	choixDestruction(p,j);
+	choisirGainTour(joueur);
+	choisirConstruction(joueur);
+	choixDestruction(partie,joueur);
 
 }
 
-void ComportementCondottiere::choixDestruction(partie * partie , Joueur * joueur){
+void ComportementCondottiereMachine::choixDestruction(Partie * partie , Joueur * joueur){
 	vector<Joueur*> tmp = partie->recupererListeJoueurs();
-	vector<Joueur*> exclus;
-	int i; 
+	vector<int> exclus;
+	int i;
 	Joueur * jj;
-	
-	while(exclus.size < tmp.size() && !trouve){
+	bool trouve =false;
+
+	while(exclus.size() < tmp.size() && !trouve){
 		i = Aleatoire::tirerEntierAvecExclusion(exclus,0,tmp.size()-1);
 		jj = tmp.at(i);
 		if(jj != joueur){
 			vector<Quartier*> qq= jj->recupererCite();
-			
-			for(vector<Quartier*>::iterator quartier=qq.begin();quartier!=qq.end();++quartier){
-				if(Condottiere::destruction(joueur,jj,qq)){
+
+			for(vector<Quartier*>::iterator iter=qq.begin();iter!=qq.end();++iter){
+				if(Condottiere::destruction(joueur,jj,(*iter))){
 					trouve = true;
 				}
 			}

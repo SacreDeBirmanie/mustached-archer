@@ -7,10 +7,6 @@
 #ifndef CONDOTTIERE_HPP
 #define CONDOTTIERE_HPP
 
-#include <string> // pour le type std::string
-
-class Joueur;
-
 class Condottiere : public Personnage{
 
 
@@ -26,6 +22,7 @@ class Condottiere : public Personnage{
 
 
 
+#include "../../Joueurs/Machine/Comportements/ComportementCondottiereMachine.hpp"
 /******************************************************************************/
 #include "Condottiere.cpp"
 #endif // CONDOTTIERE_HPP

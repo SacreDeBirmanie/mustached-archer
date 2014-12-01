@@ -7,9 +7,6 @@
 #ifndef ROI_HPP
 #define ROI_HPP
 
-#include <string> // pour le type std::string
-#include "Personnage.hpp"
-
 class Roi : public Personnage{
 
 
@@ -18,15 +15,14 @@ class Roi : public Personnage{
 		
 
 	public :
-		Roi();
-		void capacite(Joueur* joueur);
-		void jouer();
+		Roi(string nom, int ordre, ComportementMachine * comp);
+		static void capacite(Partie * partie,Joueur* joueur);
 };
 
 
-
+#include "../../Joueurs/Machine/Comportements/ComportementRoiMachine.hpp"
 /******************************************************************************/
-#include "Voleur.cpp"
-#endif // VOLEUR_HPP
+#include "Roi.cpp"
+#endif // Roi
 
 

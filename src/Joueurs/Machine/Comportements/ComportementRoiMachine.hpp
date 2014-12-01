@@ -17,7 +17,7 @@ class ComportementRoiMachine : public ComportementMachine{
 
 	public :
 		ComportementRoiMachine();//constructeur de la classe EtatRoiMachine
-		void jouer();
+		void jouer(Partie * partie, Joueur * joueur);
 		
 };
 

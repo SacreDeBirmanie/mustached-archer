@@ -1,18 +1,18 @@
-ComportementMagicienMachine::ComportementMagicienMachine(){
+ComportementMagicienMachine::ComportementMagicienMachine():ComportementMachine(){
 
 }
 
-void jouer(Partie * partie,Joueur * joueur){
-	choisirGainTour(j);
-	choixPouvoir(p,j);
-	choisirConstruction(j);
+void ComportementMagicienMachine::jouer(Partie * partie,Joueur * joueur){
+	choisirGainTour(joueur);
+	choixPouvoir(partie,joueur);
+	choisirConstruction(joueur);
 }
 
-void choixPouvoir(Partie * partie, Joueur * joueur){
+void ComportementMagicienMachine::choixPouvoir(Partie * partie, Joueur * joueur){
 	int i = Aleatoire::tirerEntier(1,2);
-	
+
 	if(i==1){
-		vector<Joueur*> tmp =  p->recupererListeJoueurs();
+		vector<Joueur*> tmp =  partie->recupererListeJoueurs();
 		vector<int> exclus;
 		bool trouve = false;
 		int i;
@@ -27,6 +27,6 @@ void choixPouvoir(Partie * partie, Joueur * joueur){
 		}
 	}
 	else{
-		Magicien::echangerMainContreJoueur(joueur->getMain(),joueur);
+		Magicien::echangerMainContrePioche(joueur->getMain(),joueur);
 	}
 }

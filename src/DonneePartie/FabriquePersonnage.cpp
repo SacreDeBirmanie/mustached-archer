@@ -7,7 +7,7 @@ Personnage * FabriquePersonnage::FabriquePersonnage::creerAssassin(){
 }
 
 Personnage * FabriquePersonnage::creerVoleur(){
-	return (new Voleur("Voleur",2,new ComportementVoleurMachine()));
+	return (new Voleur("Voleur",2,new ComportementVoleurMachine(), new EstVole()));
 }
 
 Personnage * FabriquePersonnage::creerMagicien(){
@@ -23,7 +23,7 @@ Personnage * FabriquePersonnage::creerEveque(){
 }
 
 Personnage * FabriquePersonnage::creerMarchand(){
-	return new creerMarchand("creerMarchand",6,new ComportementcreerMarchandMachine());
+	return new Marchand("creerMarchand",6,new ComportementMarchandMachine());
 }
 
 Personnage * FabriquePersonnage::creerArchitecte(){

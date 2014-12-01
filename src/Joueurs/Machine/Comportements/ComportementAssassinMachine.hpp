@@ -6,7 +6,6 @@
 #ifndef COMPORTEMENTASSASSINMACHINE_HPP
 #define COMPORTEMENTASSASSINMACHINE_HPP
 
-#include <string> // pour le type std::string
 
 class ComportementAssassinMachine : public ComportementMachine{
 

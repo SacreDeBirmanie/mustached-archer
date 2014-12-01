@@ -19,7 +19,6 @@ class Assassin : public Personnage{
 
 };
 
-//#include "../../Joueurs/Machine/Comportements/Specialite/ComportementMacchabeeMachine.hpp"
 /******************************************************************************/
 #include "../../Joueurs/Machine/Comportements/ComportementAssassinMachine.hpp"
 #include "Assassin.cpp"

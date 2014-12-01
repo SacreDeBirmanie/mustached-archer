@@ -63,6 +63,7 @@ class Partie : public Observer{
 		void nouveauJoueur(Joueur *joueur);
 		void nouveauPersonnage(Personnage *personnage);
 		void debuterLeJeu();
+		void couronnement(Joueur *joueur);
 		void decompteDesPoints(map<string,int> *tmp);
 		void associer(Personnage *p, Joueur *j);
 		vector<Quartier*> piocher(int nombre);
@@ -76,6 +77,7 @@ class Partie : public Observer{
 		int nbJoueurs();
 		int nbPersonnages();
 		vector<Joueur*> recupererListeJoueurs();
+		vector<Personnage*> recupererListePersonnages();
 
 };
 

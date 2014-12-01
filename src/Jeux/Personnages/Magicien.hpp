@@ -7,8 +7,6 @@
 #ifndef MAGICIEN_HPP
 #define MAGICIEN_HPP
 
-#include <string> // pour le type std::string
-
 class Magicien : public Personnage{
 
 
@@ -19,12 +17,12 @@ class Magicien : public Personnage{
 	public :
 		Magicien(string nom, int ordre, ComportementMachine* comp);//constructeur de la classe Magicien
 		static void echangerMainContreJoueur(Joueur * joueur, Joueur* vole);
-		static void echangerMaincontrePioche(vector<Quartier> cartes, Joueur* joueur);
+		static void echangerMainContrePioche(vector<Quartier*> cartes, Joueur* joueur);
 
 };
 
 
-
+#include "../../Joueurs/Machine/Comportements/ComportementMagicienMachine.hpp"
 /******************************************************************************/
 #include "Magicien.cpp"
 #endif // MAGICIEN_HPP

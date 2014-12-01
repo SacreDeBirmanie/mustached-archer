@@ -17,7 +17,7 @@ class ComportementArchitecteMachine : public ComportementMachine{
 
 	public :
 		ComportementArchitecteMachine();//constructeur de la classe
-		void jouer();
+		void jouer(Partie * partie, Joueur * joueur);
 		
 };
 

@@ -7,9 +7,6 @@
 #ifndef EVEQUE_HPP
 #define EVEQUE_HPP
 
-#include <string> // pour le type std::string
-#include "Personnage.hpp"
-
 class Eveque : public Personnage{
 
 
@@ -18,13 +15,13 @@ class Eveque : public Personnage{
 		
 
 	public :
-		Eveque();
-		void capacite(Joueur* joueur);
-		void jouer();
+		Eveque(string nom, int ordre, ComportementMachine * comp);
+		static void capacite(Joueur* joueur);
 };
 
 
 
+#include "../../Joueurs/Machine/Comportements/ComportementEvequeMachine.hpp"
 /******************************************************************************/
 #include "Eveque.cpp"
 #endif // EVEQUE_HPP

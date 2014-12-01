@@ -13,16 +13,14 @@ class ComportementVoleurMachine : public ComportementMachine{
 
 	private :
 
-		
+
 
 	public :
 		ComportementVoleurMachine();//constructeur de la classe EtatVoleurMachine
 		void jouer(Partie * partie, Joueur * joueur);
-		Personnage choixVole();
-		
+		void choixVole(Partie * partie, Joueur * joueur);
+
 };
-
-
 
 /******************************************************************************/
 #include "ComportementVoleurMachine.cpp"

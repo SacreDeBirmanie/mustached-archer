@@ -35,6 +35,10 @@ vector<Quartier*> Joueur::recupererCite(){
 	return cite_->recupererCite();
 }
 
+void Joueur::setComportement(Comportement * comp){
+    comportement_ = comp;
+}
+
 void Joueur::piocher(int nombre){
     vector<Quartier*> tmp = this->partie_->piocher(nombre);
     vector<Quartier*>::iterator it = tmp.begin();

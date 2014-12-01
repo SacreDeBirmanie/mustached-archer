@@ -166,8 +166,8 @@ Joueur* AssociationPersonnageJoueur::joueurSuivantTour(){
 
 //--------------------------------------------------
 /*!
-* \brief 
-* \param init 
+* \brief
+* \param init
 */
 void AssociationPersonnageJoueur::deplacerCurseurChoixPerso(bool init){
 	if(init==false)
@@ -198,8 +198,8 @@ Joueur* AssociationPersonnageJoueur::joueurSuivantChoixPersonnages(){
 
 //--------------------------------------------------
 /*!
-* \brief 
-* \return 
+* \brief
+* \return
 */
 Joueur* AssociationPersonnageJoueur::joueurSuivantDecomptePoints(){
 	return NULL;
@@ -247,5 +247,19 @@ void AssociationPersonnageJoueur::modifierOrdreJoueur(Joueur* j1, Joueur* j2){
 */
 vector<Joueur*> AssociationPersonnageJoueur::recupererListeJoueurs(){
     return placementJoueur_;
+}
+
+//--------------------------------------------------
+/*!
+* \brief Méthode qui retourne la liste des personnages
+* \return La liste
+*/
+vector<Personnage*> AssociationPersonnageJoueur::recupererListePersonnages(){
+    vector<Personnage*> tmp;
+    for(map<int,Personnage*>::iterator it=listePersonnages_.begin() ; it!=listePersonnages_.end() ; ++it){
+        tmp.push_back(it->second);
+    }
+
+    return tmp;
 }
 

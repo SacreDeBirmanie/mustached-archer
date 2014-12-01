@@ -8,22 +8,22 @@
 
 #include <string> // pour le type std::string
 
-class ComportementCondottiere : public ComportementMachine{
+class ComportementCondottiereMachine : public ComportementMachine{
 
 
 	private :
 
-		
+
 
 	public :
-		ComportementCondottiere();//constructeur de la classe EtatCondottiere
+		ComportementCondottiereMachine();//constructeur de la classe EtatCondottiere
 		void jouer(Partie * partie, Joueur * joueur);
-		void choixDestruction(partie * partie , Joueur * joueur);
-		
+		void choixDestruction(Partie * partie , Joueur * joueur);
+
 };
 
 
 
 /******************************************************************************/
-#include "ComportementCondottiere.cpp"
+#include "ComportementCondottiereMachine.cpp"
 #endif // COMPORTEMENTCONDOTTIEREMACHINE_HPP

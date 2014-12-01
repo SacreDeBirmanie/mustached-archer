@@ -29,6 +29,7 @@ class Joueur{
 		int getPieceOr();
 		void setPieceOr(int piece);
 		vector<Quartier*> recupererCite();
+		void setComportement(Comportement * comp);
         virtual void setComportement(Personnage * p)= 0;
         virtual void jouer()=0;//effectue un tour de jeu
 

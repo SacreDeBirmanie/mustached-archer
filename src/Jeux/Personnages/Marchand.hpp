@@ -19,11 +19,11 @@ class Marchand : public Personnage{
 
 	public :
 		Marchand(string nom, int ordre, ComportementMachine* comp);//constructeur de la classe Marchand
-		void capacite(Joueur* joueur);
+		static void capacite(Joueur* joueur);
 };
 
 
-
+#include "../../Joueurs/Machine/Comportements/ComportementMarchandMachine.hpp"
 /******************************************************************************/
 #include "Marchand.cpp"
 #endif // MARCHAND_HPP

@@ -11,6 +11,10 @@
 #include "../Jeux/Personnages/Condottiere.hpp"
 #include "../Jeux/Personnages/Magicien.hpp"
 #include "../Jeux/Personnages/Voleur.hpp"
+#include "../Jeux/Personnages/Architecte.hpp"
+#include "../Jeux/Personnages/Roi.hpp"
+#include "../Jeux/Personnages/Eveque.hpp"
+
 
 
 class FabriquePersonnage{
@@ -30,7 +34,7 @@ class FabriquePersonnage{
 		Personnage * creerMarchand();
 		Personnage * creerArchitecte();
 		Personnage * creerCondottiere();
-		
+
 
 };
 

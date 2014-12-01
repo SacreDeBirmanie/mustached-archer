@@ -18,10 +18,16 @@ int main(){
 
     FabriquePersonnage * fabrique = new FabriquePersonnage();
 
-	partie->nouveauJoueur(new Machine("A",partie));
-	partie->nouveauJoueur(new Machine("B",partie));
-	partie->nouveauJoueur(new Machine("C",partie));
-	partie->nouveauJoueur(new Machine("D",partie));
+    Machine * Machine1 = new Machine("A",partie);
+    Machine * Machine2 = new Machine("B",partie);
+    Machine * Machine3 = new Machine("C",partie);
+    Machine * Machine4 = new Machine("D",partie);
+
+
+	partie->nouveauJoueur(Machine1);
+	partie->nouveauJoueur(Machine2);
+	partie->nouveauJoueur(Machine3);
+	partie->nouveauJoueur(Machine4);
 
 	partie->nouveauPersonnage(fabrique->creerAssassin());
 	partie->nouveauPersonnage(fabrique->creerCondottiere());

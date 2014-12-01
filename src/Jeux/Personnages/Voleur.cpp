@@ -6,6 +6,9 @@
 * \date 12.2014
 */
 
+
+EstVole * Voleur::estVole_ = new EstVole();
+
 //--------------------------------------------------
 /*!
 * \brief Constructeur de la classe
@@ -13,9 +16,6 @@
 * \param ordre l'ordre dans lequel le personnage joue
 * \param comp le comportement
 */
-
-
-EstVole * Voleur::estVole_ = new EstVole();
 Voleur::Voleur(string nom, int ordre, ComportementMachine * comp,EstVole * perso): Personnage(nom,ordre,comp){
 	estVole_ = perso;
 }

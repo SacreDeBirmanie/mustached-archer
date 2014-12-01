@@ -6,6 +6,8 @@
 * \date 12.2014
 */
 
+
+Macchabee* Assassin::macchabee_ = new Macchabee();
 //--------------------------------------------------
 /*!
 * \brief Constructeur de la classe
@@ -13,7 +15,6 @@
 * \param ordre l'ordre dans lequel le personnage joue
 * \param comp le comportement
 */
-Macchabee* Assassin::macchabee_ = new Macchabee();
 Assassin::Assassin(string nom, int ordre, ComportementMachine * comp):Personnage(nom,ordre,comp){}
 
 //--------------------------------------------------

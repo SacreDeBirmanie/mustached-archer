@@ -13,6 +13,7 @@
 AssociationPersonnageJoueur::AssociationPersonnageJoueur() {
 	ordreTour_ = new Chaine<Joueur*>();
 	joueurCourant_ = NULL;
+	couronnement_ = Aleatoire::tirerEntier(0,3);
 }
 
 //--------------------------------------------------
@@ -169,18 +170,23 @@ vector<Personnage*> AssociationPersonnageJoueur::persosDisponible(){
 * \return Le joueur
 */
 Joueur* AssociationPersonnageJoueur::joueurSuivantTour(){
+    Maillon<Joueur*> * tmp;
 	if(joueurCourant_ != NULL){
-		Maillon<Joueur*> * tmp = joueurCourant_;
+		tmp = joueurCourant_;
 		joueurCourant_ = joueurCourant_->suivant;
 		return tmp->element;
 	}
 	else{
-			vector<int> tmp = recupererListeOrdre();
+			vector<int> tmpvec = recupererListeOrdre();
 			ordreTour_->reinitialiser();
-			for(vector<int>::iterator it = tmp.begin();it!=tmp.end();it++){
+			for(vector<int>::iterator it = tmpvec.begin();it!=tmpvec.end();it++){
 				if(assocPJ_[(*it)]!="undefined")
 					ordreTour_->insererQueue(listeJoueurs_[assocPJ_[*it]]);
 			}
+
+			tmp = ordreTour_->recupererTete();
+            joueurCourant_ = tmp->suivant;
+            return tmp->element;
 		}
 
 }
@@ -223,7 +229,19 @@ Joueur* AssociationPersonnageJoueur::joueurSuivantChoixPersonnages(){
 * \return
 */
 Joueur* AssociationPersonnageJoueur::joueurSuivantDecomptePoints(){
-	return NULL;
+	if(joueurCourant_ != NULL){
+		Maillon<Joueur*> * tmp = joueurCourant_;
+		joueurCourant_ = joueurCourant_->suivant;
+		return tmp->element;
+	}
+	else{
+			vector<int> tmp = recupererListeOrdre();
+			ordreTour_->reinitialiser();
+			for(vector<int>::iterator it = tmp.begin();it!=tmp.end();it++){
+				if(assocPJ_[(*it)]!="undefined")
+					ordreTour_->insererQueue(listeJoueurs_[assocPJ_[*it]]);
+			}
+		}
 }
 
 //--------------------------------------------------

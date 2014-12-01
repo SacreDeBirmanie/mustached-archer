@@ -43,6 +43,10 @@ template <typename T> class Chaine {
 			}
 		}
 
+		Maillon<T> * recupererTete(){
+            return this->tete;
+		}
+
 		Maillon<T> * recuperer(T element){
 			Maillon<T> *p = this->tete;
 			while(!(p==NULL) && p->element != element){

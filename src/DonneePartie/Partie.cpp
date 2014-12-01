@@ -68,6 +68,7 @@ void Partie::couronnement(Joueur *joueur){
 * \brief Méthode qui lance un tour
 */
 void Partie::lancementDuTour(){
+	cout<<"le tour debute"<<endl;
 	Joueur * joueur = roles_->joueurSuivantTour();
 	while(joueur != NULL){
 		joueur->jouer();

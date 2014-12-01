@@ -10,3 +10,8 @@ void Machine::jouer(){
     comportement_->jouer(partie_,this);
 
 }
+
+void Machine::choisirPersonnage(vector<Personnage*> persosDispo){
+	int nb = Aleatoire::tirerEntier(0,persosDispo.size());
+	partie_->associer(persosDispo.at(nb),this);
+}

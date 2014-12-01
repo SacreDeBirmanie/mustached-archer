@@ -93,9 +93,9 @@ bool Joueur::detruire(Quartier * quartier){
         return false;
 }
 
-void Joueur::choisirPersonnage(vector<Personnage*> persosDispo){
+/*void Joueur::choisirPersonnage(vector<Personnage*> persosDispo){
 	comportement_->choisirPersonnage(partie_,persosDispo,this);
-}
+}*/
 
 void Joueur::choisirGainTour(){
     comportement_->choisirGainTour(this);

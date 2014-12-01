@@ -124,6 +124,8 @@ void AssociationPersonnageJoueur::reinitialiser(){
 
 	selection_ = false;
 	joueurCourant_ = NULL;
+	choixCourant_ = couronnement_;
+	selection_ = true;
 }
 
 //--------------------------------------------------

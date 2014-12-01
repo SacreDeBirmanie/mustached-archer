@@ -1,6 +1,9 @@
-/**
-*   Fichier ComportementMarchandMachine.hpp
-*   Définition du type ComportementMarchandMachine
+/*!
+* \file ComportementMarchandMachine.hpp
+* \brief Fichier contenant les entêtes de la classe ComportementMarchandMachine
+* \author François Hallereau
+* \author Sébastien Vallée
+* \date 12.2014
 */
 
 #ifndef COMPORTEMENTMARCHANDMACHINE_HPP
@@ -8,6 +11,12 @@
 
 #include <string> // pour le type std::string
 
+
+//--------------------------------------------------
+/*!
+* \class ComportementMarchandMachine
+* \brief Classe gérant le comportement machine du marchand
+*/
 class ComportementMarchandMachine : public ComportementMachine{
 
 
@@ -16,7 +25,8 @@ class ComportementMarchandMachine : public ComportementMachine{
 		
 
 	public :
-		ComportementMarchandMachine();//constructeur de la classe EtatMarchandMachine
+		ComportementMarchandMachine();
+		~ComportementMarchandMachine();
 		void jouer(Partie * p, Joueur * joueur);
 		
 };

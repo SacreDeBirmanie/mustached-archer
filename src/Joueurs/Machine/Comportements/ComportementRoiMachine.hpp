@@ -1,6 +1,9 @@
-/**
-*   Fichier ComportementRoiMachine.hpp
-*   \brief Définition du type ComportementRoiMachine
+/*!
+* \file ComportementRoiMachine.hpp
+* \brief Fichier contenant les entêtes de la classe ComportementRoiMachine
+* \author François Hallereau
+* \author Sébastien Vallée
+* \date 12.2014
 */
 
 #ifndef COMPORTEMENTROIMACHINE_HPP
@@ -8,6 +11,11 @@
 
 #include <string> // pour le type std::string
 
+//--------------------------------------------------
+/*!
+* \class ComportementRoiMachine
+* \brief Classe gérant le comportement machine du roi
+*/
 class ComportementRoiMachine : public ComportementMachine{
 
 
@@ -16,7 +24,8 @@ class ComportementRoiMachine : public ComportementMachine{
 		
 
 	public :
-		ComportementRoiMachine();//constructeur de la classe EtatRoiMachine
+		ComportementRoiMachine();
+		~ComportementRoiMachine();
 		void jouer(Partie * partie, Joueur * joueur);
 		
 };

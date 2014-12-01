@@ -1,6 +1,9 @@
-/**
-*   Fichier ComportementVoleurMachine.hpp
-*   \brief Définition du type ComportementVoleurMachine
+/*!
+* \file ComportementVoleurMachine.hpp
+* \brief Fichier contenant les entêtes de la classe ComportementVoleurMachine
+* \author François Hallereau
+* \author Sébastien Vallée
+* \date 12.2014
 */
 
 #ifndef COMPORTEMENTVOLEURMACHINE_HPP
@@ -8,6 +11,11 @@
 
 #include <string> // pour le type std::string
 
+//--------------------------------------------------
+/*!
+* \class ComportementVoleurMachine
+* \brief Classe gérant le comportement machine du voleur
+*/
 class ComportementVoleurMachine : public ComportementMachine{
 
 
@@ -16,7 +24,8 @@ class ComportementVoleurMachine : public ComportementMachine{
 
 
 	public :
-		ComportementVoleurMachine();//constructeur de la classe EtatVoleurMachine
+		ComportementVoleurMachine();
+		~ComportementVoleurMachine();
 		void jouer(Partie * partie, Joueur * joueur);
 		void choixVole(Partie * partie, Joueur * joueur);
 

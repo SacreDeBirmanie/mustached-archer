@@ -1,6 +1,6 @@
 /**
-*   Fichier ComportementMachine.hpp
-*   \brief Définition du type ComportementMachine
+*   \file ComportementMacchabeeMachine.hpp
+*   \brief Définition du type ComportementMacchabeeMachine
 */
 
 #ifndef COMPORTEMENTMACCHABEEMACHINE_HPP

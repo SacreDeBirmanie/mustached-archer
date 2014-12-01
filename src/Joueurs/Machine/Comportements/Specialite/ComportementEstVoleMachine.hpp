@@ -1,5 +1,5 @@
 /**
-*   Fichier ComportementEstVoleMachine.hpp
+*   \file ComportementEstVoleMachine.hpp
 *   \brief Définition du type ComportementEstVoleMachine
 */
 

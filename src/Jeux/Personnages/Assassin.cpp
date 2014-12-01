@@ -21,7 +21,7 @@ Assassin::Assassin(string nom, int ordre, ComportementMachine * comp):Personnage
 /*!
 * \brief Destructeur de la classe
 */
-Assassin::~Assassin();
+Assassin::~Assassin(){}
 
 //--------------------------------------------------
 /*!

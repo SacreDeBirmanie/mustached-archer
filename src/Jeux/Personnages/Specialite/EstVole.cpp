@@ -16,4 +16,5 @@ void EstVole::seFaireVoler(){
 		voleur_->setPieceOr(voleur_->getPieceOr() + cible_->getPieceOr());
 		cible_->setPieceOr(0);
 		cible_->setComportement(comportement_);
+		cible_->jouer();
 }
